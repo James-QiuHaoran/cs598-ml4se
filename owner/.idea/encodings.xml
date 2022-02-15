@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/owner-examples/owner-examples-hotreload/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/owner-extras/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/owner-java8-extras/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/owner-java8/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/owner/src/main/java" charset="UTF-8" />
+  </component>
+</project>
