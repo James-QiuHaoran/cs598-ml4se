@@ -1,6 +1,7 @@
 import argparse
 import os
 import subprocess
+import pydot
 
 PATH_ANALYZER = 'analyzer-hqiu/out/artifacts/PropertyGraph_jar/'
 NAME_ANALYZER = 'main.jar'
@@ -13,13 +14,13 @@ app_paths = {
 }
 
 # get the AST representation of the code at the specified location
-def get_ast(path):
+def get_ast(path, visualization=False):
     original_cwd = os.getcwd()
     print('Current working directory:', original_cwd)
 
     os.chdir(original_cwd + '/' + PATH_ANALYZER)
     cwd = os.getcwd()
-    print('Current working directory:', cwd)
+    # print('Current working directory:', cwd)
 
     if os.path.isfile(path) or os.path.isdir(path):
         # extract the AST representation of the code in the file or all files of the directory
@@ -41,17 +42,27 @@ def get_ast(path):
         if path[-1] == '/':
             path = path[:-1]
         print('AST representation files are stored to:', original_cwd + '/' + path + '/../AST')
+
+        # visualization
+        if visualization:
+            print('Transforming .dot files to .png files...')
+            dir_path = original_cwd + '/' + path + '/../AST'
+            for file_name in os.listdir(dir_path):
+                file_path = os.path.join(dir_path, file_name)
+                print(file_path)
+                graphs = pydot.graph_from_dot_file(file_path)
+                graphs[0].write_png(dir_path + '/' + file_name[:-3] + 'png')
     else:
         print('Input file/directory not found:', path)
 
 # get the CG representation of the code at the specified location
-def get_cg(path):
+def get_cg(path, visualization=False):
     original_cwd = os.getcwd()
     print('Current working directory:', original_cwd)
 
     os.chdir(original_cwd + '/' + PATH_ANALYZER)
     cwd = os.getcwd()
-    print('Current working directory:', cwd)
+    # print('Current working directory:', cwd)
 
     if os.path.isfile(path) or os.path.isdir(path) or os.path.isfile(original_cwd + '/' + path) or os.path.isdir(original_cwd + '/' + path):
         # extract the CG representation from the jar generated in the project
@@ -71,13 +82,13 @@ def get_cg(path):
         print('Input file/directory not found:', path)
 
 # get the CFG representation of the code at the specified location
-def get_cfg(path):
+def get_cfg(path, visualization=False):
     original_cwd = os.getcwd()
     print('Current working directory:', original_cwd)
 
     os.chdir(original_cwd + '/' + PATH_ANALYZER)
     cwd = os.getcwd()
-    print('Current working directory:', cwd)
+    # print('Current working directory:', cwd)
 
     if os.path.isfile(path) or os.path.isdir(path):
         # extract the CFG representation of the code in the file or all files of the directory
@@ -98,7 +109,25 @@ def get_cfg(path):
     
         if path[-1] == '/':
             path = path[:-1]
-            print('CFG representation files are stored to:', original_cwd + '/' + path + '/../CFG')
+        print('CFG representation files are stored to:', original_cwd + '/' + path + '/../CFG')
+
+        # visualization
+        if visualization:
+            print('Transforming .dot files to .png files...')
+            dir_path = original_cwd + '/' + path + '/../CFG'
+            for file_name in os.listdir(dir_path):
+                if file_name == 'Util_cfg.dot':
+                    continue
+                file_path = os.path.join(dir_path, file_name)
+                if os.path.getsize(file_path) < 100:
+                    # skip files less than 100 bytes
+                    continue
+                print(file_path)
+                try:
+                    graphs = pydot.graph_from_dot_file(file_path)
+                    graphs[0].write_png(dir_path + '/' + file_name[:-3] + 'png')
+                except:
+                    continue
     else:
         print('Input file/directory not found:', path)
 
@@ -106,6 +135,7 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument("-r", "--representation", help="Select code representation from [\"AST\", \"CG\", \"CFG\"]")
 parser.add_argument("-i", "--input", help="Path to the project source code directory")
+parser.add_argument("-v", "--visualization", action='store_true', help="Visualize the generated code representations in graphs")
 
 args = parser.parse_args()
 if args.representation and args.input:
@@ -113,11 +143,12 @@ if args.representation and args.input:
         print("Unknown code representation format! Select code representation from [\"AST\", \"CG\", \"CFG\"] to proceed.")
         exit()
     print("Getting", args.representation, "of", args.input + "...")
+    print("Visualization:", args.visualization)
     if args.representation == 'AST':
-        get_ast(args.input)
+        get_ast(args.input, args.visualization)
     elif args.representation == 'CG':
-        get_cg(args.input)
+        get_cg(args.input, args.visualization)
     elif args.representation == 'CFG':
-        get_cfg(args.input)
+        get_cfg(args.input, args.visualization)
 else:
     parser.print_help()
