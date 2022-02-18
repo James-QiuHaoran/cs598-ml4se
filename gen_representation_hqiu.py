@@ -13,6 +13,9 @@ app_paths = {
     "cfg4j": "cfg4j/out/artifacts/git-bind-1.0.0-SNAPSHOT.jar"
 }
 
+ast_files = ['JSONXMLSerializer_ast.dot', 'JSONObject_ast.dot', 'JSONUtil_ast.dot', 'JSONTokener_ast.dot', 'IssueI1F8M2_ast.dot']
+cfg_files = ['Util_cfg.dot', 'JSONUtilTest_cfg.dot']
+
 # get the AST representation of the code at the specified location
 def get_ast(path, visualization=False):
     original_cwd = os.getcwd()
@@ -48,10 +51,18 @@ def get_ast(path, visualization=False):
             print('Transforming .dot files to .png files...')
             dir_path = original_cwd + '/' + path + '/../AST'
             for file_name in os.listdir(dir_path):
+                if file_name in ast_files or 'Test' in file_name:
+            	    continue
                 file_path = os.path.join(dir_path, file_name)
+                if os.path.getsize(file_path) < 100:
+                    # skip files less than 100 bytes (basically no meaningful representation extracted)
+                    continue
                 print(file_path)
-                graphs = pydot.graph_from_dot_file(file_path)
-                graphs[0].write_png(dir_path + '/' + file_name[:-3] + 'png')
+                try:
+                    graphs = pydot.graph_from_dot_file(file_path)
+                    graphs[0].write_png(dir_path + '/' + file_name[:-3] + 'png')
+                except:
+                    continue
     else:
         print('Input file/directory not found:', path)
 
@@ -116,11 +127,11 @@ def get_cfg(path, visualization=False):
             print('Transforming .dot files to .png files...')
             dir_path = original_cwd + '/' + path + '/../CFG'
             for file_name in os.listdir(dir_path):
-                if file_name == 'Util_cfg.dot':
+                if file_name in cfg_files:
                     continue
                 file_path = os.path.join(dir_path, file_name)
                 if os.path.getsize(file_path) < 100:
-                    # skip files less than 100 bytes
+                    # skip files less than 100 bytes (basically no meaningful representation extracted)
                     continue
                 print(file_path)
                 try:
