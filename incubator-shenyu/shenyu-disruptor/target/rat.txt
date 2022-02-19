@@ -1,0 +1,39 @@
+
+*****************************************************
+Summary
+-------
+Generated at: 2022-02-19T12:39:14-06:00
+
+Notes: 0
+Binaries: 0
+Archives: 0
+Standards: 13
+
+Apache Licensed: 13
+Generated Documents: 0
+
+JavaDocs are generated, thus a license header is optional.
+Generated files do not require license headers.
+
+0 Unknown Licenses
+
+*****************************************************
+  Files with Apache License headers will be marked AL
+  Binary files (which do not require any license headers) will be marked B
+  Compressed archives will be marked A
+  Notices, licenses etc. will be marked N
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-disruptor/pom.xml
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-disruptor/src/main/java/org/apache/shenyu/disruptor/provider/DisruptorProvider.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-disruptor/src/main/java/org/apache/shenyu/disruptor/DisruptorProviderManage.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-disruptor/src/main/java/org/apache/shenyu/disruptor/consumer/QueueConsumerExecutor.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-disruptor/src/main/java/org/apache/shenyu/disruptor/consumer/QueueConsumer.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-disruptor/src/main/java/org/apache/shenyu/disruptor/consumer/QueueConsumerFactory.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-disruptor/src/main/java/org/apache/shenyu/disruptor/thread/DisruptorThreadFactory.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-disruptor/src/main/java/org/apache/shenyu/disruptor/thread/OrderlyExecutor.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-disruptor/src/main/java/org/apache/shenyu/disruptor/thread/SingletonExecutor.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-disruptor/src/main/java/org/apache/shenyu/disruptor/event/DisruptorEventFactory.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-disruptor/src/main/java/org/apache/shenyu/disruptor/event/DataEvent.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-disruptor/src/main/java/org/apache/shenyu/disruptor/event/OrderlyDisruptorEventFactory.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-disruptor/src/main/java/org/apache/shenyu/disruptor/event/OrderlyDataEvent.java
+ 
+*****************************************************

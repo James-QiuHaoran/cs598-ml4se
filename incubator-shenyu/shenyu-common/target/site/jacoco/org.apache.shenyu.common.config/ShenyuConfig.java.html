@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ShenyuConfig.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.config</a> &gt; <span class="el_source">ShenyuConfig.java</span></div><h1>ShenyuConfig.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.config;
+
+import org.springframework.util.StringUtils;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Properties;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+/**
+ * The type shenyu config.
+ */
+<span class="nc" id="L33">public class ShenyuConfig {</span>
+
+<span class="nc" id="L35">    private SwitchConfig switchConfig = new SwitchConfig();</span>
+    
+<span class="nc" id="L37">    private FileConfig file = new FileConfig();</span>
+    
+<span class="nc" id="L39">    private ExcludePath exclude = new ExcludePath();</span>
+
+<span class="nc" id="L41">    private FallbackPath fallback = new FallbackPath();</span>
+    
+<span class="nc" id="L43">    private ExtPlugin extPlugin = new ExtPlugin();</span>
+    
+<span class="nc" id="L45">    private Scheduler scheduler = new Scheduler();</span>
+    
+<span class="nc" id="L47">    private UpstreamCheck upstreamCheck = new UpstreamCheck();</span>
+
+<span class="nc" id="L49">    private CrossFilterConfig cross = new CrossFilterConfig();</span>
+    
+<span class="nc" id="L51">    private InstanceConfig instance = new InstanceConfig();</span>
+    
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
+    public InstanceConfig getInstance() {
+<span class="nc" id="L59">        return instance;</span>
+    }
+    
+    /**
+     * Sets instance.
+     *
+     * @param instance the instance
+     */
+    public void setInstance(final InstanceConfig instance) {
+<span class="nc" id="L68">        this.instance = instance;</span>
+<span class="nc" id="L69">    }</span>
+    
+    /**
+     * Gets switch config.
+     *
+     * @return the switch config
+     */
+    public SwitchConfig getSwitchConfig() {
+<span class="nc" id="L77">        return switchConfig;</span>
+    }
+    
+    /**
+     * Sets switch config.
+     *
+     * @param switchConfig the switch config
+     */
+    public void setSwitchConfig(final SwitchConfig switchConfig) {
+<span class="nc" id="L86">        this.switchConfig = switchConfig;</span>
+<span class="nc" id="L87">    }</span>
+    
+    /**
+     * Gets scheduler.
+     *
+     * @return the scheduler
+     */
+    public Scheduler getScheduler() {
+<span class="nc" id="L95">        return scheduler;</span>
+    }
+    
+    /**
+     * Sets scheduler.
+     *
+     * @param scheduler the scheduler
+     */
+    public void setScheduler(final Scheduler scheduler) {
+<span class="nc" id="L104">        this.scheduler = scheduler;</span>
+<span class="nc" id="L105">    }</span>
+    
+    /**
+     * Gets ext plugin.
+     *
+     * @return the ext plugin
+     */
+    public ExtPlugin getExtPlugin() {
+<span class="nc" id="L113">        return extPlugin;</span>
+    }
+    
+    /**
+     * Sets ext plugin.
+     *
+     * @param extPlugin the ext plugin
+     */
+    public void setExtPlugin(final ExtPlugin extPlugin) {
+<span class="nc" id="L122">        this.extPlugin = extPlugin;</span>
+<span class="nc" id="L123">    }</span>
+    
+    /**
+     * Gets file.
+     *
+     * @return the file
+     */
+    public FileConfig getFile() {
+<span class="nc" id="L131">        return file;</span>
+    }
+    
+    /**
+     * Sets file.
+     *
+     * @param file the file
+     */
+    public void setFile(final FileConfig file) {
+<span class="nc" id="L140">        this.file = file;</span>
+<span class="nc" id="L141">    }</span>
+    
+    /**
+     * Gets exclude.
+     *
+     * @return the exclude
+     */
+    public ExcludePath getExclude() {
+<span class="nc" id="L149">        return exclude;</span>
+    }
+    
+    /**
+     * Sets exclude.
+     *
+     * @param exclude the exclude
+     */
+    public void setExclude(final ExcludePath exclude) {
+<span class="nc" id="L158">        this.exclude = exclude;</span>
+<span class="nc" id="L159">    }</span>
+
+    /**
+     * Gets fallback.
+     *
+     * @return the fallback
+     */
+    public FallbackPath getFallback() {
+<span class="nc" id="L167">        return fallback;</span>
+    }
+
+    /**
+     * Sets fallback.
+     *
+     * @param fallback the fallback
+     */
+    public void setFallback(final FallbackPath fallback) {
+<span class="nc" id="L176">        this.fallback = fallback;</span>
+<span class="nc" id="L177">    }</span>
+
+    /**
+     * Gets upstream check.
+     *
+     * @return the upstream check
+     */
+    public UpstreamCheck getUpstreamCheck() {
+<span class="nc" id="L185">        return upstreamCheck;</span>
+    }
+    
+    /**
+     * Sets upstream check.
+     *
+     * @param upstreamCheck the upstream check
+     */
+    public void setUpstreamCheck(final UpstreamCheck upstreamCheck) {
+<span class="nc" id="L194">        this.upstreamCheck = upstreamCheck;</span>
+<span class="nc" id="L195">    }</span>
+    
+    /**
+     * Gets cross.
+     *
+     * @return the cross
+     */
+    public CrossFilterConfig getCross() {
+<span class="nc" id="L203">        return cross;</span>
+    }
+    
+    /**
+     * Sets cross.
+     *
+     * @param cross the cross
+     */
+    public void setCross(final CrossFilterConfig cross) {
+<span class="nc" id="L212">        this.cross = cross;</span>
+<span class="nc" id="L213">    }</span>
+    
+    /**
+     * The type Scheduler.
+     */
+<span class="nc" id="L218">    public static class Scheduler {</span>
+    
+<span class="nc" id="L220">        private Boolean enabled = false;</span>
+    
+<span class="nc" id="L222">        private String type = &quot;fixed&quot;;</span>
+    
+<span class="nc" id="L224">        private Integer threads = Math.max((Runtime.getRuntime().availableProcessors() &lt;&lt; 1) + 1, 16);</span>
+    
+        /**
+         * Gets enabled.
+         *
+         * @return the enabled
+         */
+        public Boolean getEnabled() {
+<span class="nc" id="L232">            return enabled;</span>
+        }
+    
+        /**
+         * Sets enabled.
+         *
+         * @param enabled the enabled
+         */
+        public void setEnabled(final Boolean enabled) {
+<span class="nc" id="L241">            this.enabled = enabled;</span>
+<span class="nc" id="L242">        }</span>
+    
+        /**
+         * Gets type.
+         *
+         * @return the type
+         */
+        public String getType() {
+<span class="nc" id="L250">            return type;</span>
+        }
+    
+        /**
+         * Sets type.
+         *
+         * @param type the type
+         */
+        public void setType(final String type) {
+<span class="nc" id="L259">            this.type = type;</span>
+<span class="nc" id="L260">        }</span>
+    
+        /**
+         * Gets threads.
+         *
+         * @return the threads
+         */
+        public Integer getThreads() {
+<span class="nc" id="L268">            return threads;</span>
+        }
+    
+        /**
+         * Sets threads.
+         *
+         * @param threads the threads
+         */
+        public void setThreads(final Integer threads) {
+<span class="nc" id="L277">            this.threads = threads;</span>
+<span class="nc" id="L278">        }</span>
+        
+    }
+    
+    /**
+     * The type Ext plugin.
+     */
+<span class="nc" id="L285">    public static class ExtPlugin {</span>
+        
+        private String path;
+        
+<span class="nc" id="L289">        private Boolean enabled = true;</span>
+    
+<span class="nc" id="L291">        private Integer threads = 1;</span>
+        
+<span class="nc" id="L293">        private Integer scheduleTime = 300;</span>
+    
+<span class="nc" id="L295">        private Integer scheduleDelay = 30;</span>
+    
+        /**
+         * Gets path.
+         *
+         * @return the path
+         */
+        public String getPath() {
+<span class="nc" id="L303">            return path;</span>
+        }
+    
+        /**
+         * Sets path.
+         *
+         * @param path the path
+         */
+        public void setPath(final String path) {
+<span class="nc" id="L312">            this.path = path;</span>
+<span class="nc" id="L313">        }</span>
+    
+        /**
+         * Gets enabled.
+         *
+         * @return the enabled
+         */
+        public Boolean getEnabled() {
+<span class="nc" id="L321">            return enabled;</span>
+        }
+    
+        /**
+         * Sets enabled.
+         *
+         * @param enabled the enabled
+         */
+        public void setEnabled(final Boolean enabled) {
+<span class="nc" id="L330">            this.enabled = enabled;</span>
+<span class="nc" id="L331">        }</span>
+    
+        /**
+         * Gets threads.
+         *
+         * @return the threads
+         */
+        public Integer getThreads() {
+<span class="nc" id="L339">            return threads;</span>
+        }
+    
+        /**
+         * Sets threads.
+         *
+         * @param threads the threads
+         */
+        public void setThreads(final Integer threads) {
+<span class="nc" id="L348">            this.threads = threads;</span>
+<span class="nc" id="L349">        }</span>
+    
+    
+        /**
+         * Gets schedule time.
+         *
+         * @return the schedule time
+         */
+        public Integer getScheduleTime() {
+<span class="nc" id="L358">            return scheduleTime;</span>
+        }
+    
+        /**
+         * Sets schedule time.
+         *
+         * @param scheduleTime the schedule time
+         */
+        public void setScheduleTime(final Integer scheduleTime) {
+<span class="nc" id="L367">            this.scheduleTime = scheduleTime;</span>
+<span class="nc" id="L368">        }</span>
+    
+        /**
+         * Gets schedule delay.
+         *
+         * @return the schedule delay
+         */
+        public Integer getScheduleDelay() {
+<span class="nc" id="L376">            return scheduleDelay;</span>
+        }
+    
+        /**
+         * Sets schedule delay.
+         *
+         * @param scheduleDelay the schedule delay
+         */
+        public void setScheduleDelay(final Integer scheduleDelay) {
+<span class="nc" id="L385">            this.scheduleDelay = scheduleDelay;</span>
+<span class="nc" id="L386">        }</span>
+    }
+    
+    /**
+     * The type Exclude path.
+     */
+<span class="nc" id="L392">    public static class ExcludePath {</span>
+    
+<span class="nc" id="L394">        private Boolean enabled = false;</span>
+    
+<span class="nc" id="L396">        private List&lt;String&gt; paths = new ArrayList&lt;&gt;();</span>
+    
+        /**
+         * Gets enabled.
+         *
+         * @return the enabled
+         */
+        public Boolean getEnabled() {
+<span class="nc" id="L404">            return enabled;</span>
+        }
+    
+        /**
+         * Sets enabled.
+         *
+         * @param enabled the enabled
+         */
+        public void setEnabled(final Boolean enabled) {
+<span class="nc" id="L413">            this.enabled = enabled;</span>
+<span class="nc" id="L414">        }</span>
+    
+        /**
+         * Sets paths.
+         *
+         * @param paths the paths
+         */
+        public void setPaths(final List&lt;String&gt; paths) {
+<span class="nc" id="L422">            this.paths = paths;</span>
+<span class="nc" id="L423">        }</span>
+    
+        /**
+         * get paths.
+         *
+         * @return paths paths
+         */
+        public List&lt;String&gt; getPaths() {
+<span class="nc" id="L431">            return paths;</span>
+        }
+    }
+
+    /**
+     * The type fallback path.
+     */
+<span class="nc" id="L438">    public static class FallbackPath {</span>
+
+<span class="nc" id="L440">        private Boolean enabled = false;</span>
+
+<span class="nc" id="L442">        private List&lt;String&gt; paths = new ArrayList&lt;&gt;();</span>
+
+        /**
+         * Gets enabled.
+         *
+         * @return the enabled
+         */
+        public Boolean getEnabled() {
+<span class="nc" id="L450">            return enabled;</span>
+        }
+
+        /**
+         * Sets enabled.
+         *
+         * @param enabled the enabled
+         */
+        public void setEnabled(final Boolean enabled) {
+<span class="nc" id="L459">            this.enabled = enabled;</span>
+<span class="nc" id="L460">        }</span>
+
+        /**
+         * Sets paths.
+         *
+         * @param paths the paths
+         */
+        public void setPaths(final List&lt;String&gt; paths) {
+<span class="nc" id="L468">            this.paths = paths;</span>
+<span class="nc" id="L469">        }</span>
+
+        /**
+         * get paths.
+         *
+         * @return paths paths
+         */
+        public List&lt;String&gt; getPaths() {
+<span class="nc" id="L477">            return paths;</span>
+        }
+    }
+    
+    /**
+     * The type File config.
+     */
+<span class="nc" id="L484">    public static class FileConfig {</span>
+    
+<span class="nc" id="L486">        private Boolean enabled = true;</span>
+    
+<span class="nc" id="L488">        private Integer maxSize = 10;</span>
+    
+        /**
+         * Gets enabled.
+         *
+         * @return the enabled
+         */
+        public Boolean getEnabled() {
+<span class="nc" id="L496">            return enabled;</span>
+        }
+    
+        /**
+         * Sets enabled.
+         *
+         * @param enabled the enabled
+         */
+        public void setEnabled(final Boolean enabled) {
+<span class="nc" id="L505">            this.enabled = enabled;</span>
+<span class="nc" id="L506">        }</span>
+    
+        /**
+         * Gets file max size.
+         *
+         * @return the file max size
+         */
+        public Integer getMaxSize() {
+<span class="nc" id="L514">            return maxSize;</span>
+        }
+    
+        /**
+         * Sets file max size.
+         *
+         * @param maxSize the file max size
+         */
+        public void setMaxSize(final Integer maxSize) {
+<span class="nc" id="L523">            this.maxSize = maxSize;</span>
+<span class="nc" id="L524">        }</span>
+    }
+    
+    /**
+     * The type Switch config.
+     */
+<span class="nc" id="L530">    public static class SwitchConfig {</span>
+        
+<span class="nc" id="L532">        private Boolean local = true;</span>
+    
+        /**
+         * Gets local.
+         *
+         * @return the local
+         */
+        public Boolean getLocal() {
+<span class="nc" id="L540">            return local;</span>
+        }
+    
+        /**
+         * Sets local.
+         *
+         * @param local the local
+         */
+        public void setLocal(final Boolean local) {
+<span class="nc" id="L549">            this.local = local;</span>
+<span class="nc" id="L550">        }</span>
+        
+    }
+    
+    /**
+     * The type Upstream check.
+     */
+<span class="nc" id="L557">    public static class UpstreamCheck {</span>
+    
+<span class="nc" id="L559">        private Boolean enabled = false;</span>
+        
+<span class="nc" id="L561">        private Integer timeout = 3000;</span>
+        
+<span class="nc" id="L563">        private Integer healthyThreshold = 1;</span>
+    
+<span class="nc" id="L565">        private Integer unhealthyThreshold = 1;</span>
+        
+<span class="nc" id="L567">        private Integer interval = 5000;</span>
+        
+<span class="nc" id="L569">        private Boolean printEnabled = true;</span>
+        
+<span class="nc" id="L571">        private Integer printInterval = 60000;</span>
+    
+        /**
+         * Gets enabled.
+         *
+         * @return the enabled
+         */
+        public Boolean getEnabled() {
+<span class="nc" id="L579">            return enabled;</span>
+        }
+    
+        /**
+         * Sets enabled.
+         *
+         * @param enabled the enabled
+         */
+        public void setEnabled(final Boolean enabled) {
+<span class="nc" id="L588">            this.enabled = enabled;</span>
+<span class="nc" id="L589">        }</span>
+    
+        /**
+         * Gets timeout.
+         *
+         * @return the timeout
+         */
+        public Integer getTimeout() {
+<span class="nc" id="L597">            return timeout;</span>
+        }
+    
+        /**
+         * Sets timeout.
+         *
+         * @param timeout the timeout
+         */
+        public void setTimeout(final Integer timeout) {
+<span class="nc" id="L606">            this.timeout = timeout;</span>
+<span class="nc" id="L607">        }</span>
+    
+        /**
+         * Gets healthy threshold.
+         *
+         * @return the healthy threshold
+         */
+        public Integer getHealthyThreshold() {
+<span class="nc" id="L615">            return healthyThreshold;</span>
+        }
+    
+        /**
+         * Sets healthy threshold.
+         *
+         * @param healthyThreshold the healthy threshold
+         */
+        public void setHealthyThreshold(final Integer healthyThreshold) {
+<span class="nc" id="L624">            this.healthyThreshold = healthyThreshold;</span>
+<span class="nc" id="L625">        }</span>
+    
+        /**
+         * Gets unhealthy threshold.
+         *
+         * @return the unhealthy threshold
+         */
+        public Integer getUnhealthyThreshold() {
+<span class="nc" id="L633">            return unhealthyThreshold;</span>
+        }
+    
+        /**
+         * Sets unhealthy threshold.
+         *
+         * @param unhealthyThreshold the unhealthy threshold
+         */
+        public void setUnhealthyThreshold(final Integer unhealthyThreshold) {
+<span class="nc" id="L642">            this.unhealthyThreshold = unhealthyThreshold;</span>
+<span class="nc" id="L643">        }</span>
+    
+        /**
+         * Gets interval.
+         *
+         * @return the interval
+         */
+        public Integer getInterval() {
+<span class="nc" id="L651">            return interval;</span>
+        }
+    
+        /**
+         * Sets interval.
+         *
+         * @param interval the interval
+         */
+        public void setInterval(final Integer interval) {
+<span class="nc" id="L660">            this.interval = interval;</span>
+<span class="nc" id="L661">        }</span>
+    
+        /**
+         * Gets print enabled.
+         *
+         * @return the print enabled
+         */
+        public Boolean getPrintEnabled() {
+<span class="nc" id="L669">            return printEnabled;</span>
+        }
+    
+        /**
+         * Sets print enabled.
+         *
+         * @param printEnabled the print enabled
+         */
+        public void setPrintEnabled(final Boolean printEnabled) {
+<span class="nc" id="L678">            this.printEnabled = printEnabled;</span>
+<span class="nc" id="L679">        }</span>
+    
+        /**
+         * Gets print interval.
+         *
+         * @return the print interval
+         */
+        public Integer getPrintInterval() {
+<span class="nc" id="L687">            return printInterval;</span>
+        }
+    
+        /**
+         * Sets print interval.
+         *
+         * @param printInterval the print interval
+         */
+        public void setPrintInterval(final Integer printInterval) {
+<span class="nc" id="L696">            this.printInterval = printInterval;</span>
+<span class="nc" id="L697">        }</span>
+    }
+    
+    /**
+     * The Cross Filter Config.
+     */
+<span class="nc" id="L703">    public static class CrossFilterConfig {</span>
+
+        private static final Set&lt;String&gt; DEFAULT_ALLOWED_HEADERS;
+
+        static {
+<span class="nc" id="L708">            DEFAULT_ALLOWED_HEADERS = new HashSet&lt;String&gt;() {</span>
+                {
+<span class="nc" id="L710">                    add(&quot;x-requested-with&quot;);</span>
+<span class="nc" id="L711">                    add(&quot;authorization&quot;);</span>
+<span class="nc" id="L712">                    add(&quot;Content-Type&quot;);</span>
+<span class="nc" id="L713">                    add(&quot;Authorization&quot;);</span>
+<span class="nc" id="L714">                    add(&quot;credential&quot;);</span>
+<span class="nc" id="L715">                    add(&quot;X-XSRF-TOKEN&quot;);</span>
+<span class="nc" id="L716">                    add(&quot;token&quot;);</span>
+<span class="nc" id="L717">                    add(&quot;username&quot;);</span>
+<span class="nc" id="L718">                    add(&quot;client&quot;);</span>
+<span class="nc" id="L719">                }</span>
+            };
+<span class="nc" id="L721">        }</span>
+    
+<span class="nc" id="L723">        private Boolean enabled = true;</span>
+
+        /**
+         * Comma-separated of “header”.
+         */
+<span class="nc" id="L728">        private String allowedHeaders = &quot;&quot;;</span>
+
+        /**
+         * Comma-separated of “method”.
+         */
+<span class="nc" id="L733">        private String allowedMethods = &quot;*&quot;;</span>
+
+<span class="nc" id="L735">        private String allowedOrigin = &quot;*&quot;;</span>
+
+<span class="nc" id="L737">        private String allowedExpose = &quot;*&quot;;</span>
+
+<span class="nc" id="L739">        private String maxAge = &quot;18000&quot;;</span>
+
+<span class="nc" id="L741">        private boolean allowCredentials = true;</span>
+
+        /**
+         * wrapper the headers.
+         *
+         * @param headers headers
+         * @return wrapped headers
+         */
+        private String wrapperHeaders(final String headers) {
+<span class="nc" id="L750">            final Set&lt;String&gt; headerSet = DEFAULT_ALLOWED_HEADERS;</span>
+<span class="nc bnc" id="L751" title="All 2 branches missed.">            if (StringUtils.hasText(headers)) {</span>
+<span class="nc" id="L752">                headerSet.addAll(Stream.of(headers.split(&quot;,&quot;)).collect(Collectors.toSet()));</span>
+            }
+<span class="nc" id="L754">            return String.join(&quot;,&quot;, headerSet);</span>
+        }
+    
+        /**
+         * Gets enabled.
+         *
+         * @return the enabled
+         */
+        public Boolean getEnabled() {
+<span class="nc" id="L763">            return enabled;</span>
+        }
+    
+        /**
+         * Sets enabled.
+         *
+         * @param enabled the enabled
+         */
+        public void setEnabled(final Boolean enabled) {
+<span class="nc" id="L772">            this.enabled = enabled;</span>
+<span class="nc" id="L773">        }</span>
+    
+        /**
+         * Gets the value of allowedHeaders.
+         *
+         * @return the value of allowedHeaders
+         */
+        public String getAllowedHeaders() {
+<span class="nc" id="L781">            return allowedHeaders = wrapperHeaders(allowedHeaders);</span>
+        }
+    
+        /**
+         * Sets the allowedHeaders.
+         *
+         * @param allowedHeaders allowedHeaders
+         */
+        public void setAllowedHeaders(final String allowedHeaders) {
+<span class="nc" id="L790">            this.allowedHeaders = wrapperHeaders(allowedHeaders);</span>
+<span class="nc" id="L791">        }</span>
+    
+        /**
+         * Gets the value of allowedMethods.
+         *
+         * @return the value of allowedMethods
+         */
+        public String getAllowedMethods() {
+<span class="nc" id="L799">            return allowedMethods;</span>
+        }
+    
+        /**
+         * Sets the allowedMethods.
+         *
+         * @param allowedMethods allowedMethods
+         */
+        public void setAllowedMethods(final String allowedMethods) {
+<span class="nc" id="L808">            this.allowedMethods = allowedMethods;</span>
+<span class="nc" id="L809">        }</span>
+    
+        /**
+         * Gets the value of allowedOrigin.
+         *
+         * @return the value of allowedOrigin
+         */
+        public String getAllowedOrigin() {
+<span class="nc" id="L817">            return allowedOrigin;</span>
+        }
+    
+        /**
+         * Sets the allowedOrigin.
+         *
+         * @param allowedOrigin allowedOrigin
+         */
+        public void setAllowedOrigin(final String allowedOrigin) {
+<span class="nc" id="L826">            this.allowedOrigin = allowedOrigin;</span>
+<span class="nc" id="L827">        }</span>
+    
+        /**
+         * Gets the value of allowedExpose.
+         *
+         * @return the value of allowedExpose
+         */
+        public String getAllowedExpose() {
+<span class="nc" id="L835">            return allowedExpose;</span>
+        }
+    
+        /**
+         * Sets the allowedExpose.
+         *
+         * @param allowedExpose allowedExpose
+         */
+        public void setAllowedExpose(final String allowedExpose) {
+<span class="nc" id="L844">            this.allowedExpose = allowedExpose;</span>
+<span class="nc" id="L845">        }</span>
+    
+        /**
+         * Gets the value of maxAge.
+         *
+         * @return the value of maxAge
+         */
+        public String getMaxAge() {
+<span class="nc" id="L853">            return maxAge;</span>
+        }
+    
+        /**
+         * Sets the maxAge.
+         *
+         * @param maxAge maxAge
+         */
+        public void setMaxAge(final String maxAge) {
+<span class="nc" id="L862">            this.maxAge = maxAge;</span>
+<span class="nc" id="L863">        }</span>
+    
+        /**
+         * Gets the value of allowCredentials.
+         *
+         * @return the value of allowCredentials
+         */
+        public boolean isAllowCredentials() {
+<span class="nc" id="L871">            return allowCredentials;</span>
+        }
+    
+        /**
+         * Sets the allowCredentials.
+         *
+         * @param allowCredentials allowCredentials
+         */
+        public void setAllowCredentials(final boolean allowCredentials) {
+<span class="nc" id="L880">            this.allowCredentials = allowCredentials;</span>
+<span class="nc" id="L881">        }</span>
+    }
+    
+    /**
+     * The type Instance config.
+     */
+    public static class InstanceConfig {
+    
+<span class="nc" id="L889">        private Boolean enabled = false;</span>
+    
+        private String registerType;
+    
+        private String serverLists;
+    
+<span class="nc" id="L895">        private Properties props = new Properties();</span>
+        
+        /**
+         * Instantiates a new Instance config.
+         */
+<span class="nc" id="L900">        public InstanceConfig() {</span>
+        
+<span class="nc" id="L902">        }</span>
+    
+        /**
+         * Instantiates a new Instance config.
+         *
+         * @param registerType the register type
+         * @param serverLists the server lists
+         * @param props the props
+         */
+<span class="nc" id="L911">        public InstanceConfig(final String registerType, final String serverLists, final Properties props) {</span>
+<span class="nc" id="L912">            this.registerType = registerType;</span>
+<span class="nc" id="L913">            this.serverLists = serverLists;</span>
+<span class="nc" id="L914">            this.props = props;</span>
+<span class="nc" id="L915">        }</span>
+    
+        /**
+         * Gets enabled.
+         *
+         * @return the enabled
+         */
+        public Boolean getEnabled() {
+<span class="nc" id="L923">            return enabled;</span>
+        }
+    
+        /**
+         * Sets enabled.
+         *
+         * @param enabled the enabled
+         */
+        public void setEnabled(final Boolean enabled) {
+<span class="nc" id="L932">            this.enabled = enabled;</span>
+<span class="nc" id="L933">        }</span>
+    
+        /**
+         * getRegisterType.
+         *
+         * @return String register type
+         */
+        public String getRegisterType() {
+<span class="nc" id="L941">            return registerType;</span>
+        }
+    
+        /**
+         * setRegisterType.
+         *
+         * @param registerType registerType
+         */
+        public void setRegisterType(final String registerType) {
+<span class="nc" id="L950">            this.registerType = registerType;</span>
+<span class="nc" id="L951">        }</span>
+    
+        /**
+         * getServerLists.
+         *
+         * @return String server lists
+         */
+        public String getServerLists() {
+<span class="nc" id="L959">            return serverLists;</span>
+        }
+    
+        /**
+         * setServerLists.
+         *
+         * @param serverLists serverLists
+         */
+        public void setServerLists(final String serverLists) {
+<span class="nc" id="L968">            this.serverLists = serverLists;</span>
+<span class="nc" id="L969">        }</span>
+    
+        /**
+         * getProps.
+         *
+         * @return String props
+         */
+        public Properties getProps() {
+<span class="nc" id="L977">            return props;</span>
+        }
+    
+        /**
+         * setProps.
+         *
+         * @param props props
+         */
+        public void setProps(final Properties props) {
+<span class="nc" id="L986">            this.props = props;</span>
+<span class="nc" id="L987">        }</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

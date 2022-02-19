@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ExtensionLoader.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-spi</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.spi</a> &gt; <span class="el_source">ExtensionLoader.java</span></div><h1>ExtensionLoader.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.spi;
+
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Properties;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
+
+/**
+ * The type Extension loader.
+ * This is done by loading the properties file.
+ *
+ * @param &lt;T&gt; the type parameter
+ * @see &lt;a href=&quot;https://github.com/apache/dubbo/blob/master/dubbo-common/src/main/java/org/apache/dubbo/common/extension/ExtensionLoader.java&quot;&gt;ExtensionLoader&lt;/a&gt;
+ */
+@SuppressWarnings(&quot;all&quot;)
+public final class ExtensionLoader&lt;T&gt; {
+    
+<span class="fc" id="L48">    private static final Logger LOG = LoggerFactory.getLogger(ExtensionLoader.class);</span>
+    
+    private static final String SHENYU_DIRECTORY = &quot;META-INF/shenyu/&quot;;
+    
+<span class="fc" id="L52">    private static final Map&lt;Class&lt;?&gt;, ExtensionLoader&lt;?&gt;&gt; LOADERS = new ConcurrentHashMap&lt;&gt;();</span>
+    
+    private final Class&lt;T&gt; clazz;
+    
+    private final ClassLoader classLoader;
+    
+<span class="fc" id="L58">    private final Holder&lt;Map&lt;String, Class&lt;?&gt;&gt;&gt; cachedClasses = new Holder&lt;&gt;();</span>
+    
+<span class="fc" id="L60">    private final Map&lt;String, Holder&lt;Object&gt;&gt; cachedInstances = new ConcurrentHashMap&lt;&gt;();</span>
+    
+<span class="fc" id="L62">    private final Map&lt;Class&lt;?&gt;, Object&gt; joinInstances = new ConcurrentHashMap&lt;&gt;();</span>
+    
+    private String cachedDefaultName;
+    
+    /**
+     * Instantiates a new Extension loader.
+     *
+     * @param clazz the clazz.
+     */
+<span class="fc" id="L71">    private ExtensionLoader(final Class&lt;T&gt; clazz, final ClassLoader cl) {</span>
+<span class="fc" id="L72">        this.clazz = clazz;</span>
+<span class="fc" id="L73">        this.classLoader = cl;</span>
+<span class="fc bfc" id="L74" title="All 2 branches covered.">        if (!Objects.equals(clazz, ExtensionFactory.class)) {</span>
+<span class="fc" id="L75">            ExtensionLoader.getExtensionLoader(ExtensionFactory.class).getExtensionClasses();</span>
+        }
+<span class="fc" id="L77">    }</span>
+    
+    /**
+     * Gets extension loader.
+     *
+     * @param &lt;T&gt;   the type parameter
+     * @param clazz the clazz
+     * @param cl    the cl
+     * @return the extension loader.
+     */
+    public static &lt;T&gt; ExtensionLoader&lt;T&gt; getExtensionLoader(final Class&lt;T&gt; clazz, final ClassLoader cl) {
+        
+<span class="fc" id="L89">        Objects.requireNonNull(clazz, &quot;extension clazz is null&quot;);</span>
+        
+<span class="fc bfc" id="L91" title="All 2 branches covered.">        if (!clazz.isInterface()) {</span>
+<span class="fc" id="L92">            throw new IllegalArgumentException(&quot;extension clazz (&quot; + clazz + &quot;) is not interface!&quot;);</span>
+        }
+<span class="fc bfc" id="L94" title="All 2 branches covered.">        if (!clazz.isAnnotationPresent(SPI.class)) {</span>
+<span class="fc" id="L95">            throw new IllegalArgumentException(&quot;extension clazz (&quot; + clazz + &quot;) without @&quot; + SPI.class + &quot; Annotation&quot;);</span>
+        }
+<span class="fc" id="L97">        ExtensionLoader&lt;T&gt; extensionLoader = (ExtensionLoader&lt;T&gt;) LOADERS.get(clazz);</span>
+<span class="fc bfc" id="L98" title="All 2 branches covered.">        if (Objects.nonNull(extensionLoader)) {</span>
+<span class="fc" id="L99">            return extensionLoader;</span>
+        }
+<span class="fc" id="L101">        LOADERS.putIfAbsent(clazz, new ExtensionLoader&lt;&gt;(clazz, cl));</span>
+<span class="fc" id="L102">        return (ExtensionLoader&lt;T&gt;) LOADERS.get(clazz);</span>
+    }
+    
+    /**
+     * Gets extension loader.
+     *
+     * @param &lt;T&gt;   the type parameter
+     * @param clazz the clazz
+     * @return the extension loader
+     */
+    public static &lt;T&gt; ExtensionLoader&lt;T&gt; getExtensionLoader(final Class&lt;T&gt; clazz) {
+<span class="fc" id="L113">        return getExtensionLoader(clazz, ExtensionLoader.class.getClassLoader());</span>
+    }
+    
+    /**
+     * Gets default join.
+     *
+     * @return the default join.
+     */
+    public T getDefaultJoin() {
+<span class="fc" id="L122">        getExtensionClasses();</span>
+<span class="fc bfc" id="L123" title="All 2 branches covered.">        if (StringUtils.isBlank(cachedDefaultName)) {</span>
+<span class="fc" id="L124">            return null;</span>
+        }
+<span class="fc" id="L126">        return getJoin(cachedDefaultName);</span>
+    }
+    
+    /**
+     * Gets join.
+     *
+     * @param name the name
+     * @return the join.
+     */
+    public T getJoin(final String name) {
+<span class="fc bfc" id="L136" title="All 2 branches covered.">        if (StringUtils.isBlank(name)) {</span>
+<span class="fc" id="L137">            throw new NullPointerException(&quot;get join name is null&quot;);</span>
+        }
+<span class="fc" id="L139">        Holder&lt;Object&gt; objectHolder = cachedInstances.get(name);</span>
+<span class="pc bpc" id="L140" title="1 of 2 branches missed.">        if (Objects.isNull(objectHolder)) {</span>
+<span class="fc" id="L141">            cachedInstances.putIfAbsent(name, new Holder&lt;&gt;());</span>
+<span class="fc" id="L142">            objectHolder = cachedInstances.get(name);</span>
+        }
+<span class="fc" id="L144">        Object value = objectHolder.getValue();</span>
+<span class="pc bpc" id="L145" title="1 of 2 branches missed.">        if (Objects.isNull(value)) {</span>
+<span class="fc" id="L146">            synchronized (cachedInstances) {</span>
+<span class="fc" id="L147">                value = objectHolder.getValue();</span>
+<span class="pc bpc" id="L148" title="1 of 2 branches missed.">                if (Objects.isNull(value)) {</span>
+<span class="fc" id="L149">                    value = createExtension(name);</span>
+<span class="fc" id="L150">                    objectHolder.setValue(value);</span>
+                }
+<span class="fc" id="L152">            }</span>
+        }
+<span class="fc" id="L154">        return (T) value;</span>
+    }
+    
+    /**
+     * get all join spi.
+     *
+     * @return list. joins
+     */
+    public List&lt;T&gt; getJoins() {
+<span class="fc" id="L163">        Map&lt;String, Class&lt;?&gt;&gt; extensionClasses = this.getExtensionClasses();</span>
+<span class="fc bfc" id="L164" title="All 2 branches covered.">        if (extensionClasses.isEmpty()) {</span>
+<span class="fc" id="L165">            return Collections.emptyList();</span>
+        }
+<span class="pc bpc" id="L167" title="1 of 2 branches missed.">        if (Objects.equals(extensionClasses.size(), cachedInstances.size())) {</span>
+<span class="nc" id="L168">            return (List&lt;T&gt;) this.cachedInstances.values().stream().map(e -&gt; {</span>
+<span class="nc" id="L169">                return e.getValue();</span>
+<span class="nc" id="L170">            }).collect(Collectors.toList());</span>
+        }
+<span class="fc" id="L172">        List&lt;T&gt; joins = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L173">        extensionClasses.forEach((name, v) -&gt; {</span>
+<span class="fc" id="L174">            T join = this.getJoin(name);</span>
+<span class="fc" id="L175">            joins.add(join);</span>
+<span class="fc" id="L176">        });</span>
+<span class="fc" id="L177">        return joins;</span>
+    }
+    
+    @SuppressWarnings(&quot;unchecked&quot;)
+    private T createExtension(final String name) {
+<span class="fc" id="L182">        Class&lt;?&gt; aClass = getExtensionClasses().get(name);</span>
+<span class="fc bfc" id="L183" title="All 2 branches covered.">        if (Objects.isNull(aClass)) {</span>
+<span class="fc" id="L184">            throw new IllegalArgumentException(&quot;name is error&quot;);</span>
+        }
+<span class="fc" id="L186">        Object o = joinInstances.get(aClass);</span>
+<span class="pc bpc" id="L187" title="1 of 2 branches missed.">        if (Objects.isNull(o)) {</span>
+            try {
+<span class="fc" id="L189">                joinInstances.putIfAbsent(aClass, aClass.newInstance());</span>
+<span class="fc" id="L190">                o = joinInstances.get(aClass);</span>
+<span class="fc" id="L191">            } catch (InstantiationException | IllegalAccessException e) {</span>
+<span class="fc" id="L192">                throw new IllegalStateException(&quot;Extension instance(name: &quot; + name + &quot;, class: &quot;</span>
+<span class="fc" id="L193">                        + aClass + &quot;)  could not be instantiated: &quot; + e.getMessage(), e);</span>
+                
+<span class="fc" id="L195">            }</span>
+        }
+<span class="fc" id="L197">        return (T) o;</span>
+    }
+    
+    /**
+     * Gets extension classes.
+     *
+     * @return the extension classes
+     */
+    public Map&lt;String, Class&lt;?&gt;&gt; getExtensionClasses() {
+<span class="fc" id="L206">        Map&lt;String, Class&lt;?&gt;&gt; classes = cachedClasses.getValue();</span>
+<span class="fc bfc" id="L207" title="All 2 branches covered.">        if (Objects.isNull(classes)) {</span>
+<span class="fc" id="L208">            synchronized (cachedClasses) {</span>
+<span class="fc" id="L209">                classes = cachedClasses.getValue();</span>
+<span class="pc bpc" id="L210" title="1 of 2 branches missed.">                if (Objects.isNull(classes)) {</span>
+<span class="fc" id="L211">                    classes = loadExtensionClass();</span>
+<span class="fc" id="L212">                    cachedClasses.setValue(classes);</span>
+                }
+<span class="fc" id="L214">            }</span>
+        }
+<span class="fc" id="L216">        return classes;</span>
+    }
+    
+    private Map&lt;String, Class&lt;?&gt;&gt; loadExtensionClass() {
+<span class="fc" id="L220">        SPI annotation = clazz.getAnnotation(SPI.class);</span>
+<span class="pc bpc" id="L221" title="1 of 2 branches missed.">        if (Objects.nonNull(annotation)) {</span>
+<span class="fc" id="L222">            String value = annotation.value();</span>
+<span class="fc bfc" id="L223" title="All 2 branches covered.">            if (StringUtils.isNotBlank(value)) {</span>
+<span class="fc" id="L224">                cachedDefaultName = value;</span>
+            }
+        }
+<span class="fc" id="L227">        Map&lt;String, Class&lt;?&gt;&gt; classes = new HashMap&lt;&gt;(16);</span>
+<span class="fc" id="L228">        loadDirectory(classes);</span>
+<span class="fc" id="L229">        return classes;</span>
+    }
+    
+    /**
+     * Load files under SHENYU_DIRECTORY.
+     */
+    private void loadDirectory(final Map&lt;String, Class&lt;?&gt;&gt; classes) {
+<span class="fc" id="L236">        String fileName = SHENYU_DIRECTORY + clazz.getName();</span>
+        try {
+<span class="pc bpc" id="L238" title="1 of 2 branches missed.">            Enumeration&lt;URL&gt; urls = Objects.nonNull(this.classLoader) ? classLoader.getResources(fileName)</span>
+<span class="pc" id="L239">                    : ClassLoader.getSystemResources(fileName);</span>
+<span class="pc bpc" id="L240" title="1 of 2 branches missed.">            if (Objects.nonNull(urls)) {</span>
+<span class="fc bfc" id="L241" title="All 2 branches covered.">                while (urls.hasMoreElements()) {</span>
+<span class="fc" id="L242">                    URL url = urls.nextElement();</span>
+<span class="fc" id="L243">                    loadResources(classes, url);</span>
+<span class="fc" id="L244">                }</span>
+            }
+<span class="nc" id="L246">        } catch (IOException t) {</span>
+<span class="nc" id="L247">            LOG.error(&quot;load extension class error {}&quot;, fileName, t);</span>
+<span class="fc" id="L248">        }</span>
+<span class="fc" id="L249">    }</span>
+    
+    private void loadResources(final Map&lt;String, Class&lt;?&gt;&gt; classes, final URL url) throws IOException {
+<span class="fc" id="L252">        try (InputStream inputStream = url.openStream()) {</span>
+<span class="fc" id="L253">            Properties properties = new Properties();</span>
+<span class="fc" id="L254">            properties.load(inputStream);</span>
+<span class="fc" id="L255">            properties.forEach((k, v) -&gt; {</span>
+<span class="fc" id="L256">                String name = (String) k;</span>
+<span class="fc" id="L257">                String classPath = (String) v;</span>
+<span class="pc bpc" id="L258" title="2 of 4 branches missed.">                if (StringUtils.isNotBlank(name) &amp;&amp; StringUtils.isNotBlank(classPath)) {</span>
+                    try {
+<span class="fc" id="L260">                        loadClass(classes, name, classPath);</span>
+<span class="fc" id="L261">                    } catch (ClassNotFoundException e) {</span>
+<span class="fc" id="L262">                        throw new IllegalStateException(&quot;load extension resources error&quot;, e);</span>
+<span class="fc" id="L263">                    }</span>
+                }
+<span class="fc" id="L265">            });</span>
+<span class="fc" id="L266">        } catch (IOException e) {</span>
+<span class="fc" id="L267">            throw new IllegalStateException(&quot;load extension resources error&quot;, e);</span>
+<span class="fc" id="L268">        }</span>
+<span class="fc" id="L269">    }</span>
+    
+    private void loadClass(final Map&lt;String, Class&lt;?&gt;&gt; classes,
+                           final String name, final String classPath) throws ClassNotFoundException {
+<span class="pc bpc" id="L273" title="1 of 2 branches missed.">        Class&lt;?&gt; subClass = Objects.nonNull(this.classLoader) ? Class.forName(classPath, true, this.classLoader) : Class.forName(classPath);</span>
+<span class="fc bfc" id="L274" title="All 2 branches covered.">        if (!clazz.isAssignableFrom(subClass)) {</span>
+<span class="fc" id="L275">            throw new IllegalStateException(&quot;load extension resources error,&quot; + subClass + &quot; subtype is not of &quot; + clazz);</span>
+        }
+<span class="fc bfc" id="L277" title="All 2 branches covered.">        if (!subClass.isAnnotationPresent(Join.class)) {</span>
+<span class="fc" id="L278">            throw new IllegalStateException(&quot;load extension resources error,&quot; + subClass + &quot; without @&quot; + Join.class + &quot; annotation&quot;);</span>
+        }
+<span class="fc" id="L280">        Class&lt;?&gt; oldClass = classes.get(name);</span>
+<span class="fc bfc" id="L281" title="All 2 branches covered.">        if (Objects.isNull(oldClass)) {</span>
+<span class="fc" id="L282">            classes.put(name, subClass);</span>
+<span class="pc bpc" id="L283" title="1 of 2 branches missed.">        } else if (!Objects.equals(oldClass, subClass)) {</span>
+<span class="fc" id="L284">            throw new IllegalStateException(&quot;load extension resources error,Duplicate class &quot; + clazz.getName() + &quot; name &quot; + name + &quot; on &quot; + oldClass.getName() + &quot; or &quot; + subClass.getName());</span>
+        }
+<span class="fc" id="L286">    }</span>
+    
+    /**
+     * The type Holder.
+     *
+     * @param &lt;T&gt; the type parameter.
+     */
+<span class="fc" id="L293">    public static class Holder&lt;T&gt; {</span>
+        
+        private volatile T value;
+        
+        /**
+         * Gets value.
+         *
+         * @return the value
+         */
+        public T getValue() {
+<span class="fc" id="L303">            return value;</span>
+        }
+        
+        /**
+         * Sets value.
+         *
+         * @param value the value
+         */
+        public void setValue(final T value) {
+<span class="fc" id="L312">            this.value = value;</span>
+<span class="fc" id="L313">        }</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

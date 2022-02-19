@@ -44,4 +44,10 @@ python gen_representation_hqiu.py -r CFG -i cfg4j/cfg4j-git/src -v
 python gen_representation_hqiu.py -r CFG -i commons-compress/src/ -v
 python gen_representation_hqiu.py -r AST -i commons-compress/src/ -v
 python gen_representation_hqiu.py -r CG -i commons-compress/src/ -v
+
+
+# incubator-shenyu
+python gen_representation_hqiu.py -r CFG -i incubator-shenyu/shenyu-common -v
+python gen_representation_hqiu.py -r AST -i incubator-shenyu/shenyu-common -v
+python gen_representation_hqiu.py -r CG -i incubator-shenyu/shenyu-common -v
 ```

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ModifyResponseRuleHandle.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.dto.convert.rule.impl</a> &gt; <span class="el_source">ModifyResponseRuleHandle.java</span></div><h1>ModifyResponseRuleHandle.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.dto.convert.rule.impl;
+
+import org.apache.shenyu.common.dto.convert.rule.RuleHandle;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+
+/**
+ * The type ModifyResponse rule handle.
+ */
+<span class="nc" id="L30">public class ModifyResponseRuleHandle implements RuleHandle {</span>
+
+    /**
+     * add header map.
+     */
+    private Map&lt;String, String&gt; addHeaders;
+
+    /**
+     * set header map.
+     */
+    private Map&lt;String, String&gt; setHeaders;
+
+    /**
+     * replace header map
+     * key: oldHeaderKey, value: newHeaderKey.
+     */
+    private Map&lt;String, String&gt; replaceHeaderKeys;
+
+    /**
+     * remove header List.
+     */
+    private Set&lt;String&gt; removeHeaderKeys;
+
+    /**
+     * http response status code.
+     */
+    private int statusCode;
+
+    /**
+     * add body List.
+     */
+    private List&lt;ParamMappingRuleHandle.ParamMapInfo&gt; addBodyKeys;
+
+    /**
+     * replace body List.
+     */
+    private List&lt;ParamMappingRuleHandle.ParamMapInfo&gt; replaceBodyKeys;
+
+    /**
+     * remove body List.
+     */
+    private Set&lt;String&gt; removeBodyKeys;
+    
+    /**
+     * get addHeaders.
+     *
+     * @return addHeaders
+     */
+    public Map&lt;String, String&gt; getAddHeaders() {
+<span class="nc" id="L79">        return addHeaders;</span>
+    }
+
+    /**
+     * set addHeaders.
+     *
+     * @param addHeaders addHeaders
+     */
+    public void setAddHeaders(final Map&lt;String, String&gt; addHeaders) {
+<span class="nc" id="L88">        this.addHeaders = addHeaders;</span>
+<span class="nc" id="L89">    }</span>
+
+    /**
+     * get setHeaders.
+     *
+     * @return setHeaders
+     */
+    public Map&lt;String, String&gt; getSetHeaders() {
+<span class="nc" id="L97">        return setHeaders;</span>
+    }
+
+    /**
+     * set setHeaders.
+     *
+     * @param setHeaders setHeaders
+     */
+    public void setSetHeaders(final Map&lt;String, String&gt; setHeaders) {
+<span class="nc" id="L106">        this.setHeaders = setHeaders;</span>
+<span class="nc" id="L107">    }</span>
+
+    /**
+     * get replaceHeaderKeys.
+     *
+     * @return replaceHeaderKeys
+     */
+    public Map&lt;String, String&gt; getReplaceHeaderKeys() {
+<span class="nc" id="L115">        return replaceHeaderKeys;</span>
+    }
+
+    /**
+     * set replaceHeaderKeys.
+     *
+     * @param replaceHeaderKeys replaceHeaderKeys
+     */
+    public void setReplaceHeaderKeys(final Map&lt;String, String&gt; replaceHeaderKeys) {
+<span class="nc" id="L124">        this.replaceHeaderKeys = replaceHeaderKeys;</span>
+<span class="nc" id="L125">    }</span>
+
+    /**
+     * get removeHeaderKeys.
+     *
+     * @return removeHeaderKeys
+     */
+    public Set&lt;String&gt; getRemoveHeaderKeys() {
+<span class="nc" id="L133">        return removeHeaderKeys;</span>
+    }
+
+    /**
+     * set removeHeaderKeys.
+     *
+     * @param removeHeaderKeys removeHeaderKeys
+     */
+    public void setRemoveHeaderKeys(final Set&lt;String&gt; removeHeaderKeys) {
+<span class="nc" id="L142">        this.removeHeaderKeys = removeHeaderKeys;</span>
+<span class="nc" id="L143">    }</span>
+
+    /**
+     * get statusCode.
+     *
+     * @return statusCode
+     */
+    public int getStatusCode() {
+<span class="nc" id="L151">        return statusCode;</span>
+    }
+
+    /**
+     * set statusCode.
+     *
+     * @param statusCode statusCode
+     */
+    public void setStatusCode(final int statusCode) {
+<span class="nc" id="L160">        this.statusCode = statusCode;</span>
+<span class="nc" id="L161">    }</span>
+
+    /**
+     * get addBodyKeys.
+     *
+     * @return addBodyKeys
+     */
+    public List&lt;ParamMappingRuleHandle.ParamMapInfo&gt; getAddBodyKeys() {
+<span class="nc" id="L169">        return addBodyKeys;</span>
+    }
+
+    /**
+     * set addBodyKeys.
+     *
+     * @param addBodyKeys addBodyKeys
+     */
+    public void setAddBodyKeys(final List&lt;ParamMappingRuleHandle.ParamMapInfo&gt; addBodyKeys) {
+<span class="nc" id="L178">        this.addBodyKeys = addBodyKeys;</span>
+<span class="nc" id="L179">    }</span>
+
+    /**
+     * get replaceBodyKeys.
+     *
+     * @return replaceBodyKeys
+     */
+    public List&lt;ParamMappingRuleHandle.ParamMapInfo&gt; getReplaceBodyKeys() {
+<span class="nc" id="L187">        return replaceBodyKeys;</span>
+    }
+
+    /**
+     * set replaceBodyKeys.
+     *
+     * @param replaceBodyKeys replaceBodyKeys
+     */
+    public void setReplaceBodyKeys(final List&lt;ParamMappingRuleHandle.ParamMapInfo&gt; replaceBodyKeys) {
+<span class="nc" id="L196">        this.replaceBodyKeys = replaceBodyKeys;</span>
+<span class="nc" id="L197">    }</span>
+
+    /**
+     * get removeBodyKeys.
+     *
+     * @return removeBodyKeys
+     */
+    public Set&lt;String&gt; getRemoveBodyKeys() {
+<span class="nc" id="L205">        return removeBodyKeys;</span>
+    }
+
+    /**
+     * set removeBodyKeys.
+     *
+     * @param removeBodyKeys removeBodyKeys
+     */
+    public void setRemoveBodyKeys(final Set&lt;String&gt; removeBodyKeys) {
+<span class="nc" id="L214">        this.removeBodyKeys = removeBodyKeys;</span>
+<span class="nc" id="L215">    }</span>
+
+    @Override
+    public boolean equals(final Object o) {
+<span class="nc bnc" id="L219" title="All 2 branches missed.">        if (this == o) {</span>
+<span class="nc" id="L220">            return true;</span>
+        }
+<span class="nc bnc" id="L222" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L223">            return false;</span>
+        }
+<span class="nc" id="L225">        ModifyResponseRuleHandle that = (ModifyResponseRuleHandle) o;</span>
+<span class="nc bnc" id="L226" title="All 4 branches missed.">        return statusCode == that.statusCode &amp;&amp; Objects.equals(addHeaders, that.addHeaders)</span>
+<span class="nc bnc" id="L227" title="All 4 branches missed.">                &amp;&amp; Objects.equals(setHeaders, that.setHeaders) &amp;&amp; Objects.equals(replaceHeaderKeys, that.replaceHeaderKeys)</span>
+<span class="nc bnc" id="L228" title="All 4 branches missed.">                &amp;&amp; Objects.equals(removeHeaderKeys, that.removeHeaderKeys) &amp;&amp; Objects.equals(addBodyKeys, that.addBodyKeys)</span>
+<span class="nc bnc" id="L229" title="All 4 branches missed.">                &amp;&amp; Objects.equals(replaceBodyKeys, that.replaceBodyKeys) &amp;&amp; Objects.equals(removeBodyKeys, that.removeBodyKeys);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L234">        return Objects.hash(addHeaders, setHeaders, replaceHeaderKeys, removeHeaderKeys, statusCode, addBodyKeys, replaceBodyKeys, removeBodyKeys);</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L239">        return &quot;ModifyResponseRuleHandle{&quot;</span>
+                + &quot;addHeaders=&quot;
+                + addHeaders
+                + &quot;, setHeaders=&quot;
+                + setHeaders
+                + &quot;, replaceHeaderKeys=&quot;
+                + replaceHeaderKeys
+                + &quot;, removeHeaderKeys=&quot;
+                + removeHeaderKeys
+                + &quot;, statusCode=&quot;
+                + statusCode
+                + &quot;, addBodyKeys=&quot;
+                + addBodyKeys
+                + &quot;, replaceBodyKeys=&quot;
+                + replaceBodyKeys
+                + &quot;, removeBodyKeys=&quot;
+                + removeBodyKeys
+                + '}';
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

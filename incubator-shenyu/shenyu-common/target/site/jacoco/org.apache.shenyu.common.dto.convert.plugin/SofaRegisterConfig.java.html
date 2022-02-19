@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SofaRegisterConfig.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.dto.convert.plugin</a> &gt; <span class="el_source">SofaRegisterConfig.java</span></div><h1>SofaRegisterConfig.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.dto.convert.plugin;
+
+import java.io.Serializable;
+import java.util.Objects;
+
+/**
+ * The type sofa register config.
+ */
+<span class="nc" id="L26">public class SofaRegisterConfig implements Serializable {</span>
+
+    private static final long serialVersionUID = -3770114790533455035L;
+
+    private String register;
+
+    private String group;
+
+    private String protocol;
+
+    /**
+     * get register.
+     *
+     * @return register
+     */
+    public String getRegister() {
+<span class="nc" id="L42">        return register;</span>
+    }
+
+    /**
+     * set register.
+     *
+     * @param register register
+     */
+    public void setRegister(final String register) {
+<span class="nc" id="L51">        this.register = register;</span>
+<span class="nc" id="L52">    }</span>
+
+    /**
+     * get group.
+     *
+     * @return group
+     */
+    public String getGroup() {
+<span class="nc" id="L60">        return group;</span>
+    }
+
+    /**
+     * set group.
+     *
+     * @param group group
+     */
+    public void setGroup(final String group) {
+<span class="nc" id="L69">        this.group = group;</span>
+<span class="nc" id="L70">    }</span>
+
+    /**
+     * get protocol.
+     *
+     * @return protocol
+     */
+    public String getProtocol() {
+<span class="nc" id="L78">        return protocol;</span>
+    }
+
+    /**
+     * set protocol.
+     *
+     * @param protocol protocol
+     */
+    public void setProtocol(final String protocol) {
+<span class="nc" id="L87">        this.protocol = protocol;</span>
+<span class="nc" id="L88">    }</span>
+
+    @Override
+    public boolean equals(final Object o) {
+<span class="nc bnc" id="L92" title="All 2 branches missed.">        if (this == o) {</span>
+<span class="nc" id="L93">            return true;</span>
+        }
+<span class="nc bnc" id="L95" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L96">            return false;</span>
+        }
+<span class="nc" id="L98">        SofaRegisterConfig that = (SofaRegisterConfig) o;</span>
+<span class="nc bnc" id="L99" title="All 6 branches missed.">        return Objects.equals(register, that.register) &amp;&amp; Objects.equals(group, that.group) &amp;&amp; Objects.equals(protocol, that.protocol);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L104">        return Objects.hash(register, group, protocol);</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L109">        return &quot;SofaRegisterConfig{&quot;</span>
+                + &quot;register='&quot;
+                + register
+                + '\''
+                + &quot;, group='&quot;
+                + group
+                + '\''
+                + &quot;, protocol='&quot;
+                + protocol
+                + '\''
+                + '}';
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

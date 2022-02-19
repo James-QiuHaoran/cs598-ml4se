@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TarsUpstream.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.dto.convert.selector</a> &gt; <span class="el_source">TarsUpstream.java</span></div><h1>TarsUpstream.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.dto.convert.selector;
+
+import java.util.Objects;
+
+/**
+ * this is tars upstream.
+ */
+public final class TarsUpstream extends CommonUpstream {
+
+    /**
+     * weight.
+     */
+    private int weight;
+
+    /**
+     * warmup.
+     */
+    private int warmup;
+
+    /**
+     * builder constructor.
+     *
+     * @param builder builder
+     */
+<span class="nc" id="L42">    private TarsUpstream(final Builder builder) {</span>
+<span class="nc" id="L43">        boolean statusValue = builder.statusValue;</span>
+<span class="nc bnc" id="L44" title="All 2 branches missed.">        if (!builder.statusSet) {</span>
+<span class="nc" id="L45">            statusValue = defaultStatus();</span>
+        }
+<span class="nc" id="L47">        setUpstreamHost(builder.upstreamHost);</span>
+<span class="nc" id="L48">        setProtocol(builder.protocol);</span>
+<span class="nc" id="L49">        setUpstreamUrl(builder.upstreamUrl); </span>
+<span class="nc" id="L50">        this.weight = builder.weight;</span>
+<span class="nc" id="L51">        setStatus(statusValue);</span>
+<span class="nc" id="L52">        setTimestamp(builder.timestamp);</span>
+<span class="nc" id="L53">        this.warmup = builder.warmup;</span>
+<span class="nc" id="L54">    }</span>
+
+    /**
+     * class builder.
+     *
+     * @return Builder
+     */
+    public static Builder builder() {
+<span class="nc" id="L62">        return new Builder();</span>
+    }
+    
+    /**
+     * get weight.
+     *
+     * @return weight
+     */
+    public int getWeight() {
+<span class="nc" id="L71">        return weight;</span>
+    }
+
+    /**
+     * set weight.
+     *
+     * @param weight weight
+     */
+    public void setWeight(final int weight) {
+<span class="nc" id="L80">        this.weight = weight;</span>
+<span class="nc" id="L81">    }</span>
+    
+    /**
+     * get warmup.
+     *
+     * @return warmup
+     */
+    public int getWarmup() {
+<span class="nc" id="L89">        return warmup;</span>
+    }
+
+    /**
+     * set warmup.
+     *
+     * @param warmup warmup
+     */
+    public void setWarmup(final int warmup) {
+<span class="nc" id="L98">        this.warmup = warmup;</span>
+<span class="nc" id="L99">    }</span>
+
+    @Override
+    public boolean equals(final Object o) {
+<span class="nc bnc" id="L103" title="All 2 branches missed.">        if (this == o) {</span>
+<span class="nc" id="L104">            return true;</span>
+        }
+<span class="nc bnc" id="L106" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L107">            return false;</span>
+        }
+<span class="nc" id="L109">        TarsUpstream that = (TarsUpstream) o;</span>
+<span class="nc bnc" id="L110" title="All 6 branches missed.">        return Objects.equals(getUpstreamHost(), that.getUpstreamHost()) &amp;&amp; Objects.equals(getProtocol(), that.getProtocol()) &amp;&amp; Objects.equals(getUpstreamUrl(), that.getUpstreamUrl());</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L115">        return Objects.hash(getUpstreamHost(), getProtocol(), getUpstreamUrl());</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L120">        return &quot;DivideUpstream{&quot;</span>
+                + &quot;upstreamHost='&quot;
+<span class="nc" id="L122">                + getUpstreamHost()</span>
+                + '\''
+                + &quot;, protocol='&quot;
+<span class="nc" id="L125">                + getProtocol()</span>
+                + '\''
+                + &quot;, upstreamUrl='&quot;
+<span class="nc" id="L128">                + getUpstreamUrl()</span>
+                + '\''
+                + &quot;, weight=&quot;
+                + weight
+                + &quot;, status=&quot;
+<span class="nc" id="L133">                + isStatus()</span>
+                + &quot;, timestamp=&quot;
+<span class="nc" id="L135">                + getTimestamp()</span>
+                + &quot;, warmup=&quot;
+                + warmup
+                + '}';
+    }
+
+    /**
+     * class builder.
+     */
+    public static final class Builder {
+
+        /**
+         * upstreamHost.
+         */
+        private String upstreamHost;
+
+        /**
+         * protocol.
+         */
+        private String protocol;
+
+        /**
+         * upstreamUrl.
+         */
+        private String upstreamUrl;
+
+        /**
+         * weight.
+         */
+        private int weight;
+
+        /**
+         * status.
+         */
+        private boolean statusSet;
+
+        /**
+         * status.
+         */
+        private boolean statusValue;
+
+        /**
+         * timestamp.
+         */
+        private long timestamp;
+
+        /**
+         * warmup.
+         */
+        private int warmup;
+        
+        /**
+         * no args constructor.
+         */
+        private Builder() {
+        }
+
+        /**
+         * build new Object.
+         *
+         * @return DivideUpstream
+         */
+        public TarsUpstream build() {
+<span class="nc" id="L198">            return new TarsUpstream(this);</span>
+        }
+
+        /**
+         * build upstreamHost.
+         *
+         * @param upstreamHost upstreamHost
+         * @return this
+         */
+        public Builder upstreamHost(final String upstreamHost) {
+<span class="nc" id="L208">            this.upstreamHost = upstreamHost;</span>
+<span class="nc" id="L209">            return this;</span>
+        }
+
+        /**
+         * build protocol.
+         *
+         * @param protocol protocol
+         * @return this
+         */
+        public Builder protocol(final String protocol) {
+<span class="nc" id="L219">            this.protocol = protocol;</span>
+<span class="nc" id="L220">            return this;</span>
+        }
+
+        /**
+         * build upstreamUrl.
+         *
+         * @param upstreamUrl upstreamUrl
+         * @return this
+         */
+        public Builder upstreamUrl(final String upstreamUrl) {
+<span class="nc" id="L230">            this.upstreamUrl = upstreamUrl;</span>
+<span class="nc" id="L231">            return this;</span>
+        }
+
+        /**
+         * build weight.
+         *
+         * @param weight weight
+         * @return this
+         */
+        public Builder weight(final int weight) {
+<span class="nc" id="L241">            this.weight = weight;</span>
+<span class="nc" id="L242">            return this;</span>
+        }
+
+        /**
+         * build status.
+         *
+         * @param status status
+         * @return this
+         */
+        public Builder status(final boolean status) {
+<span class="nc" id="L252">            this.statusValue = status;</span>
+<span class="nc" id="L253">            this.statusSet = true;</span>
+<span class="nc" id="L254">            return this;</span>
+        }
+
+        /**
+         * build timestamp.
+         *
+         * @param timestamp timestamp
+         * @return this
+         */
+        public Builder timestamp(final long timestamp) {
+<span class="nc" id="L264">            this.timestamp = timestamp;</span>
+<span class="nc" id="L265">            return this;</span>
+        }
+
+        /**
+         * build warmup.
+         *
+         * @param warmup warmup
+         * @return this
+         */
+        public Builder warmup(final int warmup) {
+<span class="nc" id="L275">            this.warmup = warmup;</span>
+<span class="nc" id="L276">            return this;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,17 @@
+org/apache/shenyu/spi/fixture/SubNoJoinSPI.class
+org/apache/shenyu/spi/fixture/NoJoinSPI.class
+org/apache/shenyu/spi/fixture/NotMatchSPI.class
+org/apache/shenyu/spi/fixture/EmptySPI.class
+org/apache/shenyu/spi/fixture/MysqlSPI.class
+org/apache/shenyu/spi/fixture/CanNotInstantiatedSPI.class
+org/apache/shenyu/spi/fixture/ArrayListSPI.class
+org/apache/shenyu/spi/fixture/ListSPI.class
+org/apache/shenyu/spi/fixture/NoClassMatchSPI.class
+org/apache/shenyu/spi/SpiExtensionFactoryTest.class
+org/apache/shenyu/spi/fixture/JdbcSPI.class
+org/apache/shenyu/spi/fixture/NopSPI.class
+org/apache/shenyu/spi/fixture/OracleSPI.class
+org/apache/shenyu/spi/fixture/SubHasDefaultSPI.class
+org/apache/shenyu/spi/ExtensionLoaderTest.class
+org/apache/shenyu/spi/fixture/LinkedListSPI.class
+org/apache/shenyu/spi/fixture/HasDefaultSPI.class

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>WheelTimerFactory.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.timer</a> &gt; <span class="el_source">WheelTimerFactory.java</span></div><h1>WheelTimerFactory.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.timer;
+
+/**
+ * WheelTimerFactory .
+ * shared wheel time.
+ */
+<span class="nc" id="L24">public class WheelTimerFactory {</span>
+    
+    private static final String NAME = &quot;shared_wheel_timer&quot;;
+    
+<span class="fc" id="L28">    private static final TimerSharedRef SHARED_TIMER = new TimerSharedRef();</span>
+    
+    /**
+     * Gets wheel timer.
+     *
+     * @return the wheel timer
+     */
+    public static Timer getSharedTimer() {
+<span class="fc" id="L36">        return SHARED_TIMER.getRef();</span>
+    }
+    
+    /**
+     * New wheel timer hashed wheel timer.
+     *
+     * @return the hashed wheel timer
+     */
+    public static Timer newWheelTimer() {
+<span class="fc" id="L45">        return new HierarchicalWheelTimer(NAME);</span>
+    }
+    
+    private abstract static class Shared&lt;T&gt; {
+        /**
+         * The Shared.
+         */
+        private final T shared;
+        
+        /**
+         * Instantiates a new Shared.
+         *
+         * @param shared the shared
+         */
+<span class="fc" id="L59">        Shared(final T shared) {</span>
+<span class="fc" id="L60">            this.shared = shared;</span>
+<span class="fc" id="L61">        }</span>
+        
+        /**
+         * Gets ref.
+         *
+         * @return the ref
+         */
+        public T getRef() {
+<span class="fc" id="L69">            return this.current();</span>
+        }
+        
+        /**
+         * Gets shared.
+         *
+         * @return the shared
+         */
+        protected T getSharedObj() {
+<span class="nc" id="L78">            return shared;</span>
+        }
+        
+        /**
+         * Current t.
+         *
+         * @return the t
+         */
+        protected abstract T current();
+    }
+    
+    private abstract static class SharedRef&lt;T&gt; {
+        
+        private Shared&lt;T&gt; shared;
+        
+        /**
+         * Gets ref.
+         *
+         * @return the ref
+         */
+        public synchronized T getRef() {
+<span class="fc bfc" id="L99" title="All 2 branches covered.">            if (shared == null) {</span>
+<span class="fc" id="L100">                this.shared = create();</span>
+            }
+<span class="fc" id="L102">            return this.shared.getRef();</span>
+        }
+        
+        /**
+         * Create shared.
+         *
+         * @return the shared
+         */
+        protected abstract Shared&lt;T&gt; create();
+    }
+    
+    private static class TimerShared extends Shared&lt;Timer&gt; implements Timer {
+        
+        /**
+         * Instantiates a new Shared.
+         *
+         * @param shared the shared
+         */
+        TimerShared(final Timer shared) {
+<span class="fc" id="L121">            super(shared);</span>
+<span class="fc" id="L122">        }</span>
+        
+        @Override
+        protected Timer current() {
+<span class="fc" id="L126">            return this;</span>
+        }
+        
+        /**
+         * Add timer task.
+         *
+         * @param timerTask the timer task
+         */
+        @Override
+        public void add(final TimerTask timerTask) {
+<span class="nc" id="L136">            this.getSharedObj().add(timerTask);</span>
+<span class="nc" id="L137">        }</span>
+        
+        /**
+         * Advance clock boolean.
+         *
+         * @param timeoutMs the timeout ms
+         * @throws InterruptedException the interrupted exception
+         */
+        @Override
+        public void advanceClock(final long timeoutMs) throws InterruptedException {
+<span class="nc" id="L147">            this.getSharedObj().advanceClock(timeoutMs);</span>
+<span class="nc" id="L148">        }</span>
+        
+        /**
+         * Size int.
+         *
+         * @return the int
+         */
+        @Override
+        public int size() {
+<span class="nc" id="L157">            return this.getSharedObj().size();</span>
+        }
+        
+        /**
+         * Shutdown.
+         */
+        @Override
+        public void shutdown() {
+<span class="nc" id="L165">            this.getSharedObj().shutdown();</span>
+<span class="nc" id="L166">        }</span>
+    }
+    
+<span class="fc" id="L169">    private static class TimerSharedRef extends SharedRef&lt;Timer&gt; {</span>
+        
+        /**
+         * Create shared.
+         *
+         * @return the shared
+         */
+        @Override
+        protected Shared&lt;Timer&gt; create() {
+<span class="fc" id="L178">            return new TimerShared(WheelTimerFactory.newWheelTimer());</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

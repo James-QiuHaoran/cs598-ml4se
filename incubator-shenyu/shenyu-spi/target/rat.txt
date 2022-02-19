@@ -1,0 +1,56 @@
+
+*****************************************************
+Summary
+-------
+Generated at: 2022-02-19T12:39:22-06:00
+
+Notes: 0
+Binaries: 0
+Archives: 0
+Standards: 30
+
+Apache Licensed: 30
+Generated Documents: 0
+
+JavaDocs are generated, thus a license header is optional.
+Generated files do not require license headers.
+
+0 Unknown Licenses
+
+*****************************************************
+  Files with Apache License headers will be marked AL
+  Binary files (which do not require any license headers) will be marked B
+  Compressed archives will be marked A
+  Notices, licenses etc. will be marked N
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/pom.xml
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/test/resources/META-INF/shenyu/org.apache.shenyu.spi.fixture.NoClassMatchSPI
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/test/resources/META-INF/shenyu/org.apache.shenyu.spi.fixture.JdbcSPI
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/test/resources/META-INF/shenyu/org.apache.shenyu.spi.fixture.NoJoinSPI
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/test/resources/META-INF/shenyu/org.apache.shenyu.spi.fixture.HasDefaultSPI
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/test/resources/META-INF/shenyu/org.apache.shenyu.spi.fixture.EmptySPI
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/test/resources/META-INF/shenyu/org.apache.shenyu.spi.fixture.ListSPI
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/test/resources/META-INF/shenyu/org.apache.shenyu.spi.fixture.NotMatchSPI
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/test/java/org/apache/shenyu/spi/SpiExtensionFactoryTest.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/test/java/org/apache/shenyu/spi/ExtensionLoaderTest.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/test/java/org/apache/shenyu/spi/fixture/NoClassMatchSPI.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/test/java/org/apache/shenyu/spi/fixture/SubNoJoinSPI.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/test/java/org/apache/shenyu/spi/fixture/NotMatchSPI.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/test/java/org/apache/shenyu/spi/fixture/EmptySPI.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/test/java/org/apache/shenyu/spi/fixture/OracleSPI.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/test/java/org/apache/shenyu/spi/fixture/JdbcSPI.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/test/java/org/apache/shenyu/spi/fixture/NopSPI.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/test/java/org/apache/shenyu/spi/fixture/MysqlSPI.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/test/java/org/apache/shenyu/spi/fixture/NoJoinSPI.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/test/java/org/apache/shenyu/spi/fixture/ArrayListSPI.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/test/java/org/apache/shenyu/spi/fixture/LinkedListSPI.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/test/java/org/apache/shenyu/spi/fixture/ListSPI.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/test/java/org/apache/shenyu/spi/fixture/HasDefaultSPI.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/test/java/org/apache/shenyu/spi/fixture/SubHasDefaultSPI.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/test/java/org/apache/shenyu/spi/fixture/CanNotInstantiatedSPI.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/main/java/org/apache/shenyu/spi/Join.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/main/java/org/apache/shenyu/spi/ExtensionFactory.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/main/java/org/apache/shenyu/spi/SpiExtensionFactory.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/main/java/org/apache/shenyu/spi/SPI.java
+  AL    /Users/abdulrafaenoor/Desktop/UIUC/4. Spring 2022/CS598 JBR/Deliverables/D1/incubator-shenyu/shenyu-spi/src/main/java/org/apache/shenyu/spi/ExtensionLoader.java
+ 
+*****************************************************

@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MetaData.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.dto</a> &gt; <span class="el_source">MetaData.java</span></div><h1>MetaData.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.dto;
+
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.Objects;
+
+public class MetaData {
+
+    private String id;
+
+    private String appName;
+
+    private String contextPath;
+
+    private String path;
+
+    private String rpcType;
+
+    private String serviceName;
+
+    private String methodName;
+
+    private String parameterTypes;
+
+    private String rpcExt;
+
+    private Boolean enabled;
+
+    /**
+     * no args constructor.
+     */
+<span class="nc" id="L49">    public MetaData() {</span>
+<span class="nc" id="L50">    }</span>
+
+    /**
+     * all args constructor.
+     *
+     * @param id             id
+     * @param appName        appName
+     * @param contextPath    contextPath
+     * @param path           path
+     * @param rpcType        rpcType
+     * @param serviceName    serviceName
+     * @param methodName     methodName
+     * @param parameterTypes parameterTypes
+     * @param rpcExt         rpcExt
+     * @param enabled        enabled
+     */
+    public MetaData(final String id, final String appName, final String contextPath, final String path, final String rpcType, final String serviceName,
+<span class="fc" id="L67">                    final String methodName, final String parameterTypes, final String rpcExt, final Boolean enabled) {</span>
+<span class="fc" id="L68">        this.id = id;</span>
+<span class="fc" id="L69">        this.appName = appName;</span>
+<span class="fc" id="L70">        this.contextPath = contextPath;</span>
+<span class="fc" id="L71">        this.path = path;</span>
+<span class="fc" id="L72">        this.rpcType = rpcType;</span>
+<span class="fc" id="L73">        this.serviceName = serviceName;</span>
+<span class="fc" id="L74">        this.methodName = methodName;</span>
+<span class="fc" id="L75">        this.parameterTypes = parameterTypes;</span>
+<span class="fc" id="L76">        this.rpcExt = rpcExt;</span>
+<span class="fc" id="L77">        this.enabled = enabled;</span>
+<span class="fc" id="L78">    }</span>
+
+    /**
+     * builder constructor.
+     *
+     * @param builder builder
+     */
+<span class="fc" id="L85">    private MetaData(final Builder builder) {</span>
+<span class="fc" id="L86">        this.id = builder.id;</span>
+<span class="fc" id="L87">        this.appName = builder.appName;</span>
+<span class="fc" id="L88">        this.contextPath = builder.contextPath;</span>
+<span class="fc" id="L89">        this.path = builder.path;</span>
+<span class="fc" id="L90">        this.rpcType = builder.rpcType;</span>
+<span class="fc" id="L91">        this.serviceName = builder.serviceName;</span>
+<span class="fc" id="L92">        this.methodName = builder.methodName;</span>
+<span class="fc" id="L93">        this.parameterTypes = builder.parameterTypes;</span>
+<span class="fc" id="L94">        this.rpcExt = builder.rpcExt;</span>
+<span class="fc" id="L95">        this.enabled = builder.enabled;</span>
+<span class="fc" id="L96">    }</span>
+
+    /**
+     * class builder.
+     *
+     * @return Builder
+     */
+    public static Builder builder() {
+<span class="fc" id="L104">        return new Builder();</span>
+    }
+
+    /**
+     * get id.
+     *
+     * @return id
+     */
+    public String getId() {
+<span class="fc" id="L113">        return id;</span>
+    }
+
+    /**
+     * set id.
+     *
+     * @param id id
+     */
+    public void setId(final String id) {
+<span class="fc" id="L122">        this.id = id;</span>
+<span class="fc" id="L123">    }</span>
+
+    /**
+     * get appName.
+     *
+     * @return appName
+     */
+    public String getAppName() {
+<span class="fc" id="L131">        return appName;</span>
+    }
+
+    /**
+     * set appName.
+     *
+     * @param appName appName
+     */
+    public void setAppName(final String appName) {
+<span class="fc" id="L140">        this.appName = appName;</span>
+<span class="fc" id="L141">    }</span>
+
+    /**
+     * get contextPath.
+     *
+     * @return contextPath
+     */
+    public String getContextPath() {
+<span class="fc" id="L149">        return contextPath;</span>
+    }
+
+    /**
+     * set contextPath.
+     *
+     * @param contextPath contextPath
+     */
+    public void setContextPath(final String contextPath) {
+<span class="fc" id="L158">        this.contextPath = contextPath;</span>
+<span class="fc" id="L159">    }</span>
+
+    /**
+     * get path.
+     *
+     * @return path
+     */
+    public String getPath() {
+<span class="fc" id="L167">        return path;</span>
+    }
+
+    /**
+     * set path.
+     *
+     * @param path path
+     */
+    public void setPath(final String path) {
+<span class="fc" id="L176">        this.path = path;</span>
+<span class="fc" id="L177">    }</span>
+
+    /**
+     * get rpcType.
+     *
+     * @return rpcType
+     */
+    public String getRpcType() {
+<span class="fc" id="L185">        return rpcType;</span>
+    }
+
+    /**
+     * set rpcType.
+     *
+     * @param rpcType rpcType
+     */
+    public void setRpcType(final String rpcType) {
+<span class="fc" id="L194">        this.rpcType = rpcType;</span>
+<span class="fc" id="L195">    }</span>
+
+    /**
+     * get serviceName.
+     *
+     * @return serviceName
+     */
+    public String getServiceName() {
+<span class="fc" id="L203">        return serviceName;</span>
+    }
+
+    /**
+     * set serviceName.
+     *
+     * @param serviceName serviceName
+     */
+    public void setServiceName(final String serviceName) {
+<span class="fc" id="L212">        this.serviceName = serviceName;</span>
+<span class="fc" id="L213">    }</span>
+
+    /**
+     * get methodName.
+     *
+     * @return methodName
+     */
+    public String getMethodName() {
+<span class="fc" id="L221">        return methodName;</span>
+    }
+
+    /**
+     * set methodName.
+     *
+     * @param methodName methodName
+     */
+    public void setMethodName(final String methodName) {
+<span class="fc" id="L230">        this.methodName = methodName;</span>
+<span class="fc" id="L231">    }</span>
+
+    /**
+     * get parameterTypes.
+     *
+     * @return parameterTypes
+     */
+    public String getParameterTypes() {
+<span class="fc" id="L239">        return parameterTypes;</span>
+    }
+
+    /**
+     * set parameterTypes.
+     *
+     * @param parameterTypes parameterTypes
+     */
+    public void setParameterTypes(final String parameterTypes) {
+<span class="fc" id="L248">        this.parameterTypes = parameterTypes;</span>
+<span class="fc" id="L249">    }</span>
+
+    /**
+     * get rpcExt.
+     *
+     * @return rpcExt
+     */
+    public String getRpcExt() {
+<span class="fc" id="L257">        return rpcExt;</span>
+    }
+
+    /**
+     * set rpcExt.
+     *
+     * @param rpcExt rpcExt
+     */
+    public void setRpcExt(final String rpcExt) {
+<span class="fc" id="L266">        this.rpcExt = rpcExt;</span>
+<span class="fc" id="L267">    }</span>
+
+    /**
+     * get enabled.
+     *
+     * @return enabled
+     */
+    public Boolean getEnabled() {
+<span class="fc" id="L275">        return enabled;</span>
+    }
+
+    /**
+     * set enabled.
+     *
+     * @param enabled enabled
+     */
+    public void setEnabled(final Boolean enabled) {
+<span class="fc" id="L284">        this.enabled = enabled;</span>
+<span class="fc" id="L285">    }</span>
+
+    @Override
+    public boolean equals(final Object o) {
+<span class="nc bnc" id="L289" title="All 2 branches missed.">        if (this == o) {</span>
+<span class="nc" id="L290">            return true;</span>
+        }
+<span class="nc bnc" id="L292" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L293">            return false;</span>
+        }
+<span class="nc" id="L295">        MetaData metaData = (MetaData) o;</span>
+<span class="nc bnc" id="L296" title="All 6 branches missed.">        return Objects.equals(id, metaData.id) &amp;&amp; Objects.equals(appName, metaData.appName) &amp;&amp; Objects.equals(contextPath, metaData.contextPath)</span>
+<span class="nc bnc" id="L297" title="All 6 branches missed.">                &amp;&amp; Objects.equals(path, metaData.path) &amp;&amp; Objects.equals(rpcType, metaData.rpcType) &amp;&amp; Objects.equals(serviceName, metaData.serviceName)</span>
+<span class="nc bnc" id="L298" title="All 4 branches missed.">                &amp;&amp; Objects.equals(methodName, metaData.methodName) &amp;&amp; Objects.equals(parameterTypes, metaData.parameterTypes)</span>
+<span class="nc bnc" id="L299" title="All 4 branches missed.">                &amp;&amp; Objects.equals(rpcExt, metaData.rpcExt) &amp;&amp; Objects.equals(enabled, metaData.enabled);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L304">        return Objects.hash(id, appName, contextPath, path, rpcType, serviceName, methodName, parameterTypes, rpcExt, enabled);</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="fc" id="L309">        return &quot;MetaData{&quot;</span>
+                + &quot;id='&quot;
+                + id
+                + '\''
+                + &quot;, appName='&quot;
+                + appName
+                + '\''
+                + &quot;, contextPath='&quot;
+                + contextPath
+                + '\''
+                + &quot;, path='&quot;
+                + path
+                + '\''
+                + &quot;, rpcType='&quot;
+                + rpcType
+                + '\''
+                + &quot;, serviceName='&quot;
+                + serviceName
+                + '\''
+                + &quot;, methodName='&quot;
+                + methodName
+                + '\''
+                + &quot;, parameterTypes='&quot;
+                + parameterTypes
+                + '\''
+                + &quot;, rpcExt='&quot;
+                + rpcExt
+                + '\''
+                + &quot;, enabled=&quot;
+                + enabled
+                + '}';
+    }
+
+    /**
+     * update ContextPath.
+     */
+    public void updateContextPath() {
+<span class="pc bpc" id="L346" title="1 of 2 branches missed.">        if (StringUtils.isNoneBlank(this.path)) {</span>
+<span class="pc bpc" id="L347" title="1 of 2 branches missed.">            this.contextPath = StringUtils.indexOf(path, &quot;/&quot;, 1) &gt; -1</span>
+<span class="pc" id="L348">                    ? this.path.substring(0, StringUtils.indexOf(path, &quot;/&quot;, 1)) : path;</span>
+        }
+<span class="fc" id="L350">    }</span>
+
+    /**
+     * class builder.
+     */
+    public static final class Builder {
+
+        /**
+         * id.
+         */
+        private String id;
+
+        /**
+         * appName.
+         */
+        private String appName;
+
+        /**
+         * contextPath.
+         */
+        private String contextPath;
+
+        /**
+         * path.
+         */
+        private String path;
+
+        /**
+         * rpcType.
+         */
+        private String rpcType;
+
+        /**
+         * serviceName.
+         */
+        private String serviceName;
+
+        /**
+         * methodName.
+         */
+        private String methodName;
+
+        /**
+         * parameterTypes.
+         */
+        private String parameterTypes;
+
+        /**
+         * rpcExt.
+         */
+        private String rpcExt;
+
+        /**
+         * enabled.
+         */
+        private Boolean enabled;
+
+        /**
+         * no args constructor.
+         */
+        private Builder() {
+        }
+
+        /**
+         * build new Object.
+         *
+         * @return MetaData
+         */
+        public MetaData build() {
+<span class="fc" id="L419">            return new MetaData(this);</span>
+        }
+
+        /**
+         * build id.
+         *
+         * @param id id
+         * @return this
+         */
+        public Builder id(final String id) {
+<span class="fc" id="L429">            this.id = id;</span>
+<span class="fc" id="L430">            return this;</span>
+        }
+
+        /**
+         * build appName.
+         *
+         * @param appName appName
+         * @return this
+         */
+        public Builder appName(final String appName) {
+<span class="fc" id="L440">            this.appName = appName;</span>
+<span class="fc" id="L441">            return this;</span>
+        }
+
+        /**
+         * build contextPath.
+         *
+         * @param contextPath contextPath
+         * @return this
+         */
+        public Builder contextPath(final String contextPath) {
+<span class="fc" id="L451">            this.contextPath = contextPath;</span>
+<span class="fc" id="L452">            return this;</span>
+        }
+
+        /**
+         * build path.
+         *
+         * @param path path
+         * @return this
+         */
+        public Builder path(final String path) {
+<span class="fc" id="L462">            this.path = path;</span>
+<span class="fc" id="L463">            return this;</span>
+        }
+
+        /**
+         * build rpcType.
+         *
+         * @param rpcType rpcType
+         * @return this
+         */
+        public Builder rpcType(final String rpcType) {
+<span class="fc" id="L473">            this.rpcType = rpcType;</span>
+<span class="fc" id="L474">            return this;</span>
+        }
+
+        /**
+         * build serviceName.
+         *
+         * @param serviceName serviceName
+         * @return this
+         */
+        public Builder serviceName(final String serviceName) {
+<span class="fc" id="L484">            this.serviceName = serviceName;</span>
+<span class="fc" id="L485">            return this;</span>
+        }
+
+        /**
+         * build methodName.
+         *
+         * @param methodName methodName
+         * @return this
+         */
+        public Builder methodName(final String methodName) {
+<span class="fc" id="L495">            this.methodName = methodName;</span>
+<span class="fc" id="L496">            return this;</span>
+        }
+
+        /**
+         * build parameterTypes.
+         *
+         * @param parameterTypes parameterTypes
+         * @return this
+         */
+        public Builder parameterTypes(final String parameterTypes) {
+<span class="fc" id="L506">            this.parameterTypes = parameterTypes;</span>
+<span class="fc" id="L507">            return this;</span>
+        }
+
+        /**
+         * build rpcExt.
+         *
+         * @param rpcExt rpcExt
+         * @return this
+         */
+        public Builder rpcExt(final String rpcExt) {
+<span class="fc" id="L517">            this.rpcExt = rpcExt;</span>
+<span class="fc" id="L518">            return this;</span>
+        }
+
+        /**
+         * build enabled.
+         *
+         * @param enabled enabled
+         * @return this
+         */
+        public Builder enabled(final Boolean enabled) {
+<span class="fc" id="L528">            this.enabled = enabled;</span>
+<span class="fc" id="L529">            return this;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

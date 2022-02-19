@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PluginEnum.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.enums</a> &gt; <span class="el_source">PluginEnum.java</span></div><h1>PluginEnum.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.enums;
+
+import java.util.Arrays;
+import java.util.List;
+
+/**
+ * PluginEnum.
+ */
+<span class="fc" id="L26">public enum PluginEnum {</span>
+
+    /**
+     * Mqtt plugin enum.
+     */
+<span class="fc" id="L31">    MQTT(0, 0, &quot;mqtt&quot;),</span>
+    
+    /**
+     * Global plugin enum.
+     */
+<span class="fc" id="L36">    GLOBAL(10, 0, &quot;global&quot;),</span>
+    
+    /**
+     * Sign plugin enum.
+     */
+<span class="fc" id="L41">    SIGN(20, 0, &quot;sign&quot;),</span>
+    
+    /**
+     * Jwt plugin enum.
+     */
+<span class="fc" id="L46">    JWT(30, 0, &quot;jwt&quot;),</span>
+    
+    /**
+     * OAuth2 plugin enum.
+     */
+<span class="fc" id="L51">    OAUTH2(40, 0, &quot;oauth2&quot;),</span>
+    
+    /**
+     * Waf plugin enum.
+     */
+<span class="fc" id="L56">    WAF(50, 0, &quot;waf&quot;),</span>
+    
+    /**
+     * Rate limiter plugin enum.
+     */
+<span class="fc" id="L61">    RATE_LIMITER(60, 0, &quot;rateLimiter&quot;),</span>
+    
+    /**
+     * Param mapping plugin enum.
+     */
+<span class="fc" id="L66">    PARAM_MAPPING(70, 0, &quot;paramMapping&quot;),</span>
+    
+    /**
+     * Context path plugin enum.
+     */
+<span class="fc" id="L71">    CONTEXT_PATH(80, 0, &quot;contextPath&quot;),</span>
+    
+    /**
+     * Rewrite plugin enum.
+     */
+<span class="fc" id="L76">    REWRITE(90, 0, &quot;rewrite&quot;),</span>
+    
+    /**
+     * Cryptor request plugin enum.
+     */
+<span class="fc" id="L81">    CRYPTOR_REQUEST(100, 0, &quot;cryptorRequest&quot;),</span>
+    
+    /**
+     * Redirect plugin enum.
+     */
+<span class="fc" id="L86">    REDIRECT(110, 0, &quot;redirect&quot;),</span>
+    
+    /**
+     * Request plugin enum.
+     */
+<span class="fc" id="L91">    REQUEST(120, 0, &quot;request&quot;),</span>
+
+    /**
+     * GeneralContext plugin enum.
+     */
+<span class="fc" id="L96">    GENERAL_CONTEXT(125, 0, &quot;generalContext&quot;),</span>
+    
+    /**
+     * Hystrix plugin enum.
+     */
+<span class="fc" id="L101">    HYSTRIX(130, 0, &quot;hystrix&quot;),</span>
+    
+    /**
+     * Sentinel plugin enum.
+     */
+<span class="fc" id="L106">    SENTINEL(140, 0, &quot;sentinel&quot;),</span>
+    
+    /**
+     * Resilence4J plugin enum.
+     */
+<span class="fc" id="L111">    RESILIENCE4J(150, 0, &quot;resilience4j&quot;),</span>
+    
+    /**
+     * Logging plugin enum.
+     */
+<span class="fc" id="L116">    LOGGING(160, 0, &quot;logging&quot;),</span>
+    
+    /**
+     * Monitor plugin enum.
+     */
+<span class="fc" id="L121">    MONITOR(170, 0, &quot;monitor&quot;),</span>
+    
+    /**
+     * Divide plugin enum.
+     */
+<span class="fc" id="L126">    DIVIDE(200, 0, &quot;divide&quot;),</span>
+    
+    /**
+     * springCloud plugin enum.
+     */
+<span class="fc" id="L131">    SPRING_CLOUD(200, 0, &quot;springCloud&quot;),</span>
+    
+    /**
+     * webSocket plugin enum.
+     */
+<span class="fc" id="L136">    WEB_SOCKET(200, 0, &quot;websocket&quot;),</span>
+    
+    /**
+     * Uri plugin enum.
+     */
+<span class="fc" id="L141">    URI(205, 0, &quot;uri&quot;),</span>
+    
+    /**
+     * Web client plugin enum.
+     */
+<span class="fc" id="L146">    WEB_CLIENT(210, 0, &quot;webClient&quot;),</span>
+    
+    /**
+     * Netty http client plugin enum.
+     */
+<span class="fc" id="L151">    NETTY_HTTP_CLIENT(210, 0, &quot;nettyHttpClient&quot;),</span>
+    
+    /**
+     * ModifyResponse plugin enum.
+     */
+<span class="fc" id="L156">    MODIFY_RESPONSE(220, 0, &quot;modifyResponse&quot;),</span>
+    
+    /**
+     * Param transform plugin enum.
+     */
+<span class="fc" id="L161">    RPC_PARAM_TRANSFORM(300, 0, &quot;paramTransform&quot;),</span>
+    
+    /**
+     * Dubbo plugin enum.
+     */
+<span class="fc" id="L166">    DUBBO(310, 0, &quot;dubbo&quot;),</span>
+    
+    /**
+     * Sofa plugin enum.
+     */
+<span class="fc" id="L171">    SOFA(310, 0, &quot;sofa&quot;),</span>
+    
+    /**
+     * Tars plugin enum.
+     */
+<span class="fc" id="L176">    TARS(310, 0, &quot;tars&quot;),</span>
+    
+    /**
+     * GPRC plugin enum.
+     */
+<span class="fc" id="L181">    GRPC(310, 0, &quot;grpc&quot;),</span>
+    
+    /**
+     * Motan plugin enum.
+     */
+<span class="fc" id="L186">    MOTAN(310, 0, &quot;motan&quot;),</span>
+    
+    /**
+     * Cryptor response plugin enum.
+     */
+<span class="fc" id="L191">    CRYPTOR_RESPONSE(410, 0, &quot;cryptorResponse&quot;),</span>
+    
+    /**
+     * Response plugin enum.
+     */
+<span class="fc" id="L196">    RESPONSE(420, 0, &quot;response&quot;);</span>
+
+    private final int code;
+
+    private final int role;
+
+    private final String name;
+
+    /**
+     * all args constructor.
+     *
+     * @param code code
+     * @param role role
+     * @param name name
+     */
+<span class="fc" id="L211">    PluginEnum(final int code, final int role, final String name) {</span>
+<span class="fc" id="L212">        this.code = code;</span>
+<span class="fc" id="L213">        this.role = role;</span>
+<span class="fc" id="L214">        this.name = name;</span>
+<span class="fc" id="L215">    }</span>
+    
+    /**
+     * get code.
+     *
+     * @return code code
+     */
+    public int getCode() {
+<span class="nc" id="L223">        return code;</span>
+    }
+    
+    /**
+     * get role.
+     *
+     * @return role role
+     */
+    public int getRole() {
+<span class="nc" id="L232">        return role;</span>
+    }
+    
+    /**
+     * get name.
+     *
+     * @return name name
+     */
+    public String getName() {
+<span class="fc" id="L241">        return name;</span>
+    }
+    
+    /**
+     * get plugin enum by name.
+     *
+     * @param name plugin name.
+     * @return plugin enum.
+     */
+    public static PluginEnum getPluginEnumByName(final String name) {
+<span class="fc" id="L251">        return Arrays.stream(PluginEnum.values())</span>
+<span class="fc" id="L252">                .filter(pluginEnum -&gt; pluginEnum.getName().equals(name))</span>
+<span class="fc" id="L253">                .findFirst().orElse(PluginEnum.GLOBAL);</span>
+    }
+    
+    /**
+     * get upstream plugin names.
+     *
+     * @return List string
+     */
+    public static List&lt;String&gt; getUpstreamNames() {
+<span class="fc" id="L262">        return Arrays.asList(DIVIDE.name, GRPC.name, TARS.name, SPRING_CLOUD.name, DUBBO.name);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

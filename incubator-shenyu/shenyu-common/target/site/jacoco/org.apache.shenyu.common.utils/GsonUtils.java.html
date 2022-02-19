@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GsonUtils.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.utils</a> &gt; <span class="el_source">GsonUtils.java</span></div><h1>GsonUtils.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.utils;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonNull;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.TypeAdapter;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonToken;
+import com.google.gson.stream.JsonWriter;
+import org.apache.commons.collections4.MapUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.tuple.Pair;
+import org.apache.shenyu.common.constant.Constants;
+import org.apache.shenyu.common.exception.ShenyuException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.util.LinkedMultiValueMap;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+import java.net.URLDecoder;
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ConcurrentNavigableMap;
+import java.util.concurrent.ConcurrentSkipListMap;
+import java.util.concurrent.CopyOnWriteArrayList;
+
+/**
+ * GSONUtils.
+ */
+<span class="fc" id="L62">public class GsonUtils {</span>
+
+    /**
+     * logger.
+     */
+<span class="fc" id="L67">    private static final Logger LOG = LoggerFactory.getLogger(GsonUtils.class);</span>
+
+<span class="fc" id="L69">    private static final GsonUtils INSTANCE = new GsonUtils();</span>
+
+<span class="fc" id="L71">    private static final Gson GSON = new GsonBuilder()</span>
+<span class="fc" id="L72">            .registerTypeAdapter(String.class, new StringTypeAdapter())</span>
+<span class="fc" id="L73">            .registerTypeHierarchyAdapter(Pair.class, new PairTypeAdapter())</span>
+<span class="fc" id="L74">            .registerTypeHierarchyAdapter(Duration.class, new DurationTypeAdapter())</span>
+<span class="fc" id="L75">            .create();</span>
+
+<span class="fc" id="L77">    private static final Gson GSON_MAP = new GsonBuilder().serializeNulls().registerTypeHierarchyAdapter(new TypeToken&lt;Map&lt;String, Object&gt;&gt;() {</span>
+<span class="fc" id="L78">    }.getRawType(), new MapDeserializer&lt;String, Object&gt;()).create();</span>
+
+    private static final String DOT = &quot;.&quot;;
+
+    private static final String E = &quot;e&quot;;
+
+    private static final String LEFT = &quot;left&quot;;
+
+    private static final String RIGHT = &quot;right&quot;;
+
+    private static final String LEFT_ANGLE_BRACKETS = &quot;{&quot;;
+
+    private static final String RIGHT_ANGLE_BRACKETS = &quot;}&quot;;
+
+    private static final String EMPTY = &quot;&quot;;
+
+    private static final String EQUAL_SIGN = &quot;=&quot;;
+
+    private static final String AND = &quot;&amp;&quot;;
+
+    /**
+     * Get gson instance.
+     *
+     * @return the instance
+     */
+    public static Gson getGson() {
+<span class="fc" id="L104">        return GsonUtils.GSON;</span>
+    }
+
+    /**
+     * Get instance.
+     *
+     * @return the instance
+     */
+    public static GsonUtils getInstance() {
+<span class="fc" id="L113">        return INSTANCE;</span>
+    }
+
+    /**
+     * To json string.
+     *
+     * @param object the object
+     * @return the string
+     */
+    public String toJson(final Object object) {
+<span class="fc" id="L123">        return GSON.toJson(object);</span>
+    }
+
+    /**
+     * From json t.
+     *
+     * @param &lt;T&gt;    the type parameter
+     * @param json   the json
+     * @param tClass the t class
+     * @return the t
+     */
+    public &lt;T&gt; T fromJson(final String json, final Class&lt;T&gt; tClass) {
+<span class="fc" id="L135">        return GSON.fromJson(json, tClass);</span>
+    }
+
+    /**
+     * From json t.
+     *
+     * @param &lt;T&gt;         the type parameter
+     * @param jsonElement the json element
+     * @param tClass      the t class
+     * @return the t
+     */
+    public &lt;T&gt; T fromJson(final JsonElement jsonElement, final Class&lt;T&gt; tClass) {
+<span class="fc" id="L147">        return GSON.fromJson(jsonElement, tClass);</span>
+    }
+
+    /**
+     * From list.
+     *
+     * @param &lt;T&gt;   the type parameter
+     * @param json  the json
+     * @param clazz the clazz
+     * @return the list
+     */
+    public &lt;T&gt; List&lt;T&gt; fromList(final String json, final Class&lt;T&gt; clazz) {
+<span class="fc" id="L159">        return GSON.fromJson(json, TypeToken.getParameterized(List.class, clazz).getType());</span>
+    }
+
+    /**
+     * From current list.
+     *
+     * @param &lt;T&gt;   the type parameter
+     * @param json  the json
+     * @param clazz the clazz
+     * @return the list
+     */
+    public &lt;T&gt; List&lt;T&gt; fromCurrentList(final String json, final Class&lt;T&gt; clazz) {
+<span class="nc" id="L171">        return GSON.fromJson(json, TypeToken.getParameterized(CopyOnWriteArrayList.class, clazz).getType());</span>
+    }
+
+    /**
+     * to Get Param.
+     *
+     * @param json json
+     * @return java.lang.String string
+     */
+    public String toGetParam(final String json) {
+<span class="fc bfc" id="L181" title="All 2 branches covered.">        if (StringUtils.isBlank(json)) {</span>
+<span class="fc" id="L182">            return EMPTY;</span>
+        }
+<span class="fc" id="L184">        final Map&lt;String, String&gt; map = toStringMap(json);</span>
+<span class="fc" id="L185">        StringBuilder stringBuilder = new StringBuilder();</span>
+<span class="fc" id="L186">        map.forEach((k, v) -&gt; {</span>
+            try {
+<span class="fc" id="L188">                stringBuilder.append(k)</span>
+<span class="fc" id="L189">                        .append(EQUAL_SIGN)</span>
+<span class="fc" id="L190">                        .append(URLDecoder.decode(v, Constants.DECODE))</span>
+<span class="fc" id="L191">                        .append(AND);</span>
+<span class="nc" id="L192">            } catch (UnsupportedEncodingException e) {</span>
+<span class="nc" id="L193">                e.printStackTrace();</span>
+<span class="fc" id="L194">            }</span>
+<span class="fc" id="L195">        });</span>
+<span class="fc" id="L196">        final String r = stringBuilder.toString();</span>
+<span class="fc" id="L197">        return r.substring(0, r.lastIndexOf(AND));</span>
+
+    }
+
+    /**
+     * to Map.
+     *
+     * @param json json
+     * @return hashMap map
+     */
+    private Map&lt;String, String&gt; toStringMap(final String json) {
+<span class="fc" id="L208">        return GSON.fromJson(json, new TypeToken&lt;Map&lt;String, String&gt;&gt;() {</span>
+<span class="fc" id="L209">        }.getType());</span>
+    }
+
+    /**
+     * to List Map.
+     *
+     * @param json json
+     * @return hashMap list
+     */
+    public List&lt;Map&lt;String, Object&gt;&gt; toListMap(final String json) {
+<span class="fc" id="L219">        return GSON.fromJson(json, new TypeToken&lt;List&lt;Map&lt;String, Object&gt;&gt;&gt;() {</span>
+<span class="fc" id="L220">        }.getType());</span>
+    }
+
+    /**
+     * To object map.
+     *
+     * @param json the json
+     * @return the map
+     */
+    public Map&lt;String, Object&gt; toObjectMap(final String json) {
+<span class="fc" id="L230">        return GSON_MAP.fromJson(json, new TypeToken&lt;LinkedHashMap&lt;String, Object&gt;&gt;() {</span>
+<span class="fc" id="L231">        }.getType());</span>
+    }
+
+    /**
+     * To object map.
+     *
+     * @param &lt;T&gt;   the class
+     * @param json  the json
+     * @param clazz the class
+     * @return the map
+     */
+    public &lt;T&gt; Map&lt;String, T&gt; toObjectMap(final String json, final Class&lt;T&gt; clazz) {
+<span class="fc" id="L243">        return GSON.fromJson(json, TypeToken.getParameterized(Map.class, String.class, clazz).getType());</span>
+    }
+
+    /**
+     * To object map list.
+     *
+     * @param &lt;T&gt;   the class
+     * @param json  the json
+     * @param clazz the class
+     * @return the map
+     */
+    public &lt;T&gt; Map&lt;String, List&lt;T&gt;&gt; toObjectMapList(final String json, final Class&lt;T&gt; clazz) {
+<span class="fc" id="L255">        return GSON.fromJson(json, TypeToken.getParameterized(Map.class, String.class, TypeToken.getParameterized(List.class, clazz).getType()).getType());</span>
+    }
+
+    /**
+     * To tree map.
+     *
+     * @param json the json
+     * @return the tree map
+     */
+    public ConcurrentNavigableMap&lt;String, Object&gt; toTreeMap(final String json) {
+<span class="fc" id="L265">        return GSON_MAP.fromJson(json, new TypeToken&lt;ConcurrentSkipListMap&lt;String, Object&gt;&gt;() {</span>
+<span class="fc" id="L266">        }.getType());</span>
+    }
+
+    /**
+     * To linked multiValue map.
+     *
+     * @param json the json
+     * @return the linked multiValue map
+     */
+    public LinkedMultiValueMap&lt;String, String&gt; toLinkedMultiValueMap(final String json) {
+<span class="nc" id="L276">        return GSON.fromJson(json, new TypeToken&lt;LinkedMultiValueMap&lt;String, String&gt;&gt;() {</span>
+<span class="nc" id="L277">        }.getType());</span>
+    }
+
+    /**
+     * Convert to map.
+     *
+     * @param json the json
+     * @return the map
+     */
+    public Map&lt;String, Object&gt; convertToMap(final String json) {
+<span class="fc" id="L287">        Map&lt;String, Object&gt; map = GSON_MAP.fromJson(json, new TypeToken&lt;Map&lt;String, Object&gt;&gt;() {</span>
+<span class="fc" id="L288">        }.getType());</span>
+
+<span class="fc bfc" id="L290" title="All 2 branches covered.">        if (MapUtils.isEmpty(map)) {</span>
+<span class="fc" id="L291">            return map;</span>
+        }
+
+<span class="fc bfc" id="L294" title="All 2 branches covered.">        for (Map.Entry&lt;String, Object&gt; entry : map.entrySet()) {</span>
+<span class="fc" id="L295">            String key = entry.getKey();</span>
+<span class="fc" id="L296">            Object value = entry.getValue();</span>
+<span class="fc bfc" id="L297" title="All 2 branches covered.">            if (value instanceof String) {</span>
+<span class="fc" id="L298">                String valueStr = ((String) value).trim();</span>
+<span class="pc bpc" id="L299" title="3 of 4 branches missed.">                if (valueStr.startsWith(LEFT_ANGLE_BRACKETS) &amp;&amp; valueStr.endsWith(RIGHT_ANGLE_BRACKETS)) {</span>
+<span class="nc" id="L300">                    Map&lt;String, Object&gt; mv = convertToMap(value.toString());</span>
+<span class="nc" id="L301">                    map.put(key, mv);</span>
+                }
+<span class="fc bfc" id="L303" title="All 2 branches covered.">            } else if (value instanceof JsonObject) {</span>
+<span class="fc" id="L304">                map.put(key, convertToMap(value.toString()));</span>
+<span class="fc bfc" id="L305" title="All 2 branches covered.">            } else if (value instanceof JsonArray) {</span>
+<span class="fc" id="L306">                JsonArray jsonArray = (JsonArray) value;</span>
+<span class="fc" id="L307">                map.put(key, jsonArrayToListInConvertToMap(jsonArray));</span>
+<span class="pc bpc" id="L308" title="1 of 2 branches missed.">            } else if (value instanceof JsonNull) {</span>
+<span class="nc" id="L309">                map.put(key, null);</span>
+            }
+<span class="fc" id="L311">        }</span>
+
+<span class="fc" id="L313">        return map;</span>
+    }
+
+    /**
+     * translate JsonArray in covertToMap of Method.
+     *
+     * @param jsonArray the Gson's Object {@link com.google.gson.JsonArray}
+     * @return list about translating jsonArray
+     */
+    private List&lt;Object&gt; jsonArrayToListInConvertToMap(final JsonArray jsonArray) {
+<span class="fc" id="L323">        List&lt;Object&gt; list = new ArrayList&lt;&gt;(jsonArray.size());</span>
+<span class="fc bfc" id="L324" title="All 2 branches covered.">        for (JsonElement jsonElement : jsonArray) {</span>
+<span class="pc bpc" id="L325" title="1 of 2 branches missed.">            if (jsonElement.isJsonNull()) {</span>
+<span class="nc" id="L326">                list.add(null);</span>
+<span class="nc" id="L327">                continue;</span>
+            }
+<span class="fc" id="L329">            String objStr = jsonElement.getAsString();</span>
+<span class="pc bpc" id="L330" title="3 of 4 branches missed.">            if (objStr.startsWith(LEFT_ANGLE_BRACKETS) &amp;&amp; objStr.endsWith(RIGHT_ANGLE_BRACKETS)) {</span>
+<span class="nc" id="L331">                list.add(convertToMap(jsonElement.toString()));</span>
+            } else {
+<span class="fc" id="L333">                list.add(objStr);</span>
+            }
+<span class="fc" id="L335">        }</span>
+
+<span class="fc" id="L337">        return list;</span>
+    }
+
+    private static class MapDeserializer&lt;T, U&gt; implements JsonDeserializer&lt;Map&lt;T, U&gt;&gt; {
+        @SuppressWarnings(&quot;unchecked&quot;)
+        @Override
+        public Map&lt;T, U&gt; deserialize(final JsonElement json, final Type type, final JsonDeserializationContext context) {
+<span class="pc bpc" id="L344" title="1 of 2 branches missed.">            if (!json.isJsonObject()) {</span>
+<span class="nc" id="L345">                return null;</span>
+            }
+
+<span class="fc" id="L348">            JsonObject jsonObject = json.getAsJsonObject();</span>
+<span class="fc" id="L349">            Set&lt;Map.Entry&lt;String, JsonElement&gt;&gt; jsonEntrySet = jsonObject.entrySet();</span>
+
+<span class="fc" id="L351">            String className = ((ParameterizedType) type).getRawType().getTypeName();</span>
+<span class="fc" id="L352">            Class&lt;Map&lt;?, ?&gt;&gt; mapClass = null;</span>
+            try {
+<span class="fc" id="L354">                mapClass = (Class&lt;Map&lt;?, ?&gt;&gt;) Class.forName(className);</span>
+<span class="nc" id="L355">            } catch (ClassNotFoundException e) {</span>
+<span class="nc" id="L356">                LOG.error(&quot;failed to get class&quot;, e);</span>
+<span class="fc" id="L357">            }</span>
+
+<span class="fc" id="L359">            Map&lt;T, U&gt; resultMap = null;</span>
+<span class="fc bfc" id="L360" title="All 2 branches covered.">            if (mapClass.isInterface()) {</span>
+<span class="fc" id="L361">                resultMap = new LinkedHashMap&lt;&gt;();</span>
+            } else {
+                try {
+<span class="fc" id="L364">                    resultMap = (Map&lt;T, U&gt;) mapClass.getConstructor().newInstance();</span>
+<span class="nc" id="L365">                } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {</span>
+<span class="nc" id="L366">                    LOG.error(&quot;failed to get constructor&quot;, e);</span>
+<span class="fc" id="L367">                }</span>
+            }
+
+<span class="fc bfc" id="L370" title="All 2 branches covered.">            for (Map.Entry&lt;String, JsonElement&gt; entry : jsonEntrySet) {</span>
+<span class="pc bpc" id="L371" title="1 of 2 branches missed.">                if (entry.getValue().isJsonNull()) {</span>
+<span class="nc" id="L372">                    resultMap.put((T) entry.getKey(), null);</span>
+                } else {
+<span class="fc" id="L374">                    U value = context.deserialize(entry.getValue(), this.getType(entry.getValue()));</span>
+<span class="fc" id="L375">                    resultMap.put((T) entry.getKey(), value);</span>
+                }
+<span class="fc" id="L377">            }</span>
+
+<span class="fc" id="L379">            return resultMap;</span>
+        }
+
+        /**
+         * Get JsonElement class type.
+         *
+         * @param element the element
+         * @return Class the class
+         */
+        public Class&lt;?&gt; getType(final JsonElement element) {
+<span class="fc bfc" id="L389" title="All 2 branches covered.">            if (!element.isJsonPrimitive()) {</span>
+<span class="fc" id="L390">                return element.getClass();</span>
+            }
+
+<span class="fc" id="L393">            final JsonPrimitive primitive = element.getAsJsonPrimitive();</span>
+<span class="fc bfc" id="L394" title="All 2 branches covered.">            if (primitive.isString()) {</span>
+<span class="fc" id="L395">                return String.class;</span>
+            }
+<span class="fc bfc" id="L397" title="All 2 branches covered.">            if (primitive.isNumber()) {</span>
+<span class="fc" id="L398">                String numStr = primitive.getAsString();</span>
+<span class="pc bpc" id="L399" title="1 of 4 branches missed.">                if (numStr.contains(DOT) || numStr.contains(E)</span>
+<span class="pc bpc" id="L400" title="1 of 2 branches missed.">                        || numStr.contains(E.toUpperCase())) {</span>
+<span class="fc" id="L401">                    return Double.class;</span>
+                }
+<span class="fc" id="L403">                return Long.class;</span>
+            }
+<span class="pc bpc" id="L405" title="1 of 2 branches missed.">            if (primitive.isBoolean()) {</span>
+<span class="fc" id="L406">                return Boolean.class;</span>
+            }
+<span class="nc" id="L408">            return element.getClass();</span>
+        }
+    }
+
+    private static class StringTypeAdapter extends TypeAdapter&lt;String&gt; {
+        @Override
+        public void write(final JsonWriter out, final String value) {
+            try {
+<span class="pc bpc" id="L416" title="1 of 2 branches missed.">                if (StringUtils.isBlank(value)) {</span>
+<span class="nc" id="L417">                    out.nullValue();</span>
+<span class="nc" id="L418">                    return;</span>
+                }
+<span class="fc" id="L420">                out.value(value);</span>
+<span class="nc" id="L421">            } catch (IOException e) {</span>
+<span class="nc" id="L422">                LOG.error(&quot;failed to write&quot;, e);</span>
+<span class="fc" id="L423">            }</span>
+<span class="fc" id="L424">        }</span>
+
+        @Override
+        public String read(final JsonReader reader) {
+            try {
+<span class="pc bpc" id="L429" title="1 of 2 branches missed.">                if (reader.peek() == JsonToken.NULL) {</span>
+<span class="nc" id="L430">                    reader.nextNull();</span>
+<span class="nc" id="L431">                    return EMPTY;</span>
+                }
+<span class="fc" id="L433">                return reader.nextString();</span>
+<span class="nc" id="L434">            } catch (IOException e) {</span>
+<span class="nc" id="L435">                throw new ShenyuException(e);</span>
+            }
+        }
+    }
+
+    private static class PairTypeAdapter extends TypeAdapter&lt;Pair&lt;String, String&gt;&gt; {
+
+        @Override
+        public void write(final JsonWriter out, final Pair&lt;String, String&gt; value) throws IOException {
+<span class="fc" id="L444">            out.beginObject();</span>
+<span class="fc" id="L445">            out.name(LEFT).value(value.getLeft());</span>
+<span class="fc" id="L446">            out.name(RIGHT).value(value.getRight());</span>
+<span class="fc" id="L447">            out.endObject();</span>
+<span class="fc" id="L448">        }</span>
+
+        @Override
+        public Pair&lt;String, String&gt; read(final JsonReader in) throws IOException {
+<span class="fc" id="L452">            in.beginObject();</span>
+
+<span class="fc" id="L454">            String left = null;</span>
+<span class="fc" id="L455">            String right = null;</span>
+
+<span class="fc bfc" id="L457" title="All 2 branches covered.">            while (in.hasNext()) {</span>
+<span class="pc bpc" id="L458" title="1 of 3 branches missed.">                switch (in.nextName()) {</span>
+                    case LEFT:
+<span class="fc" id="L460">                        left = in.nextString();</span>
+<span class="fc" id="L461">                        break;</span>
+                    case RIGHT:
+<span class="fc" id="L463">                        right = in.nextString();</span>
+<span class="fc" id="L464">                        break;</span>
+                    default:
+<span class="fc" id="L466">                        break;</span>
+                }
+            }
+
+<span class="fc" id="L470">            in.endObject();</span>
+
+<span class="fc" id="L472">            return Pair.of(left, right);</span>
+        }
+    }
+
+    private static class DurationTypeAdapter extends TypeAdapter&lt;Duration&gt; {
+        @Override
+        public void write(final JsonWriter out, final Duration value) {
+            try {
+<span class="nc bnc" id="L480" title="All 2 branches missed.">                if (value == null) {</span>
+<span class="nc" id="L481">                    out.nullValue();</span>
+<span class="nc" id="L482">                    return;</span>
+                }
+<span class="nc" id="L484">                out.value(value.toString());</span>
+<span class="nc" id="L485">            } catch (IOException e) {</span>
+<span class="nc" id="L486">                LOG.error(&quot;failed to write&quot;, e);</span>
+<span class="nc" id="L487">            }</span>
+<span class="nc" id="L488">        }</span>
+
+        @Override
+        public Duration read(final JsonReader reader) {
+            try {
+<span class="nc bnc" id="L493" title="All 2 branches missed.">                if (reader.peek() == JsonToken.NULL) {</span>
+<span class="nc" id="L494">                    reader.nextNull();</span>
+<span class="nc" id="L495">                    return null;</span>
+                }
+<span class="nc" id="L497">                return Duration.parse(reader.nextString());</span>
+<span class="nc" id="L498">            } catch (IOException e) {</span>
+<span class="nc" id="L499">                throw new ShenyuException(e);</span>
+            }
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

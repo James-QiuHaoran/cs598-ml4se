@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AuthPathData.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.dto</a> &gt; <span class="el_source">AuthPathData.java</span></div><h1>AuthPathData.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.dto;
+
+import java.util.Objects;
+
+/**
+ * The type Auth path data.
+ */
+public class AuthPathData {
+
+    private String appName;
+
+    private String path;
+
+    private Boolean enabled;
+
+    /**
+     * no args constructor.
+     */
+<span class="nc" id="L36">    public AuthPathData() {</span>
+<span class="nc" id="L37">    }</span>
+
+    /**
+     * all args constructor.
+     *
+     * @param appName appName
+     * @param path    path
+     * @param enabled enabled
+     */
+<span class="nc" id="L46">    public AuthPathData(final String appName, final String path, final Boolean enabled) {</span>
+<span class="nc" id="L47">        this.appName = appName;</span>
+<span class="nc" id="L48">        this.path = path;</span>
+<span class="nc" id="L49">        this.enabled = enabled;</span>
+<span class="nc" id="L50">    }</span>
+
+    /**
+     * builder constructor.
+     *
+     * @param builder builder
+     */
+<span class="nc" id="L57">    private AuthPathData(final Builder builder) {</span>
+<span class="nc" id="L58">        this.appName = builder.appName;</span>
+<span class="nc" id="L59">        this.path = builder.path;</span>
+<span class="nc" id="L60">        this.enabled = builder.enabled;</span>
+<span class="nc" id="L61">    }</span>
+
+    /**
+     * class builder.
+     *
+     * @return builder
+     */
+    public static Builder builder() {
+<span class="nc" id="L69">        return new Builder();</span>
+    }
+
+    /**
+     * get appName.
+     *
+     * @return appName
+     */
+    public String getAppName() {
+<span class="nc" id="L78">        return appName;</span>
+    }
+
+    /**
+     * set appName.
+     *
+     * @param appName appName
+     */
+    public void setAppName(final String appName) {
+<span class="nc" id="L87">        this.appName = appName;</span>
+<span class="nc" id="L88">    }</span>
+
+    /**
+     * get path.
+     *
+     * @return path
+     */
+    public String getPath() {
+<span class="nc" id="L96">        return path;</span>
+    }
+
+    /**
+     * set path.
+     *
+     * @param path path
+     */
+    public void setPath(final String path) {
+<span class="nc" id="L105">        this.path = path;</span>
+<span class="nc" id="L106">    }</span>
+
+    /**
+     * get enabled.
+     *
+     * @return enabled
+     */
+    public Boolean getEnabled() {
+<span class="nc" id="L114">        return enabled;</span>
+    }
+
+    /**
+     * set enabled.
+     *
+     * @param enabled enabled
+     */
+    public void setEnabled(final Boolean enabled) {
+<span class="nc" id="L123">        this.enabled = enabled;</span>
+<span class="nc" id="L124">    }</span>
+
+    @Override
+    public boolean equals(final Object o) {
+<span class="nc bnc" id="L128" title="All 2 branches missed.">        if (this == o) {</span>
+<span class="nc" id="L129">            return true;</span>
+        }
+<span class="nc bnc" id="L131" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L132">            return false;</span>
+        }
+<span class="nc" id="L134">        AuthPathData that = (AuthPathData) o;</span>
+<span class="nc bnc" id="L135" title="All 6 branches missed.">        return Objects.equals(appName, that.appName) &amp;&amp; Objects.equals(path, that.path) &amp;&amp; Objects.equals(enabled, that.enabled);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L140">        return Objects.hash(appName, path, enabled);</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L145">        return &quot;AuthPathData{&quot;</span>
+                + &quot;appName='&quot;
+                + appName
+                + '\''
+                + &quot;, path='&quot;
+                + path
+                + '\''
+                + &quot;, enabled=&quot;
+                + enabled
+                + '}';
+    }
+
+    /**
+     * class builder.
+     */
+    public static final class Builder {
+
+        /**
+         * appName.
+         */
+        private String appName;
+
+        /**
+         * path.
+         */
+        private String path;
+
+        /**
+         * enabled.
+         */
+        private Boolean enabled;
+
+        /**
+         * no args constructor.
+         */
+        private Builder() {
+        }
+
+        /**
+         * build new Object.
+         *
+         * @return AuthPathData
+         */
+        public AuthPathData build() {
+<span class="nc" id="L189">            return new AuthPathData(this);</span>
+        }
+
+        /**
+         * build appName.
+         *
+         * @param appName appName
+         * @return this
+         */
+        public Builder appName(final String appName) {
+<span class="nc" id="L199">            this.appName = appName;</span>
+<span class="nc" id="L200">            return this;</span>
+        }
+
+        /**
+         * build path.
+         *
+         * @param path path
+         * @return this
+         */
+        public Builder path(final String path) {
+<span class="nc" id="L210">            this.path = path;</span>
+<span class="nc" id="L211">            return this;</span>
+        }
+
+        /**
+         * build enabled.
+         *
+         * @param enabled enabled
+         * @return this
+         */
+        public Builder enabled(final Boolean enabled) {
+<span class="nc" id="L221">            this.enabled = enabled;</span>
+<span class="nc" id="L222">            return this;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

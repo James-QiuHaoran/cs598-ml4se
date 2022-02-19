@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AppAuthData.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.dto</a> &gt; <span class="el_source">AppAuthData.java</span></div><h1>AppAuthData.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.dto;
+
+import java.util.List;
+import java.util.Objects;
+
+/**
+ * AppAuthDTO.
+ *
+ * @since 2.0.0
+ */
+public class AppAuthData {
+
+    private String appKey;
+
+    private String appSecret;
+
+    private Boolean enabled;
+
+    private Boolean open;
+
+    private List&lt;AuthParamData&gt; paramDataList;
+
+    private List&lt;AuthPathData&gt; pathDataList;
+
+    /**
+     * no args constructor.
+     */
+<span class="nc" id="L45">    public AppAuthData() {</span>
+<span class="nc" id="L46">    }</span>
+
+    /**
+     * builder constructor.
+     *
+     * @param builder builder
+     */
+<span class="nc" id="L53">    private AppAuthData(final Builder builder) {</span>
+<span class="nc" id="L54">        this.appKey = builder.appKey;</span>
+<span class="nc" id="L55">        this.appSecret = builder.appSecret;</span>
+<span class="nc" id="L56">        this.enabled = builder.enabled;</span>
+<span class="nc" id="L57">        this.open = builder.open;</span>
+<span class="nc" id="L58">        this.paramDataList = builder.paramDataList;</span>
+<span class="nc" id="L59">        this.pathDataList = builder.pathDataList;</span>
+<span class="nc" id="L60">    }</span>
+
+    /**
+     * class builder.
+     *
+     * @return builder
+     */
+    public static Builder builder() {
+<span class="nc" id="L68">        return new Builder();</span>
+    }
+
+    /**
+     * get appKey.
+     *
+     * @return appKey
+     */
+    public String getAppKey() {
+<span class="nc" id="L77">        return appKey;</span>
+    }
+
+    /**
+     * set appKey.
+     *
+     * @param appKey appKey
+     */
+    public void setAppKey(final String appKey) {
+<span class="nc" id="L86">        this.appKey = appKey;</span>
+<span class="nc" id="L87">    }</span>
+
+    /**
+     * get appSecret.
+     *
+     * @return appSecret
+     */
+    public String getAppSecret() {
+<span class="nc" id="L95">        return appSecret;</span>
+    }
+
+    /**
+     * set appSecret.
+     *
+     * @param appSecret appSecret
+     */
+    public void setAppSecret(final String appSecret) {
+<span class="nc" id="L104">        this.appSecret = appSecret;</span>
+<span class="nc" id="L105">    }</span>
+
+    /**
+     * get enabled.
+     *
+     * @return enabled
+     */
+    public Boolean getEnabled() {
+<span class="nc" id="L113">        return enabled;</span>
+    }
+
+    /**
+     * set enabled.
+     *
+     * @param enabled enabled
+     */
+    public void setEnabled(final Boolean enabled) {
+<span class="nc" id="L122">        this.enabled = enabled;</span>
+<span class="nc" id="L123">    }</span>
+
+    /**
+     * get open.
+     *
+     * @return open
+     */
+    public Boolean getOpen() {
+<span class="nc" id="L131">        return open;</span>
+    }
+
+    /**
+     * set open.
+     *
+     * @param open open
+     */
+    public void setOpen(final Boolean open) {
+<span class="nc" id="L140">        this.open = open;</span>
+<span class="nc" id="L141">    }</span>
+
+    /**
+     * get paramDataList.
+     *
+     * @return paramDataList
+     */
+    public List&lt;AuthParamData&gt; getParamDataList() {
+<span class="nc" id="L149">        return paramDataList;</span>
+    }
+
+    /**
+     * set paramDataList.
+     *
+     * @param paramDataList paramDataList
+     */
+    public void setParamDataList(final List&lt;AuthParamData&gt; paramDataList) {
+<span class="nc" id="L158">        this.paramDataList = paramDataList;</span>
+<span class="nc" id="L159">    }</span>
+
+    /**
+     * get pathDataList.
+     *
+     * @return pathDataList
+     */
+    public List&lt;AuthPathData&gt; getPathDataList() {
+<span class="nc" id="L167">        return pathDataList;</span>
+    }
+
+    /**
+     * set pathDataList.
+     *
+     * @param pathDataList pathDataList
+     */
+    public void setPathDataList(final List&lt;AuthPathData&gt; pathDataList) {
+<span class="nc" id="L176">        this.pathDataList = pathDataList;</span>
+<span class="nc" id="L177">    }</span>
+
+    @Override
+    public boolean equals(final Object o) {
+<span class="nc bnc" id="L181" title="All 2 branches missed.">        if (this == o) {</span>
+<span class="nc" id="L182">            return true;</span>
+        }
+<span class="nc bnc" id="L184" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L185">            return false;</span>
+        }
+<span class="nc" id="L187">        AppAuthData that = (AppAuthData) o;</span>
+<span class="nc bnc" id="L188" title="All 6 branches missed.">        return Objects.equals(appKey, that.appKey) &amp;&amp; Objects.equals(appSecret, that.appSecret) &amp;&amp; Objects.equals(enabled, that.enabled)</span>
+<span class="nc bnc" id="L189" title="All 6 branches missed.">                &amp;&amp; Objects.equals(open, that.open) &amp;&amp; Objects.equals(paramDataList, that.paramDataList) &amp;&amp; Objects.equals(pathDataList, that.pathDataList);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L194">        return Objects.hash(appKey, appSecret, enabled, open, paramDataList, pathDataList);</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L199">        return &quot;AppAuthData{&quot;</span>
+                + &quot;appKey='&quot;
+                + appKey
+                + '\''
+                + &quot;, appSecret='&quot;
+                + appSecret
+                + '\''
+                + &quot;, enabled=&quot;
+                + enabled
+                + &quot;, open=&quot;
+                + open
+                + &quot;, paramDataList=&quot;
+                + paramDataList
+                + &quot;, pathDataList=&quot;
+                + pathDataList
+                + '}';
+    }
+
+    /**
+     * class builder.
+     */
+    public static final class Builder {
+
+        /**
+         * appKey.
+         */
+        private String appKey;
+
+        /**
+         * appSecret.
+         */
+        private String appSecret;
+
+        /**
+         * enabled.
+         */
+        private Boolean enabled;
+
+        /**
+         * open.
+         */
+        private Boolean open;
+
+        /**
+         * paramDataList.
+         */
+        private List&lt;AuthParamData&gt; paramDataList;
+
+        /**
+         * pathDataList.
+         */
+        private List&lt;AuthPathData&gt; pathDataList;
+
+        /**
+         * no args constructor.
+         */
+        private Builder() {
+        }
+
+        /**
+         * build new Object.
+         *
+         * @return AppAuthData
+         */
+        public AppAuthData build() {
+<span class="nc" id="L264">            return new AppAuthData(this);</span>
+        }
+
+        /**
+         * build appKey.
+         *
+         * @param appKey appKey
+         * @return this
+         */
+        public Builder appKey(final String appKey) {
+<span class="nc" id="L274">            this.appKey = appKey;</span>
+<span class="nc" id="L275">            return this;</span>
+        }
+
+        /**
+         * build appSecret.
+         *
+         * @param appSecret appSecret
+         * @return this
+         */
+        public Builder appSecret(final String appSecret) {
+<span class="nc" id="L285">            this.appSecret = appSecret;</span>
+<span class="nc" id="L286">            return this;</span>
+        }
+
+        /**
+         * build enabled.
+         *
+         * @param enabled enabled
+         * @return this
+         */
+        public Builder enabled(final Boolean enabled) {
+<span class="nc" id="L296">            this.enabled = enabled;</span>
+<span class="nc" id="L297">            return this;</span>
+        }
+
+        /**
+         * build open.
+         *
+         * @param open open
+         * @return this
+         */
+        public Builder open(final Boolean open) {
+<span class="nc" id="L307">            this.open = open;</span>
+<span class="nc" id="L308">            return this;</span>
+        }
+
+        /**
+         * build paramDataList.
+         *
+         * @param paramDataList paramDataList
+         * @return this
+         */
+        public Builder paramDataList(final List&lt;AuthParamData&gt; paramDataList) {
+<span class="nc" id="L318">            this.paramDataList = paramDataList;</span>
+<span class="nc" id="L319">            return this;</span>
+        }
+
+        /**
+         * build pathDataList.
+         *
+         * @param pathDataList pathDataList
+         * @return this
+         */
+        public Builder pathDataList(final List&lt;AuthPathData&gt; pathDataList) {
+<span class="nc" id="L329">            this.pathDataList = pathDataList;</span>
+<span class="nc" id="L330">            return this;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

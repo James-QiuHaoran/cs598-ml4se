@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SentinelHandle.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.dto.convert.rule</a> &gt; <span class="el_source">SentinelHandle.java</span></div><h1>SentinelHandle.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.dto.convert.rule;
+
+import org.apache.shenyu.common.constant.Constants;
+
+import java.util.Objects;
+
+/**
+ * This is SentinelHandle.
+ */
+<span class="nc" id="L27">public class SentinelHandle {</span>
+
+    /**
+     * Flow rule enable.
+     */
+<span class="nc" id="L32">    private Integer flowRuleEnable = Constants.SENTINEL_ENABLE_FLOW_RULE;</span>
+
+    /**
+     * Flow rule grade.
+     */
+<span class="nc" id="L37">    private Integer flowRuleGrade = Constants.SENTINEL_QPS_FLOW_GRADE;</span>
+
+    /**
+     * Flow rule count.
+     */
+    private Integer flowRuleCount;
+
+    /**
+     * Flow rule control behavior.
+     */
+<span class="nc" id="L47">    private Integer flowRuleControlBehavior = Constants.SENTINEL_FLOW_REJECT;</span>
+
+    /**
+     * Degrade rule control behavior.
+     */
+<span class="nc" id="L52">    private Integer degradeRuleEnable = Constants.SENTINEL_ENABLE_DEGRADE_RULE;</span>
+
+    /**
+     * Degrade rule grade.
+     */
+<span class="nc" id="L57">    private Integer degradeRuleGrade = Constants.SENTINEL_RESPONSE_RULE_GRADE;</span>
+
+    /**
+     * Degrade rule count.
+     */
+    private Integer degradeRuleCount;
+
+    /**
+     * Degrade rule time window.
+     */
+    private Integer degradeRuleTimeWindow;
+
+    /**
+     * Degrade rule min request amount.
+     */
+<span class="nc" id="L72">    private Integer degradeRuleMinRequestAmount = Constants.SENTINEL_MIN_REQUEST_AMOUNT;</span>
+
+    /**
+     * Degrade rule slow ratio threshold.
+     */
+<span class="nc" id="L77">    private Double degradeRuleSlowRatioThreshold = Constants.SENTINEL_SLOW_RATIO_THRESHOLD;</span>
+
+    /**
+     * Degrade rule stat intervalMs.
+     */
+<span class="nc" id="L82">    private int degradeRuleStatIntervals = Constants.SENTINEL_STAT_INTERVALS;</span>
+
+    /**
+     * Sentinel fallback uri.
+     */
+    private String fallbackUri;
+
+    /**
+     * get flowRuleEnable.
+     *
+     * @return flowRuleEnable
+     */
+    public Integer getFlowRuleEnable() {
+<span class="nc" id="L95">        return flowRuleEnable;</span>
+    }
+
+    /**
+     * set flowRuleEnable.
+     *
+     * @param flowRuleEnable flowRuleEnable
+     */
+    public void setFlowRuleEnable(final Integer flowRuleEnable) {
+<span class="nc" id="L104">        this.flowRuleEnable = flowRuleEnable;</span>
+<span class="nc" id="L105">    }</span>
+
+    /**
+     * get flowRuleGrade.
+     *
+     * @return flowRuleGrade
+     */
+    public Integer getFlowRuleGrade() {
+<span class="nc" id="L113">        return flowRuleGrade;</span>
+    }
+
+    /**
+     * set flowRuleGrade.
+     *
+     * @param flowRuleGrade flowRuleGrade
+     */
+    public void setFlowRuleGrade(final Integer flowRuleGrade) {
+<span class="nc" id="L122">        this.flowRuleGrade = flowRuleGrade;</span>
+<span class="nc" id="L123">    }</span>
+
+    /**
+     * get flowRuleCount.
+     *
+     * @return flowRuleCount
+     */
+    public Integer getFlowRuleCount() {
+<span class="nc" id="L131">        return flowRuleCount;</span>
+    }
+
+    /**
+     * set flowRuleCount.
+     *
+     * @param flowRuleCount flowRuleCount
+     */
+    public void setFlowRuleCount(final Integer flowRuleCount) {
+<span class="nc" id="L140">        this.flowRuleCount = flowRuleCount;</span>
+<span class="nc" id="L141">    }</span>
+
+    /**
+     * get flowRuleControlBehavior.
+     *
+     * @return flowRuleControlBehavior
+     */
+    public Integer getFlowRuleControlBehavior() {
+<span class="nc" id="L149">        return flowRuleControlBehavior;</span>
+    }
+
+    /**
+     * set flowRuleControlBehavior.
+     *
+     * @param flowRuleControlBehavior flowRuleControlBehavior
+     */
+    public void setFlowRuleControlBehavior(final Integer flowRuleControlBehavior) {
+<span class="nc" id="L158">        this.flowRuleControlBehavior = flowRuleControlBehavior;</span>
+<span class="nc" id="L159">    }</span>
+
+    /**
+     * get degradeRuleEnable.
+     *
+     * @return degradeRuleEnable
+     */
+    public Integer getDegradeRuleEnable() {
+<span class="nc" id="L167">        return degradeRuleEnable;</span>
+    }
+
+    /**
+     * set degradeRuleEnable.
+     *
+     * @param degradeRuleEnable degradeRuleEnable
+     */
+    public void setDegradeRuleEnable(final Integer degradeRuleEnable) {
+<span class="nc" id="L176">        this.degradeRuleEnable = degradeRuleEnable;</span>
+<span class="nc" id="L177">    }</span>
+
+    /**
+     * get degradeRuleGrade.
+     *
+     * @return degradeRuleGrade
+     */
+    public Integer getDegradeRuleGrade() {
+<span class="nc" id="L185">        return degradeRuleGrade;</span>
+    }
+
+    /**
+     * set degradeRuleGrade.
+     *
+     * @param degradeRuleGrade degradeRuleGrade
+     */
+    public void setDegradeRuleGrade(final Integer degradeRuleGrade) {
+<span class="nc" id="L194">        this.degradeRuleGrade = degradeRuleGrade;</span>
+<span class="nc" id="L195">    }</span>
+
+    /**
+     * get degradeRuleCount.
+     *
+     * @return degradeRuleCount
+     */
+    public Integer getDegradeRuleCount() {
+<span class="nc" id="L203">        return degradeRuleCount;</span>
+    }
+
+    /**
+     * set degradeRuleCount.
+     *
+     * @param degradeRuleCount degradeRuleCount
+     */
+    public void setDegradeRuleCount(final Integer degradeRuleCount) {
+<span class="nc" id="L212">        this.degradeRuleCount = degradeRuleCount;</span>
+<span class="nc" id="L213">    }</span>
+
+    /**
+     * get degradeRuleTimeWindow.
+     *
+     * @return degradeRuleTimeWindow
+     */
+    public Integer getDegradeRuleTimeWindow() {
+<span class="nc" id="L221">        return degradeRuleTimeWindow;</span>
+    }
+
+    /**
+     * set degradeRuleTimeWindow.
+     *
+     * @param degradeRuleTimeWindow degradeRuleTimeWindow
+     */
+    public void setDegradeRuleTimeWindow(final Integer degradeRuleTimeWindow) {
+<span class="nc" id="L230">        this.degradeRuleTimeWindow = degradeRuleTimeWindow;</span>
+<span class="nc" id="L231">    }</span>
+
+    /**
+     * get degradeRuleMinRequestAmount.
+     *
+     * @return degradeRuleMinRequestAmount
+     */
+    public Integer getDegradeRuleMinRequestAmount() {
+<span class="nc" id="L239">        return degradeRuleMinRequestAmount;</span>
+    }
+
+    /**
+     * set degradeRuleMinRequestAmount.
+     *
+     * @param degradeRuleMinRequestAmount degradeRuleMinRequestAmount
+     */
+    public void setDegradeRuleMinRequestAmount(final Integer degradeRuleMinRequestAmount) {
+<span class="nc" id="L248">        this.degradeRuleMinRequestAmount = degradeRuleMinRequestAmount;</span>
+<span class="nc" id="L249">    }</span>
+
+    /**
+     * get degradeRuleSlowRatioThreshold.
+     *
+     * @return degradeRuleSlowRatioThreshold
+     */
+    public Double getDegradeRuleSlowRatioThreshold() {
+<span class="nc" id="L257">        return degradeRuleSlowRatioThreshold;</span>
+    }
+
+    /**
+     * set degradeRuleSlowRatioThreshold.
+     *
+     * @param degradeRuleSlowRatioThreshold degradeRuleSlowRatioThreshold
+     */
+    public void setDegradeRuleSlowRatioThreshold(final Double degradeRuleSlowRatioThreshold) {
+<span class="nc" id="L266">        this.degradeRuleSlowRatioThreshold = degradeRuleSlowRatioThreshold;</span>
+<span class="nc" id="L267">    }</span>
+
+    /**
+     * get degradeRuleStatIntervals.
+     *
+     * @return degradeRuleStatIntervals
+     */
+    public int getDegradeRuleStatIntervals() {
+<span class="nc" id="L275">        return degradeRuleStatIntervals;</span>
+    }
+
+    /**
+     * set degradeRuleStatIntervals.
+     *
+     * @param degradeRuleStatIntervals degradeRuleStatIntervals
+     */
+    public void setDegradeRuleStatIntervals(final int degradeRuleStatIntervals) {
+<span class="nc" id="L284">        this.degradeRuleStatIntervals = degradeRuleStatIntervals;</span>
+<span class="nc" id="L285">    }</span>
+
+    /**
+     * get fallbackUri.
+     *
+     * @return fallbackUri
+     */
+    public String getFallbackUri() {
+<span class="nc" id="L293">        return fallbackUri;</span>
+    }
+
+    /**
+     * set fallbackUri.
+     *
+     * @param fallbackUri fallbackUri
+     */
+    public void setFallbackUri(final String fallbackUri) {
+<span class="nc" id="L302">        this.fallbackUri = fallbackUri;</span>
+<span class="nc" id="L303">    }</span>
+
+    @Override
+    public boolean equals(final Object o) {
+<span class="nc bnc" id="L307" title="All 2 branches missed.">        if (this == o) {</span>
+<span class="nc" id="L308">            return true;</span>
+        }
+<span class="nc bnc" id="L310" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L311">            return false;</span>
+        }
+<span class="nc" id="L313">        SentinelHandle that = (SentinelHandle) o;</span>
+<span class="nc bnc" id="L314" title="All 4 branches missed.">        return degradeRuleStatIntervals == that.degradeRuleStatIntervals &amp;&amp; Objects.equals(flowRuleEnable, that.flowRuleEnable)</span>
+<span class="nc bnc" id="L315" title="All 4 branches missed.">                &amp;&amp; Objects.equals(flowRuleGrade, that.flowRuleGrade) &amp;&amp; Objects.equals(flowRuleCount, that.flowRuleCount)</span>
+<span class="nc bnc" id="L316" title="All 4 branches missed.">                &amp;&amp; Objects.equals(flowRuleControlBehavior, that.flowRuleControlBehavior) &amp;&amp; Objects.equals(degradeRuleEnable, that.degradeRuleEnable)</span>
+<span class="nc bnc" id="L317" title="All 4 branches missed.">                &amp;&amp; Objects.equals(degradeRuleGrade, that.degradeRuleGrade) &amp;&amp; Objects.equals(degradeRuleCount, that.degradeRuleCount)</span>
+<span class="nc bnc" id="L318" title="All 4 branches missed.">                &amp;&amp; Objects.equals(degradeRuleTimeWindow, that.degradeRuleTimeWindow) &amp;&amp; Objects.equals(degradeRuleMinRequestAmount, that.degradeRuleMinRequestAmount)</span>
+<span class="nc bnc" id="L319" title="All 4 branches missed.">                &amp;&amp; Objects.equals(degradeRuleSlowRatioThreshold, that.degradeRuleSlowRatioThreshold) &amp;&amp; Objects.equals(fallbackUri, that.fallbackUri);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L324">        return Objects.hash(flowRuleEnable, flowRuleGrade, flowRuleCount, flowRuleControlBehavior, degradeRuleEnable, degradeRuleGrade,</span>
+<span class="nc" id="L325">                degradeRuleCount, degradeRuleTimeWindow, degradeRuleMinRequestAmount, degradeRuleSlowRatioThreshold, degradeRuleStatIntervals, fallbackUri);</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L330">        return &quot;SentinelHandle{&quot;</span>
+                + &quot;flowRuleEnable=&quot;
+                + flowRuleEnable
+                + &quot;, flowRuleGrade=&quot;
+                + flowRuleGrade
+                + &quot;, flowRuleCount=&quot;
+                + flowRuleCount
+                + &quot;, flowRuleControlBehavior=&quot;
+                + flowRuleControlBehavior
+                + &quot;, degradeRuleEnable=&quot;
+                + degradeRuleEnable
+                + &quot;, degradeRuleGrade=&quot;
+                + degradeRuleGrade
+                + &quot;, degradeRuleCount=&quot;
+                + degradeRuleCount
+                + &quot;, degradeRuleTimeWindow=&quot;
+                + degradeRuleTimeWindow
+                + &quot;, degradeRuleMinRequestAmount=&quot;
+                + degradeRuleMinRequestAmount
+                + &quot;, degradeRuleSlowRatioThreshold=&quot;
+                + degradeRuleSlowRatioThreshold
+                + &quot;, degradeRuleStatIntervals=&quot;
+                + degradeRuleStatIntervals
+                + &quot;, fallbackUri='&quot;
+                + fallbackUri
+                + '\''
+                + '}';
+    }
+
+    /**
+     * check filed default value.
+     *
+     * @param sentinelHandle {@linkplain SentinelHandle}
+     */
+    public void checkData(final SentinelHandle sentinelHandle) {
+<span class="nc bnc" id="L365" title="All 4 branches missed.">        sentinelHandle.setFlowRuleEnable((sentinelHandle.getFlowRuleEnable() == 1 || sentinelHandle.getFlowRuleEnable() == 0)</span>
+<span class="nc" id="L366">                ? sentinelHandle.getFlowRuleEnable() : Constants.SENTINEL_ENABLE_FLOW_RULE);</span>
+<span class="nc bnc" id="L367" title="All 4 branches missed.">        sentinelHandle.setDegradeRuleEnable((sentinelHandle.getDegradeRuleEnable() == 1 || sentinelHandle.getDegradeRuleEnable() == 0)</span>
+<span class="nc" id="L368">                ? sentinelHandle.getDegradeRuleEnable() : Constants.SENTINEL_ENABLE_DEGRADE_RULE);</span>
+<span class="nc" id="L369">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"org.apache.shenyu.register.common.config"},{"l":"org.apache.shenyu.register.common.dto"},{"l":"org.apache.shenyu.register.common.enums"},{"l":"org.apache.shenyu.register.common.path"},{"l":"org.apache.shenyu.register.common.subsriber"},{"l":"org.apache.shenyu.register.common.type"}]

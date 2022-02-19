@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>WebSocketUpstream.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.dto.convert.selector</a> &gt; <span class="el_source">WebSocketUpstream.java</span></div><h1>WebSocketUpstream.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.dto.convert.selector;
+
+import java.util.Objects;
+
+/**
+ * this is WebSocket upstream.
+ */
+public final class WebSocketUpstream {
+
+    /**
+     * host.
+     */
+    private String host;
+
+    /**
+     * this is http protocol.
+     */
+    private String protocol;
+
+    /**
+     * url.
+     */
+    private String url;
+
+    /**
+     * weight.
+     */
+    private int weight;
+
+    /**
+     * false close/ true open.
+     */
+    private boolean status;
+
+    /**
+     * startup time.
+     */
+    private long timestamp;
+
+    /**
+     * warmup.
+     */
+    private int warmup;
+
+    /**
+     * builder constructor.
+     *
+     * @param builder builder
+     */
+<span class="nc" id="L67">    private WebSocketUpstream(final Builder builder) {</span>
+<span class="nc" id="L68">        this.host = builder.host;</span>
+<span class="nc" id="L69">        this.protocol = builder.protocol;</span>
+<span class="nc" id="L70">        this.url = builder.url;</span>
+<span class="nc" id="L71">        this.weight = builder.weight;</span>
+<span class="nc" id="L72">        this.status = builder.status;</span>
+<span class="nc" id="L73">        this.timestamp = builder.timestamp;</span>
+<span class="nc" id="L74">        this.warmup = builder.warmup;</span>
+<span class="nc" id="L75">    }</span>
+
+    /**
+     * class builder.
+     *
+     * @return Builder
+     */
+    public static Builder builder() {
+<span class="nc" id="L83">        return new Builder();</span>
+    }
+
+    /**
+     * get host.
+     *
+     * @return host
+     */
+    public String getHost() {
+<span class="nc" id="L92">        return host;</span>
+    }
+
+    /**
+     * set host.
+     *
+     * @param host upstreamHost
+     */
+    public void setHost(final String host) {
+<span class="nc" id="L101">        this.host = host;</span>
+<span class="nc" id="L102">    }</span>
+
+    /**
+     * get protocol.
+     *
+     * @return protocol
+     */
+    public String getProtocol() {
+<span class="nc" id="L110">        return protocol;</span>
+    }
+
+    /**
+     * set protocol.
+     *
+     * @param protocol protocol
+     */
+    public void setProtocol(final String protocol) {
+<span class="nc" id="L119">        this.protocol = protocol;</span>
+<span class="nc" id="L120">    }</span>
+
+    /**
+     * get url.
+     *
+     * @return url
+     */
+    public String getUrl() {
+<span class="nc" id="L128">        return url;</span>
+    }
+
+    /**
+     * set url.
+     *
+     * @param url url
+     */
+    public void setUrl(final String url) {
+<span class="nc" id="L137">        this.url = url;</span>
+<span class="nc" id="L138">    }</span>
+
+    /**
+     * get weight.
+     *
+     * @return weight
+     */
+    public int getWeight() {
+<span class="nc" id="L146">        return weight;</span>
+    }
+
+    /**
+     * set weight.
+     *
+     * @param weight weight
+     */
+    public void setWeight(final int weight) {
+<span class="nc" id="L155">        this.weight = weight;</span>
+<span class="nc" id="L156">    }</span>
+
+    /**
+     * get status.
+     *
+     * @return status
+     */
+    public boolean isStatus() {
+<span class="nc" id="L164">        return status;</span>
+    }
+
+    /**
+     * set status.
+     *
+     * @param status status
+     */
+    public void setStatus(final boolean status) {
+<span class="nc" id="L173">        this.status = status;</span>
+<span class="nc" id="L174">    }</span>
+
+    /**
+     * get timestamp.
+     *
+     * @return timestamp
+     */
+    public long getTimestamp() {
+<span class="nc" id="L182">        return timestamp;</span>
+    }
+
+    /**
+     * set timestamp.
+     *
+     * @param timestamp timestamp
+     */
+    public void setTimestamp(final long timestamp) {
+<span class="nc" id="L191">        this.timestamp = timestamp;</span>
+<span class="nc" id="L192">    }</span>
+
+    /**
+     * get warmup.
+     *
+     * @return warmup
+     */
+    public int getWarmup() {
+<span class="nc" id="L200">        return warmup;</span>
+    }
+
+    /**
+     * set warmup.
+     *
+     * @param warmup warmup
+     */
+    public void setWarmup(final int warmup) {
+<span class="nc" id="L209">        this.warmup = warmup;</span>
+<span class="nc" id="L210">    }</span>
+    
+    @Override
+    public boolean equals(final Object o) {
+<span class="nc bnc" id="L214" title="All 2 branches missed.">        if (this == o) {</span>
+<span class="nc" id="L215">            return true;</span>
+        }
+<span class="nc bnc" id="L217" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L218">            return false;</span>
+        }
+<span class="nc" id="L220">        WebSocketUpstream that = (WebSocketUpstream) o;</span>
+<span class="nc bnc" id="L221" title="All 6 branches missed.">        return Objects.equals(host, that.host) &amp;&amp; Objects.equals(protocol, that.protocol) &amp;&amp; Objects.equals(url, that.url);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L226">        return Objects.hash(host, protocol, url);</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L231">        return &quot;DivideUpstream{&quot;</span>
+                + &quot;host='&quot;
+                + host
+                + '\''
+                + &quot;, protocol='&quot;
+                + protocol
+                + '\''
+                + &quot;, url='&quot;
+                + url
+                + '\''
+                + &quot;, weight=&quot;
+                + weight
+                + &quot;, status=&quot;
+                + status
+                + &quot;, timestamp=&quot;
+                + timestamp
+                + &quot;, warmup=&quot;
+                + warmup
+                + '}';
+    }
+    
+
+    /**
+     * class builder.
+     */
+    public static final class Builder {
+
+        /**
+         * host.
+         */
+        private String host;
+
+        /**
+         * protocol.
+         */
+        private String protocol;
+
+        /**
+         * url.
+         */
+        private String url;
+
+        /**
+         * weight.
+         */
+        private int weight;
+
+        /**
+         * status.
+         */
+        private boolean status;
+        
+
+        /**
+         * timestamp.
+         */
+        private long timestamp;
+
+        /**
+         * warmup.
+         */
+        private int warmup;
+
+        /**
+         * no args constructor.
+         */
+        private Builder() {
+        }
+
+        /**
+         * build new Object.
+         *
+         * @return DivideUpstream
+         */
+        public WebSocketUpstream build() {
+<span class="nc" id="L306">            return new WebSocketUpstream(this);</span>
+        }
+
+        /**
+         * build host.
+         *
+         * @param host host
+         * @return this
+         */
+        public Builder host(final String host) {
+<span class="nc" id="L316">            this.host = host;</span>
+<span class="nc" id="L317">            return this;</span>
+        }
+
+        /**
+         * build protocol.
+         *
+         * @param protocol protocol
+         * @return this
+         */
+        public Builder protocol(final String protocol) {
+<span class="nc" id="L327">            this.protocol = protocol;</span>
+<span class="nc" id="L328">            return this;</span>
+        }
+
+        /**
+         * build url.
+         *
+         * @param url url
+         * @return this
+         */
+        public Builder upstreamUrl(final String url) {
+<span class="nc" id="L338">            this.url = url;</span>
+<span class="nc" id="L339">            return this;</span>
+        }
+
+        /**
+         * build weight.
+         *
+         * @param weight weight
+         * @return this
+         */
+        public Builder weight(final int weight) {
+<span class="nc" id="L349">            this.weight = weight;</span>
+<span class="nc" id="L350">            return this;</span>
+        }
+
+        /**
+         * build status.
+         *
+         * @param status status
+         * @return this
+         */
+        public Builder status(final boolean status) {
+<span class="nc" id="L360">            this.status = status;</span>
+<span class="nc" id="L361">            return this;</span>
+        }
+
+        /**
+         * build timestamp.
+         *
+         * @param timestamp timestamp
+         * @return this
+         */
+        public Builder timestamp(final long timestamp) {
+<span class="nc" id="L371">            this.timestamp = timestamp;</span>
+<span class="nc" id="L372">            return this;</span>
+        }
+
+        /**
+         * build warmup.
+         *
+         * @param warmup warmup
+         * @return this
+         */
+        public Builder warmup(final int warmup) {
+<span class="nc" id="L382">            this.warmup = warmup;</span>
+<span class="nc" id="L383">            return this;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ReflectUtils.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.utils</a> &gt; <span class="el_source">ReflectUtils.java</span></div><h1>ReflectUtils.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.utils;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+import java.util.Objects;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Validate;
+import org.apache.shenyu.common.exception.ShenyuException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+/**
+ * The type Reflect utils.
+ */
+<span class="pc bpc" id="L36" title="1 of 2 branches missed.">public class ReflectUtils {</span>
+
+    /**
+     * logger.
+     */
+<span class="fc" id="L41">    private static final Logger LOG = LoggerFactory.getLogger(ReflectUtils.class);</span>
+
+    /**
+     * Get field.
+     *
+     * @param beanClass the bean class
+     * @param name      the name
+     * @return the field
+     * @throws SecurityException the security exception
+     */
+    public static Field getField(final Class&lt;?&gt; beanClass, final String name) throws SecurityException {
+<span class="fc" id="L52">        final Field[] fields = beanClass.getDeclaredFields();</span>
+<span class="fc" id="L53">        return Arrays.stream(fields).filter(field -&gt; Objects.equals(name, field.getName()))</span>
+<span class="fc" id="L54">                .findFirst().orElse(null);</span>
+    }
+
+    /**
+     * Get field value object.
+     *
+     * @param obj       the obj
+     * @param fieldName the field name
+     * @return the object
+     */
+    public static Object getFieldValue(final Object obj, final String fieldName) {
+<span class="fc bfc" id="L65" title="All 4 branches covered.">        if (Objects.isNull(obj) || StringUtils.isBlank(fieldName)) {</span>
+<span class="fc" id="L66">            return null;</span>
+        }
+<span class="fc" id="L68">        return getFieldValue(obj, getField(obj.getClass(), fieldName));</span>
+    }
+
+    /**
+     * Gets field value.
+     *
+     * @param obj   the obj
+     * @param field the field
+     * @return the field value
+     */
+    public static Object getFieldValue(final Object obj, final Field field) {
+<span class="pc bpc" id="L79" title="1 of 4 branches missed.">        if (Objects.isNull(obj) || Objects.isNull(field)) {</span>
+<span class="fc" id="L80">            return null;</span>
+        }
+<span class="fc" id="L82">        field.setAccessible(true);</span>
+<span class="fc" id="L83">        Object result = null;</span>
+        try {
+<span class="fc" id="L85">            result = field.get(obj);</span>
+<span class="nc" id="L86">        } catch (IllegalAccessException e) {</span>
+<span class="nc" id="L87">            LOG.error(&quot;&quot;, e);</span>
+<span class="fc" id="L88">        }</span>
+<span class="fc" id="L89">        return result;</span>
+    }
+
+    /**
+     * Invoke method by class.
+     *
+     * @param clazz  class type
+     * @param method method
+     * @return Method object
+     */
+    public static Object invokeMethod(final Class&lt;?&gt; clazz, final String method) {
+        try {
+<span class="nc" id="L101">            Method m = findMethod(clazz, method);</span>
+<span class="nc bnc" id="L102" title="All 4 branches missed.">            assert m != null;</span>
+<span class="nc" id="L103">            return m.invoke(null);</span>
+<span class="nc" id="L104">        } catch (Exception e) {</span>
+<span class="nc" id="L105">            LOG.error(&quot;&quot;, e);</span>
+        }
+<span class="nc" id="L107">        return null;</span>
+    }
+
+    /**
+     * Get method by class.
+     *
+     * @param clazz  class type
+     * @param method method
+     * @return Method object
+     */
+    public static Method findMethod(final Class&lt;?&gt; clazz, final String method) {
+        try {
+<span class="nc" id="L119">            return clazz.getMethod(method);</span>
+<span class="nc" id="L120">        } catch (Exception e) {</span>
+<span class="nc" id="L121">            LOG.error(&quot;&quot;, e);</span>
+        }
+<span class="nc" id="L123">        return null;</span>
+    }
+
+    /**
+     * Set object property values directly.
+     *
+     * @param obj       object
+     * @param fieldName tje field name
+     * @param value     the field value
+     */
+    public static void setFieldValue(final Object obj, final String fieldName, final Object value) {
+<span class="fc" id="L134">        Field field = getAccessibleField(obj, fieldName);</span>
+
+<span class="pc bpc" id="L136" title="1 of 2 branches missed.">        if (Objects.isNull(field)) {</span>
+<span class="nc" id="L137">            throw new IllegalArgumentException(&quot;Could not find field [&quot; + fieldName + &quot;] on target [&quot; + obj + &quot;]&quot;);</span>
+        }
+
+        try {
+<span class="fc" id="L141">            field.set(obj, value);</span>
+<span class="nc" id="L142">        } catch (IllegalAccessException e) {</span>
+<span class="nc" id="L143">            LOG.error(&quot;Failed to assign to the element.&quot;, e);</span>
+<span class="nc" id="L144">            throw new ShenyuException(e.getMessage());</span>
+<span class="fc" id="L145">        }</span>
+<span class="fc" id="L146">    }</span>
+
+    /**
+     * get the object's declared field.
+     *
+     * @param obj       object
+     * @param fieldName tje field name
+     * @return {@linkplain Field}
+     */
+    private static Field getAccessibleField(final Object obj, final String fieldName) {
+<span class="fc" id="L156">        Validate.notNull(obj, &quot;object can't be null&quot;);</span>
+<span class="fc" id="L157">        Validate.notBlank(fieldName, &quot;fieldName can't be blank&quot;);</span>
+<span class="pc bpc" id="L158" title="1 of 2 branches missed.">        for (Class&lt;?&gt; superClass = obj.getClass(); superClass != Object.class; superClass = superClass.getSuperclass()) {</span>
+            try {
+<span class="fc" id="L160">                Field field = superClass.getDeclaredField(fieldName);</span>
+<span class="fc" id="L161">                makeAccessible(field);</span>
+<span class="fc" id="L162">                return field;</span>
+<span class="nc" id="L163">            } catch (NoSuchFieldException e) {</span>
+                // Field is not defined in the current class and continues to transition up
+                // new add
+<span class="nc" id="L166">                LOG.error(&quot;field is not defined in the current class and continues to transition up&quot;, e);</span>
+            }
+        }
+<span class="nc" id="L169">        return null;</span>
+    }
+
+    /**
+     * Change the private/protected member variables to public.
+     *
+     * @param field field
+     */
+    private static void makeAccessible(final Field field) {
+<span class="pc bpc" id="L178" title="3 of 4 branches missed.">        if ((!Modifier.isPublic(field.getModifiers()) || !Modifier.isPublic(field.getDeclaringClass().getModifiers()) || Modifier</span>
+<span class="pc bpc" id="L179" title="3 of 4 branches missed.">                .isFinal(field.getModifiers())) &amp;&amp; !field.isAccessible()) {</span>
+<span class="fc" id="L180">            field.setAccessible(true);</span>
+        }
+<span class="fc" id="L182">    }</span>
+
+    /**
+     * Verify the cls is Primitives (Maybe array).
+     *
+     * @param cls class
+     * @return boolean
+     */
+    public static boolean isPrimitives(final Class&lt;?&gt; cls) {
+<span class="nc bnc" id="L191" title="All 2 branches missed.">        return cls.isArray() ? isPrimitive(cls.getComponentType()) : isPrimitive(cls);</span>
+    }
+
+    /**
+     * Verify the cls is Primitive.
+     *
+     * @param cls class
+     * @return boolean
+     */
+    public static boolean isPrimitive(final Class&lt;?&gt; cls) {
+<span class="nc bnc" id="L201" title="All 8 branches missed.">        return cls.isPrimitive() || cls == String.class || cls == Boolean.class || cls == Character.class</span>
+<span class="nc bnc" id="L202" title="All 6 branches missed.">            || Number.class.isAssignableFrom(cls) || Date.class.isAssignableFrom(cls) || List.class.isAssignableFrom(cls);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

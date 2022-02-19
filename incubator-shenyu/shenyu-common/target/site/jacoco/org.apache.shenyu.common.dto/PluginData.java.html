@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PluginData.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.dto</a> &gt; <span class="el_source">PluginData.java</span></div><h1>PluginData.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.dto;
+
+import java.util.Objects;
+
+/**
+ * PluginData.
+ *
+ * @since 2.0.0
+ */
+public class PluginData {
+
+    private String id;
+
+    private String name;
+
+    private String config;
+
+    private String role;
+
+    private Boolean enabled;
+
+    /**
+     * no args constructor.
+     */
+<span class="nc" id="L42">    public PluginData() {</span>
+<span class="nc" id="L43">    }</span>
+
+    /**
+     * all args constructor.
+     *
+     * @param id      id
+     * @param name    name
+     * @param config  config
+     * @param role    role
+     * @param enabled enabled
+     */
+<span class="nc" id="L54">    public PluginData(final String id, final String name, final String config, final String role, final Boolean enabled) {</span>
+<span class="nc" id="L55">        this.id = id;</span>
+<span class="nc" id="L56">        this.name = name;</span>
+<span class="nc" id="L57">        this.config = config;</span>
+<span class="nc" id="L58">        this.role = role;</span>
+<span class="nc" id="L59">        this.enabled = enabled;</span>
+<span class="nc" id="L60">    }</span>
+
+    /**
+     * builder constructor.
+     *
+     * @param builder builder
+     */
+<span class="nc" id="L67">    private PluginData(final Builder builder) {</span>
+<span class="nc" id="L68">        this.id = builder.id;</span>
+<span class="nc" id="L69">        this.name = builder.name;</span>
+<span class="nc" id="L70">        this.config = builder.config;</span>
+<span class="nc" id="L71">        this.role = builder.role;</span>
+<span class="nc" id="L72">        this.enabled = builder.enabled;</span>
+<span class="nc" id="L73">    }</span>
+
+    /**
+     * class builder.
+     *
+     * @return Builder
+     */
+    public static Builder builder() {
+<span class="nc" id="L81">        return new Builder();</span>
+    }
+
+    /**
+     * get id.
+     *
+     * @return id
+     */
+    public String getId() {
+<span class="nc" id="L90">        return id;</span>
+    }
+
+    /**
+     * set id.
+     *
+     * @param id id
+     */
+    public void setId(final String id) {
+<span class="nc" id="L99">        this.id = id;</span>
+<span class="nc" id="L100">    }</span>
+
+    /**
+     * get name.
+     *
+     * @return name
+     */
+    public String getName() {
+<span class="nc" id="L108">        return name;</span>
+    }
+
+    /**
+     * set name.
+     *
+     * @param name name
+     */
+    public void setName(final String name) {
+<span class="nc" id="L117">        this.name = name;</span>
+<span class="nc" id="L118">    }</span>
+
+    /**
+     * get config.
+     *
+     * @return config
+     */
+    public String getConfig() {
+<span class="nc" id="L126">        return config;</span>
+    }
+
+    /**
+     * set config.
+     *
+     * @param config config
+     */
+    public void setConfig(final String config) {
+<span class="nc" id="L135">        this.config = config;</span>
+<span class="nc" id="L136">    }</span>
+
+    /**
+     * get role.
+     *
+     * @return role
+     */
+    public String getRole() {
+<span class="nc" id="L144">        return role;</span>
+    }
+
+    /**
+     * set role.
+     *
+     * @param role role
+     */
+    public void setRole(final String role) {
+<span class="nc" id="L153">        this.role = role;</span>
+<span class="nc" id="L154">    }</span>
+
+    /**
+     * get enabled.
+     *
+     * @return enabled
+     */
+    public Boolean getEnabled() {
+<span class="nc" id="L162">        return enabled;</span>
+    }
+
+    /**
+     * set enabled.
+     *
+     * @param enabled enabled
+     */
+    public void setEnabled(final Boolean enabled) {
+<span class="nc" id="L171">        this.enabled = enabled;</span>
+<span class="nc" id="L172">    }</span>
+
+    @Override
+    public boolean equals(final Object o) {
+<span class="nc bnc" id="L176" title="All 2 branches missed.">        if (this == o) {</span>
+<span class="nc" id="L177">            return true;</span>
+        }
+<span class="nc bnc" id="L179" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L180">            return false;</span>
+        }
+<span class="nc" id="L182">        PluginData that = (PluginData) o;</span>
+<span class="nc bnc" id="L183" title="All 6 branches missed.">        return Objects.equals(id, that.id) &amp;&amp; Objects.equals(name, that.name) &amp;&amp; Objects.equals(config, that.config)</span>
+<span class="nc bnc" id="L184" title="All 4 branches missed.">                &amp;&amp; Objects.equals(role, that.role) &amp;&amp; Objects.equals(enabled, that.enabled);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L189">        return Objects.hash(id, name, config, role, enabled);</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L194">        return &quot;PluginData{&quot;</span>
+                + &quot;id='&quot;
+                + id
+                + '\''
+                + &quot;, name='&quot;
+                + name
+                + '\''
+                + &quot;, config='&quot;
+                + config
+                + '\''
+                + &quot;, role='&quot;
+                + role
+                + '\''
+                + &quot;, enabled=&quot;
+                + enabled
+                + '}';
+    }
+
+    /**
+     * class builder.
+     */
+    public static final class Builder {
+
+        /**
+         * id.
+         */
+        private String id;
+
+        /**
+         * name.
+         */
+        private String name;
+
+        /**
+         * config.
+         */
+        private String config;
+
+        /**
+         * role.
+         */
+        private String role;
+
+        /**
+         * enabled.
+         */
+        private Boolean enabled;
+
+        /**
+         * no args constructor.
+         */
+        private Builder() {
+        }
+
+        /**
+         * build new Object.
+         *
+         * @return PluginData
+         */
+        public PluginData build() {
+<span class="nc" id="L254">            return new PluginData(this);</span>
+        }
+
+        /**
+         * build id.
+         *
+         * @param id id
+         * @return this
+         */
+        public Builder id(final String id) {
+<span class="nc" id="L264">            this.id = id;</span>
+<span class="nc" id="L265">            return this;</span>
+        }
+
+        /**
+         * build name.
+         *
+         * @param name name
+         * @return this
+         */
+        public Builder name(final String name) {
+<span class="nc" id="L275">            this.name = name;</span>
+<span class="nc" id="L276">            return this;</span>
+        }
+
+        /**
+         * build config.
+         *
+         * @param config config
+         * @return this
+         */
+        public Builder config(final String config) {
+<span class="nc" id="L286">            this.config = config;</span>
+<span class="nc" id="L287">            return this;</span>
+        }
+
+        /**
+         * build role.
+         *
+         * @param role role
+         * @return this
+         */
+        public Builder role(final String role) {
+<span class="nc" id="L297">            this.role = role;</span>
+<span class="nc" id="L298">            return this;</span>
+        }
+
+        /**
+         * build enabled.
+         *
+         * @param enabled enabled
+         * @return this
+         */
+        public Builder enabled(final Boolean enabled) {
+<span class="nc" id="L308">            this.enabled = enabled;</span>
+<span class="nc" id="L309">            return this;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TimerTask.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.timer</a> &gt; <span class="el_source">TimerTask.java</span></div><h1>TimerTask.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.timer;
+
+import java.util.concurrent.TimeUnit;
+
+/**
+ * TimerTask.
+ */
+public abstract class TimerTask {
+    
+    /**
+     * The time the current task delays execution ms.
+     */
+    private final long delayMs;
+    
+    private TimerTaskList.TimerTaskEntry timerTaskEntry;
+    
+    /**
+     * Instantiates a new Timer task.
+     *
+     * @param delayMs the delay ms
+     */
+    public TimerTask(final long delayMs) {
+<span class="fc" id="L40">        this(delayMs, TimeUnit.MILLISECONDS);</span>
+<span class="fc" id="L41">    }</span>
+    
+    /**
+     * Instantiates a new Timer task.
+     *
+     * @param delay the delay
+     * @param unit  the unit
+     */
+<span class="fc" id="L49">    public TimerTask(final long delay, final TimeUnit unit) {</span>
+<span class="fc" id="L50">        delayMs = unit.toMillis(delay);</span>
+<span class="fc" id="L51">    }</span>
+    
+    /**
+     * Sets timer task entry.
+     *
+     * @param entry the entry
+     */
+    synchronized void setTimerTaskEntry(final TimerTaskList.TimerTaskEntry entry) {
+<span class="pc bpc" id="L59" title="3 of 4 branches missed.">        if (timerTaskEntry != null &amp;&amp; timerTaskEntry != entry) {</span>
+<span class="nc" id="L60">            this.timerTaskEntry.remove();</span>
+        }
+<span class="fc" id="L62">        timerTaskEntry = entry;</span>
+<span class="fc" id="L63">    }</span>
+    
+    /**
+     * Gets delay ms.
+     *
+     * @return the delay ms
+     */
+    long getDelayMs() {
+<span class="fc" id="L71">        return delayMs;</span>
+    }
+    
+    /**
+     * Gets timer task entry.
+     *
+     * @return the timer task entry
+     */
+    TimerTaskList.TimerTaskEntry getTimerTaskEntry() {
+<span class="fc" id="L80">        return timerTaskEntry;</span>
+    }
+    
+    /**
+     * Cancel task.
+     */
+    public synchronized void cancel() {
+<span class="pc bpc" id="L87" title="1 of 2 branches missed.">        if (timerTaskEntry != null) {</span>
+<span class="fc" id="L88">            timerTaskEntry.remove();</span>
+        }
+<span class="fc" id="L90">        timerTaskEntry = null;</span>
+<span class="fc" id="L91">    }</span>
+    
+    /**
+     * Run.
+     *
+     * @param taskEntity the task entity
+     */
+    public abstract void run(TaskEntity taskEntity);
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

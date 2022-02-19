@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RpcTypeEnum.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.enums</a> &gt; <span class="el_source">RpcTypeEnum.java</span></div><h1>RpcTypeEnum.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.enums;
+
+import org.apache.shenyu.common.exception.ShenyuException;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+/**
+ * RpcTypeEnum.
+ */
+<span class="fc" id="L29">public enum RpcTypeEnum {</span>
+
+    /**
+     * Http rpc type enum.
+     */
+<span class="fc" id="L34">    HTTP(&quot;http&quot;, true),</span>
+
+    /**
+     * Dubbo rpc type enum.
+     */
+<span class="fc" id="L39">    DUBBO(&quot;dubbo&quot;, true),</span>
+
+    /**
+     * Sofa rpc type enum.
+     */
+<span class="fc" id="L44">    SOFA(&quot;sofa&quot;, true),</span>
+
+    /**
+     * Tars rpc type enum.
+     */
+<span class="fc" id="L49">    TARS(&quot;tars&quot;, true),</span>
+
+    /**
+     * Web socket rpc type enum.
+     */
+<span class="fc" id="L54">    WEB_SOCKET(&quot;websocket&quot;, true),</span>
+
+    /**
+     * springCloud rpc type enum.
+     */
+<span class="fc" id="L59">    SPRING_CLOUD(&quot;springCloud&quot;, true),</span>
+
+    /**
+     * motan.
+     */
+<span class="fc" id="L64">    MOTAN(&quot;motan&quot;, true),</span>
+
+    /**
+     * grpc.
+     */
+<span class="fc" id="L69">    GRPC(&quot;grpc&quot;, true);</span>
+
+
+    private final String name;
+
+    private final Boolean support;
+
+    /**
+     * all args constructor.
+     *
+     * @param name    name
+     * @param support support
+     */
+<span class="fc" id="L82">    RpcTypeEnum(final String name, final Boolean support) {</span>
+<span class="fc" id="L83">        this.name = name;</span>
+<span class="fc" id="L84">        this.support = support;</span>
+<span class="fc" id="L85">    }</span>
+
+    /**
+     * get name.
+     *
+     * @return name
+     */
+    public String getName() {
+<span class="fc" id="L93">        return name;</span>
+    }
+
+    /**
+     * get support.
+     *
+     * @return support
+     */
+    public Boolean getSupport() {
+<span class="fc" id="L102">        return support;</span>
+    }
+
+    /**
+     * acquire operator supports.
+     *
+     * @return operator support.
+     */
+    public static List&lt;RpcTypeEnum&gt; acquireSupports() {
+<span class="fc" id="L111">        return Arrays.stream(RpcTypeEnum.values())</span>
+<span class="fc" id="L112">                .filter(e -&gt; e.support).collect(Collectors.toList());</span>
+    }
+
+    /**
+     * acquire operator support URI RPC type.
+     *
+     * @return operator support.
+     */
+    public static List&lt;RpcTypeEnum&gt; acquireSupportURIs() {
+<span class="fc" id="L121">        return Arrays.asList(RpcTypeEnum.GRPC, RpcTypeEnum.HTTP, RpcTypeEnum.TARS, RpcTypeEnum.SPRING_CLOUD, RpcTypeEnum.DUBBO);</span>
+    }
+
+    /**
+     * acquire operator support Metadata RPC type.
+     *
+     * @return operator support.
+     */
+    public static List&lt;RpcTypeEnum&gt; acquireSupportMetadatas() {
+<span class="fc" id="L130">        return Arrays.asList(RpcTypeEnum.HTTP, RpcTypeEnum.DUBBO, RpcTypeEnum.GRPC, RpcTypeEnum.SPRING_CLOUD, RpcTypeEnum.SOFA, RpcTypeEnum.TARS, RpcTypeEnum.MOTAN);</span>
+    }
+
+    /**
+     * acquireByName.
+     *
+     * @param name this is rpc type
+     * @return RpcTypeEnum rpc type enum
+     */
+    public static RpcTypeEnum acquireByName(final String name) {
+<span class="fc" id="L140">        return Arrays.stream(RpcTypeEnum.values())</span>
+<span class="pc bpc" id="L141" title="1 of 4 branches missed.">                .filter(e -&gt; e.support &amp;&amp; e.name.equals(name)).findFirst()</span>
+<span class="fc" id="L142">                .orElseThrow(() -&gt; new ShenyuException(String.format(&quot; this rpc type can not support %s&quot;, name)));</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

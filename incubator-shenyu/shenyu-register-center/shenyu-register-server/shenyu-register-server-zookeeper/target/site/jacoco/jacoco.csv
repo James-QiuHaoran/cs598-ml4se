@@ -1,0 +1,3 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+shenyu-register-server-zookeeper,org.apache.shenyu.register.server.zookeeper,ZookeeperServerRegisterRepository,115,274,10,16,25,64,17,20,9,15
+shenyu-register-server-zookeeper,org.apache.shenyu.register.server.zookeeper,ZookeeperServerRegisterRepository.new IZkDataListener() {...},1,12,0,0,1,3,1,2,1,2

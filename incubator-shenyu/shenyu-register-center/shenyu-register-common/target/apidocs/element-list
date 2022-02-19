@@ -1,0 +1,6 @@
+org.apache.shenyu.register.common.config
+org.apache.shenyu.register.common.dto
+org.apache.shenyu.register.common.enums
+org.apache.shenyu.register.common.path
+org.apache.shenyu.register.common.subsriber
+org.apache.shenyu.register.common.type

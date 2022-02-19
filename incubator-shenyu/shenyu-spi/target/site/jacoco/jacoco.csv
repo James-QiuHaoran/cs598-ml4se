@@ -1,0 +1,4 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+shenyu-spi,org.apache.shenyu.spi,ExtensionLoader.Holder,0,10,0,0,0,4,0,3,0,3
+shenyu-spi,org.apache.shenyu.spi,ExtensionLoader,23,534,13,41,5,117,14,29,1,15
+shenyu-spi,org.apache.shenyu.spi,SpiExtensionFactory,4,16,0,0,0,7,1,2,1,2

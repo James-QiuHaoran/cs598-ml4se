@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ConsulConstants.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.constant</a> &gt; <span class="el_source">ConsulConstants.java</span></div><h1>ConsulConstants.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.constant;
+
+/**
+ * Consul constants.
+ */
+<span class="nc" id="L23">public final class ConsulConstants {</span>
+
+    public static final String SYNC_PRE_FIX = &quot;shenyu/sync&quot;;
+
+    /**
+     * plugin data path.
+     */
+    public static final String PLUGIN_DATA = SYNC_PRE_FIX + &quot;/plugin&quot;;
+
+    /**
+     * selector data path.
+     */
+    public static final String SELECTOR_DATA = SYNC_PRE_FIX + &quot;/selector&quot;;
+
+    /**
+     * rule data path.
+     */
+    public static final String RULE_DATA = SYNC_PRE_FIX + &quot;/rule&quot;;
+
+    /**
+     * auth data path.
+     */
+    public static final String AUTH_DATA = SYNC_PRE_FIX + &quot;/auth&quot;;
+
+    /**
+     * meta data path.
+     */
+    public static final String META_DATA = SYNC_PRE_FIX + &quot;/meta&quot;;
+
+    /**
+     * default value of get config.
+     */
+    public static final String EMPTY_CONFIG_DEFAULT_VALUE = &quot;{}&quot;;
+
+    /**
+     * default value of config version index.
+     */
+<span class="nc" id="L60">    public static final Long INIT_CONFIG_VERSION_INDEX = -1L;</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

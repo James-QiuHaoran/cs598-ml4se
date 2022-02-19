@@ -1,0 +1,6 @@
+org/apache/shenyu/spi/SpiExtensionFactory.class
+org/apache/shenyu/spi/Join.class
+org/apache/shenyu/spi/ExtensionLoader$Holder.class
+org/apache/shenyu/spi/ExtensionFactory.class
+org/apache/shenyu/spi/ExtensionLoader.class
+org/apache/shenyu/spi/SPI.class

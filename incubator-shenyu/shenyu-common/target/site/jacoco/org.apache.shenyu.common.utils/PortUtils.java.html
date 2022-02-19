@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PortUtils.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.utils</a> &gt; <span class="el_source">PortUtils.java</span></div><h1>PortUtils.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.utils;
+
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.shenyu.common.exception.ShenyuException;
+import org.springframework.beans.factory.BeanFactory;
+
+import javax.management.MBeanServer;
+import javax.management.ObjectName;
+import java.lang.management.ManagementFactory;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.Set;
+
+/**
+ * get the port number exposed by the current tomcat.
+ */
+<span class="nc" id="L34">public class PortUtils {</span>
+
+    /**
+     * Note: springboot 1.x version has been made compatible.
+     * Note: springmvc with external tomcat had been made compatible.
+     * Note: In this way, no matter what container is actually used, you can get the port that is actually started in the end.
+     * Note: see {@code org.springframework.boot.context.embedded.AbstractConfigurableEmbeddedServletContainer#getPort()}
+     * for springboot 1.x;
+     * Note: see {@code org.springframework.boot.web.server.AbstractConfigurableWebServerFactory#getPort()}
+     * for springboot 2.x
+     *
+     * @param beanFactory beanFactory
+     * @return port number
+     * @throws ShenyuException when can not find port
+     */
+    @SuppressWarnings(&quot;all&quot;)
+    public static int findPort(final BeanFactory beanFactory) {
+        try {
+            //works fine for springboot 2.x
+<span class="nc" id="L53">            return getPort(beanFactory, &quot;org.springframework.boot.web.server.AbstractConfigurableWebServerFactory&quot;);</span>
+<span class="nc" id="L54">        } catch (Exception ignored) {</span>
+        }
+        try {
+            //works fine for springboot 1.x
+<span class="nc" id="L58">            return getPort(beanFactory, &quot;org.springframework.boot.context.embedded.AbstractConfigurableEmbeddedServletContainer&quot;);</span>
+<span class="nc" id="L59">        } catch (Exception ignored) {</span>
+        }
+        try {
+            //works for springmvc with external tomcat
+<span class="nc" id="L63">            return PortUtils.getPort();</span>
+<span class="nc" id="L64">        } catch (Exception e) {</span>
+<span class="nc" id="L65">            throw new ShenyuException(&quot;can not find port automatically ! &quot;);</span>
+        }
+    }
+
+    /**
+     * get container port.
+     *
+     * @param beanFactory beanFactory
+     * @param className   className
+     * @return container port
+     */
+    private static int getPort(final BeanFactory beanFactory, final String className) throws ClassNotFoundException,
+            NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+<span class="nc" id="L78">        final Class&lt;?&gt; clazz = Class.forName(className);</span>
+<span class="nc" id="L79">        final Method method = clazz.getMethod(&quot;getPort&quot;);</span>
+<span class="nc" id="L80">        final Object bean = beanFactory.getBean(clazz);</span>
+<span class="nc" id="L81">        return (int) method.invoke(bean);</span>
+    }
+
+    /**
+     * get the current tomcat port number.
+     * Note: This method is not supported when there are multiple instances of external Tomcat.
+     *
+     * @return tomcat port number
+     * @throws Exception when failed to get port
+     */
+    public static Integer getPort() throws Exception {
+<span class="nc" id="L92">        MBeanServer mBeanServer = ManagementFactory.getPlatformMBeanServer();</span>
+<span class="nc" id="L93">        Set&lt;ObjectName&gt; objectNames = mBeanServer.queryNames(new ObjectName(&quot;*:type=Connector,*&quot;), null);</span>
+<span class="nc bnc" id="L94" title="All 2 branches missed.">        if (CollectionUtils.isEmpty(objectNames)) {</span>
+<span class="nc" id="L95">            throw new IllegalStateException(&quot;Cannot get the names of MBeans controlled by the MBean server.&quot;);</span>
+        }
+        //This method is not supported when there are multiple instances of external Tomcat
+<span class="nc bnc" id="L98" title="All 2 branches missed.">        if (objectNames.size() &gt; 1) {</span>
+<span class="nc" id="L99">            throw new IllegalStateException(&quot;Not supported when there are multiple instances of external Tomcat.&quot;);</span>
+        }
+<span class="nc" id="L101">        ObjectName objectName = objectNames.iterator().next();</span>
+<span class="nc" id="L102">        String protocol = String.valueOf(mBeanServer.getAttribute(objectName, &quot;protocol&quot;));</span>
+<span class="nc" id="L103">        String port = String.valueOf(mBeanServer.getAttribute(objectName, &quot;port&quot;));</span>
+        // The property name is HTTP1.1, org.apache.coyote.http11.Http11NioProtocol under linux
+<span class="nc bnc" id="L105" title="All 4 branches missed.">        if (&quot;HTTP/1.1&quot;.equals(protocol) || &quot;org.apache.coyote.http11.Http11NioProtocol&quot;.equals(protocol)) {</span>
+<span class="nc" id="L106">            return Integer.parseInt(port);</span>
+        }
+<span class="nc" id="L108">        throw new IllegalStateException(&quot;failed to get the HTTP port of the current tomcat&quot;);</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

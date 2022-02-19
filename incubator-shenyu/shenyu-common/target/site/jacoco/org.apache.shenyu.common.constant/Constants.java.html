@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Constants.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.constant</a> &gt; <span class="el_source">Constants.java</span></div><h1>Constants.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.constant;
+
+/**
+ * Constants.
+ */
+public interface Constants {
+
+    /**
+     * The constant SUCCESS.
+     */
+    String SUCCESS = &quot;success&quot;;
+
+    /**
+     * The constant APP_PARAM.
+     */
+    String APP_PARAM = &quot;appParam&quot;;
+
+    /**
+     * The constant context.
+     */
+    String CONTEXT = &quot;context&quot;;
+
+    /**
+     * The constant context path.
+     */
+    String CONTEXT_PATH = &quot;contextPath&quot;;
+
+    /**
+     * The constant META_DATA.
+     */
+    String META_DATA = &quot;metaData&quot;;
+
+    /**
+     * The constant CLIENT_RESPONSE_ATTR.
+     */
+    String CLIENT_RESPONSE_ATTR = &quot;webHandlerClientResponse&quot;;
+
+    /**
+     * The constant DUBBO_RPC_RESULT_EMPTY.
+     */
+    String DUBBO_RPC_RESULT_EMPTY = &quot;dubbo has not return value!&quot;;
+
+    /**
+     * The constant SOFA_RPC_RESULT_EMPTY.
+     */
+    String SOFA_RPC_RESULT_EMPTY = &quot;sofa has not return value!&quot;;
+
+    /**
+     * The constant RPC_RESULT.
+     */
+    String RPC_RESULT = &quot;rpc_result&quot;;
+
+    /**
+     * The constant MOTAN_RPC_RESULT.
+     */
+    String MOTAN_RPC_RESULT = &quot;motan_rpc_result&quot;;
+
+    /**
+     * The constant TARS_RPC_RESULT_EMPTY.
+     */
+    String TARS_RPC_RESULT_EMPTY = &quot;tars has not return value!&quot;;
+
+    /**
+     * The constant MOTAN_RPC_RESULT_EMPTY.
+     */
+    String MOTAN_RPC_RESULT_EMPTY = &quot;motan has not return value!&quot;;
+
+    /**
+     * The constant CLIENT_RESPONSE_RESULT_TYPE.
+     */
+    String CLIENT_RESPONSE_RESULT_TYPE = &quot;webHandlerClientResponseResultType&quot;;
+
+    /**
+     * The constant CLIENT_RESPONSE_CONN_ATTR.
+     */
+    String CLIENT_RESPONSE_CONN_ATTR = &quot;nettyClientResponseConnection&quot;;
+
+    /**
+     * The constant HTTP_TIME_OUT.
+     */
+    String HTTP_TIME_OUT = &quot;httpTimeOut&quot;;
+
+    /**
+     * The constant HTTP_RETRY.
+     */
+    String HTTP_RETRY = &quot;httpRetry&quot;;
+
+    /**
+     * Original response Content-Type attribute name.
+     */
+    String ORIGINAL_RESPONSE_CONTENT_TYPE_ATTR = &quot;original_response_content_type&quot;;
+
+    /**
+     * The constant HTTP_URI.
+     */
+    String HTTP_URI = &quot;httpUri&quot;;
+
+    /**
+     * The constant HTTP_DOMAIN.
+     */
+    String HTTP_DOMAIN = &quot;httpDomain&quot;;
+
+    /**
+     * The constant RPC_PARAM_TRANSFORM.
+     */
+    String PARAM_TRANSFORM = &quot;param_transform&quot;;
+
+    /**
+     * The constant DECODE.
+     */
+    String DECODE = &quot;UTF-8&quot;;
+
+    /**
+     * The constant MODULE.
+     */
+    String MODULE = &quot;module&quot;;
+
+    /**
+     * The constant METHOD.
+     */
+    String METHOD = &quot;method&quot;;
+
+    /**
+     * The constant APP_KEY.
+     */
+    String APP_KEY = &quot;appKey&quot;;
+
+    /**
+     * The constant RPC_TYPE.
+     */
+    String RPC_TYPE = &quot;rpcType&quot;;
+
+    /**
+     * The constant SIGN.
+     */
+    String SIGN = &quot;sign&quot;;
+
+    /**
+     * The constant PATH.
+     */
+    String PATH = &quot;path&quot;;
+
+    /**
+     * The constant VERSION.
+     */
+    String VERSION = &quot;version&quot;;
+
+    /**
+     * The constant SIGN_PARAMS_ERROR.
+     */
+    String SIGN_PARAMS_ERROR = &quot;sign parameters are incomplete!&quot;;
+
+    /**
+     * The constant SIGN_APP_KEY_IS_NOT_EXIST.
+     */
+    String SIGN_APP_KEY_IS_NOT_EXIST = &quot;sign appKey does not exist.&quot;;
+
+    /**
+     * The constant SIGN_PATH_NOT_EXIST.
+     */
+    String SIGN_PATH_NOT_EXIST = &quot;you have not configured the sign path.&quot;;
+
+    /**
+     * The constant SIGN_VALUE_IS_ERROR.
+     */
+    String SIGN_VALUE_IS_ERROR = &quot;signature value is error!&quot;;
+
+    /**
+     * The constant TIMESTAMP.
+     */
+    String TIMESTAMP = &quot;timestamp&quot;;
+
+    /**
+     * The constant REJECT_MSG.
+     */
+    String REJECT_MSG = &quot; You are forbidden to visit&quot;;
+
+    /**
+     * The constant REWRITE_URI.
+     */
+    String REWRITE_URI = &quot;rewrite_uri&quot;;
+
+    /**
+     * The constant URI.
+     */
+    String URI = &quot;uri&quot;;
+
+    /**
+     * The constant LINE_SEPARATOR.
+     */
+<span class="fc" id="L208">    String LINE_SEPARATOR = System.getProperty(&quot;line.separator&quot;);</span>
+
+    /**
+     * The constant URL_SEPARATOR.
+     */
+    String PATH_SEPARATOR = &quot;/&quot;;
+
+    /**
+     * hystrix withExecutionIsolationSemaphoreMaxConcurrentRequests.
+     */
+    int MAX_CONCURRENT_REQUESTS = 100;
+
+    /**
+     * hystrix  withCircuitBreakerErrorThresholdPercentage.
+     */
+    int ERROR_THRESHOLD_PERCENTAGE = 50;
+
+    /**
+     * hystrix withCircuitBreakerRequestVolumeThreshold.
+     */
+    int REQUEST_VOLUME_THRESHOLD = 20;
+
+    /**
+     * hystrix withCircuitBreakerSleepWindowInMilliseconds.
+     */
+    int SLEEP_WINDOW_INMILLISECONDS = 5000;
+
+    /**
+     * The constant TIME_OUT.
+     */
+    long TIME_OUT = 3000;
+
+    /**
+     * The constant COLONS.
+     */
+    String COLONS = &quot;:&quot;;
+
+    /**
+     * hystrix thead pool core size.
+     */
+    int HYSTRIX_THREAD_POOL_CORE_SIZE = 10;
+
+    /**
+     * hystrix thread pool max size.
+     */
+    int HYSTRIX_THREAD_POOL_MAX_SIZE = 10;
+
+    /**
+     * hystrix thread pool keep alive time minutes.
+     */
+    int HYSTRIX_THREAD_KEEP_ALIVE_TIME_MINUTE = 1;
+
+    /**
+     * hystrix thread pool queue size.
+     */
+    int HYSTRIX_THREAD_POOL_QUEUE_SIZE = 12;
+
+    /**
+     * ratelimiter timeoutDurationRate.
+     */
+    int TIMEOUT_DURATION_RATE = 5000;
+
+    /**
+     * ratelimiter limitRefreshPeriod.
+     */
+    int LIMIT_REFRESH_PERIOD = 500;
+
+    /**
+     * ratelimiter limitForPeriod.
+     */
+    int LIMIT_FOR_PERIOD = 50;
+
+    /**
+     * circuitBreaker circuitEnable.
+     */
+    int CIRCUIT_ENABLE = 0;
+
+    /**
+     * circuitBreaker timeoutDuration.
+     */
+    long TIMEOUT_DURATION = 30000;
+
+    /**
+     * circuitBreaker slidingWindowSize.
+     */
+    int SLIDING_WINDOW_SIZE = 100;
+
+    /**
+     * circuitBreaker slidingWindowType.
+     */
+    int SLIDING_WINDOW_TYPE = 0;
+
+    /**
+     * circuitBreaker minimumNumberOfCalls.
+     */
+    int MINIMUM_NUMBER_OF_CALLS = 100;
+
+    /**
+     * circuitBreaker waitIntervalFunctionInOpenState.
+     */
+    int WAIT_INTERVAL_FUNCTION_IN_OPEN_STATE = 60000;
+
+    /**
+     * circuitBreaker waitIntervalFunctionInOpenState.
+     */
+    int PERMITTED_NUMBER_OF_CALLS_IN_HALF_OPEN_STATE = 10;
+
+    /**
+     * circuitBreaker failureRateThreshold.
+     */
+    float FAILURE_RATE_THRESHOLD = 50;
+
+    /**
+     * circuitBreaker automaticTransitionFromOpenToHalfOpenEnabled.
+     */
+    boolean AUTOMATIC_TRANSITION_FROM_OPEN_TO_HALF_OPEN_ENABLED = false;
+
+    /**
+     * jwt handle key for secretKey.
+     */
+    String SECRET_KEY = &quot;secretKey&quot;;
+
+    /**
+     * jwt handle key for filterPath.
+     */
+    String FILTER_PATH = &quot;filterPath&quot;;
+
+    /**
+     * Enable the flow rule.
+     */
+    int SENTINEL_ENABLE_FLOW_RULE = 1;
+
+    /**
+     * Sentinel qps flow grade.
+     */
+    int SENTINEL_QPS_FLOW_GRADE = 1;
+
+    /**
+     * Sentinel flow reject behavior.
+     */
+    int SENTINEL_FLOW_REJECT = 0;
+
+    /**
+     * Enable the degrade rule.
+     */
+    int SENTINEL_ENABLE_DEGRADE_RULE = 1;
+
+    /**
+     * Sentinel response RT degrade rule.
+     */
+    int SENTINEL_RESPONSE_RULE_GRADE = 0;
+
+    /**
+     * Sentinel degrade rule default min request.
+     */
+    int SENTINEL_MIN_REQUEST_AMOUNT = 5;
+
+    /**
+     * Sentinel degrade rule default slow ratio threshold.
+     */
+    double SENTINEL_SLOW_RATIO_THRESHOLD = 1.0d;
+
+    /**
+     * Sentinel degrade rule default stat intervals.
+     */
+    int SENTINEL_STAT_INTERVALS = 1;
+
+    /**
+     * default warmup.
+     */
+    int DEFAULT_WARMUP = 10 * 60 * 1000;
+
+    /**
+     * default register type.
+     */
+    String DEFAULT_REGISTER_TYPE = &quot;http&quot;;
+
+    /**
+     * is checked.
+     */
+    String IS_CHECKED = &quot;checked&quot;;
+
+    /**
+     * default checked value.
+     */
+    String DEFAULT_CHECK_VALUE = &quot;false&quot;;
+
+    /**
+     * zombie check times.
+     */
+    String ZOMBIE_CHECK_TIMES = &quot;zombieCheckTimes&quot;;
+
+    /**
+     * default zombie check times value.
+     */
+    String ZOMBIE_CHECK_TIMES_VALUE = &quot;5&quot;;
+
+    /**
+     * scheduled time.
+     */
+    String SCHEDULED_TIME = &quot;scheduledTime&quot;;
+
+    /**
+     * default scheduled time value.
+     */
+    String SCHEDULED_TIME_VALUE = &quot;10&quot;;
+
+    /**
+     * default headerMaxSize value.
+     */
+    int HEADER_MAX_SIZE = 10240;
+
+    /**
+     * default requestMaxSize value.
+     */
+    int REQUEST_MAX_SIZE = 102400;
+
+    /**
+     * String default.
+     */
+    String DEFAULT = &quot;DEFAULT&quot;;
+
+    /**
+     * context path name prefix.
+     */
+    String CONTEXT_PATH_NAME_PREFIX = &quot;/context-path&quot;;
+
+    /**
+     * dubbo gray release selector id.
+     */
+    String DUBBO_SELECTOR_ID = &quot;dubboSelectorId&quot;;
+
+    /**
+     * dubbo gray release rule id.
+     */
+    String DUBBO_RULE_ID = &quot;dubboRuleId&quot;;
+
+    /**
+     * dubbo remote address.
+     */
+    String DUBBO_REMOTE_ADDRESS = &quot;dubboRemoteAddress&quot;;
+
+    /**
+     * dubbo group.
+     */
+    String GROUP = &quot;group&quot;;
+
+    /**
+     * redis script path.
+     */
+    String SCRIPT_PATH = &quot;/META-INF/scripts/&quot;;
+
+    /**
+     * cache max count.
+     */
+    int CACHE_MAX_COUNT = 1000;
+
+    /**
+     * the empty json.
+     */
+    String EMPTY_JSON = &quot;{}&quot;;
+
+    /**
+     * http accept encoding gzip.
+     */
+    String HTTP_ACCEPT_ENCODING_GZIP = &quot;gzip&quot;;
+
+    /**
+     * general context.
+     */
+    String GENERAL_CONTEXT = &quot;generalContext&quot;;
+
+    /**
+     * addGeneralContextType.
+     */
+    String ADD_GENERAL_CONTEXT_TYPE = &quot;addGeneralContext&quot;;
+
+    /**
+     * transmitHeaderToGeneralContext.
+     */
+    String TRANSMIT_HEADER_TO_GENERAL_CONTEXT_TYPE = &quot;transmitHeaderToGeneralContext&quot;;
+
+    /**
+     * When register by http, the meta register path.
+     */
+    String META_PATH = &quot;/shenyu-client/register-metadata&quot;;
+
+    /**
+     * When register by http, the meta type.
+     */
+    String META_TYPE = &quot;metadata&quot;;
+
+    /**
+     * When register by http, the uri path.
+     */
+    String URI_PATH = &quot;/shenyu-client/register-uri&quot;;
+
+    /**
+     * When register by http, the login path.
+     */
+    String LOGIN_PATH = &quot;/platform/login&quot;;
+
+    /**
+     * When register by http, admin username.
+     */
+    String USER_NAME = &quot;username&quot;;
+
+    /**
+     * Login name.
+     */
+    String LOGIN_NAME = &quot;userName&quot;;
+
+    /**
+     * When register by http, admin password.
+     */
+    String PASS_WORD = &quot;password&quot;;
+
+    /**
+     * X-Access-Token.
+     */
+    String X_ACCESS_TOKEN = &quot;X-Access-Token&quot;;
+
+    /**
+     * The admin return result code.
+     */
+    String ADMIN_RESULT_CODE = &quot;code&quot;;
+
+    /**
+     * The admin return result data.
+     */
+    String ADMIN_RESULT_DATA = &quot;data&quot;;
+
+    /**
+     * The admin return result token.
+     */
+    String ADMIN_RESULT_TOKEN = &quot;token&quot;;
+
+    /**
+     * The admin userName.
+     */
+    String ADMIN_RESULT_USERNAME = &quot;userName&quot;;
+
+    /**
+     * The admin password.
+     */
+    String ADMIN_RESULT_PASSWORD = &quot;password&quot;;
+
+    /**
+     * shenyu admin path configs fetch.
+     */
+    String SHENYU_ADMIN_PATH_CONFIGS_FETCH = &quot;/configs/fetch&quot;;
+
+    /**
+     * shenyu admin path configs listener.
+     */
+    String SHENYU_ADMIN_PATH_CONFIGS_LISTENER = &quot;/configs/listener&quot;;
+
+    /**
+     * String q.
+     */
+    default void findConstants() {
+<span class="nc" id="L569">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

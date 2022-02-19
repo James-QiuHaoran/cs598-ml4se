@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CommonUpstream.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.dto.convert.selector</a> &gt; <span class="el_source">CommonUpstream.java</span></div><h1>CommonUpstream.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.dto.convert.selector;
+
+import java.util.Objects;
+
+/**
+ * this is common upstream.
+ */
+public class CommonUpstream {
+    
+    /**
+     * this is http protocol.
+     */
+    private String protocol;
+
+    /**
+     * host.
+     */
+    private String upstreamHost;
+
+    /**
+     * url.
+     */
+    private String upstreamUrl;
+    
+    /**
+     * false close/ true open.
+     */
+<span class="nc" id="L45">    private boolean status = true;</span>
+    
+    /**
+     * startup time.
+     */
+    private long timestamp;
+    
+    /**
+     * Instantiates a new Common upstream.
+     */
+<span class="nc" id="L55">    public CommonUpstream() {</span>
+        
+<span class="nc" id="L57">    }</span>
+    
+    /**
+     * Instantiates a new Common upstream.
+     *
+     * @param protocol the protocol
+     * @param upstreamHost the upstream host
+     * @param upstreamUrl the upstream url
+     */
+<span class="nc" id="L66">    public CommonUpstream(final String protocol, final String upstreamHost, final String upstreamUrl) {</span>
+<span class="nc" id="L67">        this.protocol = protocol;</span>
+<span class="nc" id="L68">        this.upstreamHost = upstreamHost;</span>
+<span class="nc" id="L69">        this.upstreamUrl = upstreamUrl;</span>
+<span class="nc" id="L70">    }</span>
+    
+    /**
+     * get upstreamHost.
+     *
+     * @return upstreamHost upstream host
+     */
+    public String getUpstreamHost() {
+<span class="nc" id="L78">        return upstreamHost;</span>
+    }
+    
+    /**
+     * set upstreamHost.
+     *
+     * @param upstreamHost upstreamHost
+     */
+    public void setUpstreamHost(final String upstreamHost) {
+<span class="nc" id="L87">        this.upstreamHost = upstreamHost;</span>
+<span class="nc" id="L88">    }</span>
+    
+    /**
+     * get protocol.
+     *
+     * @return protocol protocol
+     */
+    public String getProtocol() {
+<span class="nc" id="L96">        return protocol;</span>
+    }
+    
+    /**
+     * set protocol.
+     *
+     * @param protocol protocol
+     */
+    public void setProtocol(final String protocol) {
+<span class="nc" id="L105">        this.protocol = protocol;</span>
+<span class="nc" id="L106">    }</span>
+    
+    /**
+     * get upstreamUrl.
+     *
+     * @return upstreamUrl upstream url
+     */
+    public String getUpstreamUrl() {
+<span class="nc" id="L114">        return upstreamUrl;</span>
+    }
+    
+    /**
+     * set upstreamUrl.
+     *
+     * @param upstreamUrl upstreamUrl
+     */
+    public void setUpstreamUrl(final String upstreamUrl) {
+<span class="nc" id="L123">        this.upstreamUrl = upstreamUrl;</span>
+<span class="nc" id="L124">    }</span>
+    
+    /**
+     * get status.
+     *
+     * @return status boolean
+     */
+    public boolean isStatus() {
+<span class="nc" id="L132">        return status;</span>
+    }
+    
+    /**
+     * set status.
+     *
+     * @param status status
+     */
+    public void setStatus(final boolean status) {
+<span class="nc" id="L141">        this.status = status;</span>
+<span class="nc" id="L142">    }</span>
+    
+    /**
+     * get timestamp.
+     *
+     * @return timestamp timestamp
+     */
+    public long getTimestamp() {
+<span class="nc" id="L150">        return timestamp;</span>
+    }
+    
+    /**
+     * set timestamp.
+     *
+     * @param timestamp timestamp
+     */
+    public void setTimestamp(final long timestamp) {
+<span class="nc" id="L159">        this.timestamp = timestamp;</span>
+<span class="nc" id="L160">    }</span>
+    
+    /**
+     * Default status boolean.
+     *
+     * @return the boolean
+     */
+    protected static boolean defaultStatus() {
+<span class="nc" id="L168">        return true;</span>
+    }
+
+    @Override
+    public boolean equals(final Object o) {
+<span class="nc bnc" id="L173" title="All 2 branches missed.">        if (this == o) {</span>
+<span class="nc" id="L174">            return true;</span>
+        }
+<span class="nc bnc" id="L176" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L177">            return false;</span>
+        }
+<span class="nc" id="L179">        CommonUpstream that = (CommonUpstream) o;</span>
+<span class="nc bnc" id="L180" title="All 6 branches missed.">        return Objects.equals(upstreamHost, that.upstreamHost) &amp;&amp; Objects.equals(protocol, that.protocol) &amp;&amp; Objects.equals(upstreamUrl, that.upstreamUrl);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L185">        return Objects.hash(upstreamHost, protocol, upstreamUrl);</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L190">        return &quot;DivideUpstream{&quot;</span>
+                + &quot;upstreamHost='&quot;
+                + upstreamHost
+                + '\''
+                + &quot;, protocol='&quot;
+                + protocol
+                + '\''
+                + &quot;, upstreamUrl='&quot;
+                + upstreamUrl
+                + '}';
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

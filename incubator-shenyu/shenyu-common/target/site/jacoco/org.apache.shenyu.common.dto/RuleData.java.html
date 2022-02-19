@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RuleData.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.dto</a> &gt; <span class="el_source">RuleData.java</span></div><h1>RuleData.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.dto;
+
+import java.util.List;
+import java.util.Objects;
+
+/**
+ * RuleDTO.
+ *
+ * @since 2.0.0
+ */
+public class RuleData {
+
+    private String id;
+
+    private String name;
+
+    private String pluginName;
+
+    private String selectorId;
+
+    /**
+     * match way（0 and  1 or).
+     */
+    private Integer matchMode;
+
+    private Integer sort;
+
+    private Boolean enabled;
+
+    private Boolean loged;
+
+    /**
+     * handle message（different plugin have different handle to mark ,json style）.
+     */
+    private String handle;
+
+    private List&lt;ConditionData&gt; conditionDataList;
+
+    /**
+     * no args constructor.
+     */
+<span class="nc" id="L59">    public RuleData() {</span>
+<span class="nc" id="L60">    }</span>
+
+    /**
+     * builder constructor.
+     *
+     * @param builder builder
+     */
+<span class="nc" id="L67">    private RuleData(final Builder builder) {</span>
+<span class="nc" id="L68">        this.id = builder.id;</span>
+<span class="nc" id="L69">        this.name = builder.name;</span>
+<span class="nc" id="L70">        this.pluginName = builder.pluginName;</span>
+<span class="nc" id="L71">        this.selectorId = builder.selectorId;</span>
+<span class="nc" id="L72">        this.matchMode = builder.matchMode;</span>
+<span class="nc" id="L73">        this.sort = builder.sort;</span>
+<span class="nc" id="L74">        this.enabled = builder.enabled;</span>
+<span class="nc" id="L75">        this.loged = builder.loged;</span>
+<span class="nc" id="L76">        this.handle = builder.handle;</span>
+<span class="nc" id="L77">        this.conditionDataList = builder.conditionDataList;</span>
+<span class="nc" id="L78">    }</span>
+
+    /**
+     * class builder.
+     *
+     * @return Builder
+     */
+    public static Builder builder() {
+<span class="nc" id="L86">        return new Builder();</span>
+    }
+
+    /**
+     * get id.
+     *
+     * @return id
+     */
+    public String getId() {
+<span class="nc" id="L95">        return id;</span>
+    }
+
+    /**
+     * set id.
+     *
+     * @param id id
+     * @return this
+     */
+    public RuleData setId(final String id) {
+<span class="nc" id="L105">        this.id = id;</span>
+<span class="nc" id="L106">        return this;</span>
+    }
+
+    /**
+     * get name.
+     *
+     * @return name
+     */
+    public String getName() {
+<span class="nc" id="L115">        return name;</span>
+    }
+
+    /**
+     * set name.
+     *
+     * @param name name
+     * @return this
+     */
+    public RuleData setName(final String name) {
+<span class="nc" id="L125">        this.name = name;</span>
+<span class="nc" id="L126">        return this;</span>
+    }
+
+    /**
+     * get pluginName.
+     *
+     * @return pluginName
+     */
+    public String getPluginName() {
+<span class="nc" id="L135">        return pluginName;</span>
+    }
+
+    /**
+     * set pluginName.
+     *
+     * @param pluginName pluginName
+     * @return this
+     */
+    public RuleData setPluginName(final String pluginName) {
+<span class="nc" id="L145">        this.pluginName = pluginName;</span>
+<span class="nc" id="L146">        return this;</span>
+    }
+
+    /**
+     * get selectorId.
+     *
+     * @return selectorId
+     */
+    public String getSelectorId() {
+<span class="nc" id="L155">        return selectorId;</span>
+    }
+
+    /**
+     * set selectorId.
+     *
+     * @param selectorId selectorId
+     * @return this
+     */
+    public RuleData setSelectorId(final String selectorId) {
+<span class="nc" id="L165">        this.selectorId = selectorId;</span>
+<span class="nc" id="L166">        return this;</span>
+    }
+
+    /**
+     * get matchMode.
+     *
+     * @return matchMode
+     */
+    public Integer getMatchMode() {
+<span class="nc" id="L175">        return matchMode;</span>
+    }
+
+    /**
+     * set matchMode.
+     *
+     * @param matchMode matchMode
+     * @return this
+     */
+    public RuleData setMatchMode(final Integer matchMode) {
+<span class="nc" id="L185">        this.matchMode = matchMode;</span>
+<span class="nc" id="L186">        return this;</span>
+    }
+
+    /**
+     * get sort.
+     *
+     * @return sort
+     */
+    public Integer getSort() {
+<span class="nc" id="L195">        return sort;</span>
+    }
+
+    /**
+     * set sort.
+     *
+     * @param sort sort
+     * @return this
+     */
+    public RuleData setSort(final Integer sort) {
+<span class="nc" id="L205">        this.sort = sort;</span>
+<span class="nc" id="L206">        return this;</span>
+    }
+
+    /**
+     * get enabled.
+     *
+     * @return enabled
+     */
+    public Boolean getEnabled() {
+<span class="nc" id="L215">        return enabled;</span>
+    }
+
+    /**
+     * set enabled.
+     *
+     * @param enabled enabled
+     * @return this
+     */
+    public RuleData setEnabled(final Boolean enabled) {
+<span class="nc" id="L225">        this.enabled = enabled;</span>
+<span class="nc" id="L226">        return this;</span>
+    }
+
+    /**
+     * get loged.
+     *
+     * @return loged
+     */
+    public Boolean getLoged() {
+<span class="nc" id="L235">        return loged;</span>
+    }
+
+    /**
+     * set loged.
+     *
+     * @param loged loged
+     * @return this
+     */
+    public RuleData setLoged(final Boolean loged) {
+<span class="nc" id="L245">        this.loged = loged;</span>
+<span class="nc" id="L246">        return this;</span>
+    }
+
+    /**
+     * get handle.
+     *
+     * @return handle
+     */
+    public String getHandle() {
+<span class="nc" id="L255">        return handle;</span>
+    }
+
+    /**
+     * set handle.
+     *
+     * @param handle handle
+     * @return this
+     */
+    public RuleData setHandle(final String handle) {
+<span class="nc" id="L265">        this.handle = handle;</span>
+<span class="nc" id="L266">        return this;</span>
+    }
+
+    /**
+     * get conditionDataList.
+     *
+     * @return conditionDataList
+     */
+    public List&lt;ConditionData&gt; getConditionDataList() {
+<span class="nc" id="L275">        return conditionDataList;</span>
+    }
+
+    /**
+     * set conditionDataList.
+     *
+     * @param conditionDataList conditionDataList
+     * @return this
+     */
+    public RuleData setConditionDataList(final List&lt;ConditionData&gt; conditionDataList) {
+<span class="nc" id="L285">        this.conditionDataList = conditionDataList;</span>
+<span class="nc" id="L286">        return this;</span>
+    }
+
+    @Override
+    public boolean equals(final Object o) {
+<span class="nc bnc" id="L291" title="All 2 branches missed.">        if (this == o) {</span>
+<span class="nc" id="L292">            return true;</span>
+        }
+<span class="nc bnc" id="L294" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L295">            return false;</span>
+        }
+<span class="nc" id="L297">        RuleData ruleData = (RuleData) o;</span>
+<span class="nc bnc" id="L298" title="All 6 branches missed.">        return Objects.equals(id, ruleData.id) &amp;&amp; Objects.equals(name, ruleData.name) &amp;&amp; Objects.equals(pluginName, ruleData.pluginName)</span>
+<span class="nc bnc" id="L299" title="All 4 branches missed.">                &amp;&amp; Objects.equals(selectorId, ruleData.selectorId) &amp;&amp; Objects.equals(matchMode, ruleData.matchMode)</span>
+<span class="nc bnc" id="L300" title="All 6 branches missed.">                &amp;&amp; Objects.equals(sort, ruleData.sort) &amp;&amp; Objects.equals(enabled, ruleData.enabled) &amp;&amp; Objects.equals(loged, ruleData.loged)</span>
+<span class="nc bnc" id="L301" title="All 4 branches missed.">                &amp;&amp; Objects.equals(handle, ruleData.handle) &amp;&amp; Objects.equals(conditionDataList, ruleData.conditionDataList);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L306">        return Objects.hash(id, name, pluginName, selectorId, matchMode, sort, enabled, loged, handle, conditionDataList);</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L311">        return &quot;RuleData{&quot;</span>
+                + &quot;id='&quot;
+                + id
+                + '\''
+                + &quot;, name='&quot;
+                + name
+                + '\''
+                + &quot;, pluginName='&quot;
+                + pluginName
+                + '\''
+                + &quot;, selectorId='&quot;
+                + selectorId
+                + '\''
+                + &quot;, matchMode=&quot;
+                + matchMode
+                + &quot;, sort=&quot;
+                + sort
+                + &quot;, enabled=&quot;
+                + enabled
+                + &quot;, loged=&quot;
+                + loged
+                + &quot;, handle='&quot;
+                + handle
+                + '\''
+                + &quot;, conditionDataList=&quot;
+                + conditionDataList
+                + '}';
+    }
+
+    /**
+     * class builder.
+     */
+    public static final class Builder {
+
+        private String id;
+
+        private String name;
+
+        private String pluginName;
+
+        private String selectorId;
+
+        private Integer matchMode;
+
+        private Integer sort;
+
+        private Boolean enabled;
+
+        private Boolean loged;
+
+        private String handle;
+
+        private List&lt;ConditionData&gt; conditionDataList;
+
+        /**
+         * no args constructor.
+         */
+        private Builder() {
+        }
+
+        /**
+         * build new Object.
+         *
+         * @return RuleData
+         */
+        public RuleData build() {
+<span class="nc" id="L377">            return new RuleData(this);</span>
+        }
+
+        /**
+         * build id.
+         *
+         * @param id id
+         * @return this
+         */
+        public Builder id(final String id) {
+<span class="nc" id="L387">            this.id = id;</span>
+<span class="nc" id="L388">            return this;</span>
+        }
+
+        /**
+         * build name.
+         *
+         * @param name name
+         * @return this
+         */
+        public Builder name(final String name) {
+<span class="nc" id="L398">            this.name = name;</span>
+<span class="nc" id="L399">            return this;</span>
+        }
+
+        /**
+         * build pluginName.
+         *
+         * @param pluginName pluginName
+         * @return this
+         */
+        public Builder pluginName(final String pluginName) {
+<span class="nc" id="L409">            this.pluginName = pluginName;</span>
+<span class="nc" id="L410">            return this;</span>
+        }
+
+        /**
+         * build selectorId.
+         *
+         * @param selectorId selectorId
+         * @return this
+         */
+        public Builder selectorId(final String selectorId) {
+<span class="nc" id="L420">            this.selectorId = selectorId;</span>
+<span class="nc" id="L421">            return this;</span>
+        }
+
+        /**
+         * build matchMode.
+         *
+         * @param matchMode matchMode
+         * @return this
+         */
+        public Builder matchMode(final Integer matchMode) {
+<span class="nc" id="L431">            this.matchMode = matchMode;</span>
+<span class="nc" id="L432">            return this;</span>
+        }
+
+        /**
+         * build sort.
+         *
+         * @param sort sort
+         * @return this
+         */
+        public Builder sort(final Integer sort) {
+<span class="nc" id="L442">            this.sort = sort;</span>
+<span class="nc" id="L443">            return this;</span>
+        }
+
+        /**
+         * build enabled.
+         *
+         * @param enabled enabled
+         * @return this
+         */
+        public Builder enabled(final Boolean enabled) {
+<span class="nc" id="L453">            this.enabled = enabled;</span>
+<span class="nc" id="L454">            return this;</span>
+        }
+
+        /**
+         * build loged.
+         *
+         * @param loged loged
+         * @return this
+         */
+        public Builder loged(final Boolean loged) {
+<span class="nc" id="L464">            this.loged = loged;</span>
+<span class="nc" id="L465">            return this;</span>
+        }
+
+        /**
+         * build handle.
+         *
+         * @param handle handle
+         * @return this
+         */
+        public Builder handle(final String handle) {
+<span class="nc" id="L475">            this.handle = handle;</span>
+<span class="nc" id="L476">            return this;</span>
+        }
+
+        /**
+         * build conditionDataList.
+         *
+         * @param conditionDataList conditionDataList
+         * @return this
+         */
+        public Builder conditionDataList(final List&lt;ConditionData&gt; conditionDataList) {
+<span class="nc" id="L486">            this.conditionDataList = conditionDataList;</span>
+<span class="nc" id="L487">            return this;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

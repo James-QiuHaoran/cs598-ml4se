@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UUIDUtils.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.utils</a> &gt; <span class="el_source">UUIDUtils.java</span></div><h1>UUIDUtils.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.utils;
+
+import java.util.Random;
+
+/**
+ * UUIDUtils.
+ */
+public final class UUIDUtils {
+
+<span class="fc" id="L27">    private static final Random RANDOM = new Random();</span>
+
+    private static final long WORKER_ID_BITS = 5L;
+
+    private static final long DATACENTERIDBITS = 5L;
+
+    private static final long MAX_WORKER_ID = ~(-1L &lt;&lt; WORKER_ID_BITS);
+
+    private static final long MAX_DATACENTER_ID = ~(-1L &lt;&lt; DATACENTERIDBITS);
+
+    private static final long SEQUENCE_BITS = 12L;
+
+    private static final long WORKER_ID_SHIFT = SEQUENCE_BITS;
+
+    private static final long DATACENTER_ID_SHIFT = SEQUENCE_BITS + WORKER_ID_BITS;
+
+    private static final long TIMESTAMP_LEFT_SHIFT = SEQUENCE_BITS + WORKER_ID_BITS + DATACENTERIDBITS;
+
+    private static final long SEQUENCE_MASK = ~(-1L &lt;&lt; SEQUENCE_BITS);
+
+<span class="fc" id="L47">    private static final UUIDUtils ID_WORKER_UTILS = new UUIDUtils();</span>
+
+    private final long workerId;
+
+    private final long datacenterId;
+
+    private final long idepoch;
+
+<span class="fc" id="L55">    private long sequence = '0';</span>
+
+<span class="fc" id="L57">    private long lastTimestamp = -1L;</span>
+
+    private UUIDUtils() {
+<span class="fc" id="L60">        this(RANDOM.nextInt((int) MAX_WORKER_ID), RANDOM.nextInt((int) MAX_DATACENTER_ID), 1288834974657L);</span>
+<span class="fc" id="L61">    }</span>
+
+<span class="fc" id="L63">    private UUIDUtils(final long workerId, final long datacenterId, final long idepoch) {</span>
+<span class="pc bpc" id="L64" title="1 of 4 branches missed.">        if (workerId &gt; MAX_WORKER_ID || workerId &lt; 0) {</span>
+<span class="fc" id="L65">            throw new IllegalArgumentException(String.format(&quot;worker Id can't be greater than %d or less than 0&quot;, MAX_WORKER_ID));</span>
+        }
+<span class="pc bpc" id="L67" title="1 of 4 branches missed.">        if (datacenterId &gt; MAX_DATACENTER_ID || datacenterId &lt; 0) {</span>
+<span class="fc" id="L68">            throw new IllegalArgumentException(String.format(&quot;datacenter Id can't be greater than %d or less than 0&quot;, MAX_DATACENTER_ID));</span>
+        }
+<span class="fc" id="L70">        this.workerId = workerId;</span>
+<span class="fc" id="L71">        this.datacenterId = datacenterId;</span>
+<span class="fc" id="L72">        this.idepoch = idepoch;</span>
+<span class="fc" id="L73">    }</span>
+
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
+    public static UUIDUtils getInstance() {
+<span class="fc" id="L81">        return ID_WORKER_UTILS;</span>
+    }
+
+    private synchronized long nextId() {
+<span class="fc" id="L85">        long timestamp = timeGen();</span>
+<span class="pc bpc" id="L86" title="1 of 2 branches missed.">        if (timestamp &lt; lastTimestamp) {</span>
+<span class="nc" id="L87">            throw new RuntimeException(String.format(&quot;Clock moved backwards.  Refusing to generate id for %d milliseconds&quot;, lastTimestamp - timestamp));</span>
+        }
+<span class="fc bfc" id="L89" title="All 2 branches covered.">        if (lastTimestamp == timestamp) {</span>
+<span class="fc" id="L90">            sequence = (sequence + 1) &amp; SEQUENCE_MASK;</span>
+<span class="pc bpc" id="L91" title="1 of 2 branches missed.">            if (sequence == 0) {</span>
+<span class="nc" id="L92">                timestamp = tilNextMillis(lastTimestamp);</span>
+            }
+        } else {
+<span class="fc" id="L95">            sequence = 0L;</span>
+        }
+
+<span class="fc" id="L98">        lastTimestamp = timestamp;</span>
+
+<span class="fc" id="L100">        return ((timestamp - idepoch) &lt;&lt; TIMESTAMP_LEFT_SHIFT)</span>
+                | (datacenterId &lt;&lt; DATACENTER_ID_SHIFT)
+                | (workerId &lt;&lt; WORKER_ID_SHIFT) | sequence;
+    }
+
+    private long tilNextMillis(final long lastTimestamp) {
+<span class="fc" id="L106">        long timestamp = timeGen();</span>
+<span class="pc bpc" id="L107" title="1 of 2 branches missed.">        while (timestamp &lt;= lastTimestamp) {</span>
+<span class="nc" id="L108">            timestamp = timeGen();</span>
+        }
+<span class="fc" id="L110">        return timestamp;</span>
+    }
+
+    private long timeGen() {
+<span class="fc" id="L114">        return System.currentTimeMillis();</span>
+    }
+
+    /**
+     * generate short uuid.
+     *
+     * @return short uuid.
+     */
+    public String generateShortUuid() {
+<span class="fc" id="L123">        return String.valueOf(ID_WORKER_UTILS.nextId());</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RateLimitEnum.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.enums</a> &gt; <span class="el_source">RateLimitEnum.java</span></div><h1>RateLimitEnum.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.enums;
+
+/**
+ * rate limit.
+ */
+<span class="fc" id="L23">public enum RateLimitEnum {</span>
+
+<span class="fc" id="L25">    SLIDING_WINDOW(&quot;sliding_window_request_rate_limiter&quot;, &quot;sliding_window_request_rate_limiter.lua&quot;),</span>
+
+<span class="fc" id="L27">    LEAKY_BUCKET(&quot;request_leaky_rate_limiter&quot;, &quot;request_leaky_rate_limiter.lua&quot;),</span>
+
+<span class="fc" id="L29">    CONCURRENT(&quot;concurrent_request_rate_limiter&quot;, &quot;concurrent_request_rate_limiter.lua&quot;),</span>
+
+<span class="fc" id="L31">    TOKEN_BUCKET(&quot;request_rate_limiter&quot;, &quot;request_rate_limiter.lua&quot;);</span>
+
+    private final String keyName;
+
+    private final String scriptName;
+
+<span class="fc" id="L37">    RateLimitEnum(final String keyName, final String scriptName) {</span>
+<span class="fc" id="L38">        this.keyName = keyName;</span>
+<span class="fc" id="L39">        this.scriptName = scriptName;</span>
+<span class="fc" id="L40">    }</span>
+
+    /**
+     * getKeyName.
+     *
+     * @return keyName
+     */
+    public String getKeyName() {
+<span class="fc" id="L48">        return this.keyName;</span>
+    }
+
+    /**
+     * getScriptName.
+     *
+     * @return scriptName
+     */
+    public String getScriptName() {
+<span class="fc" id="L57">        return this.scriptName;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

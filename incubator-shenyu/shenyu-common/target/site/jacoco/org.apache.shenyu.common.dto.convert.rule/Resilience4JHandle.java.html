@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Resilience4JHandle.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.dto.convert.rule</a> &gt; <span class="el_source">Resilience4JHandle.java</span></div><h1>Resilience4JHandle.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.dto.convert.rule;
+
+import org.apache.shenyu.common.constant.Constants;
+
+import java.util.Objects;
+
+/**
+ * this is Resilience4J plugin handle.
+ */
+<span class="nc" id="L27">public class Resilience4JHandle {</span>
+
+    /**
+     * ratelimiter timeoutDurationRate.
+     */
+<span class="nc" id="L32">    private int timeoutDurationRate = Constants.TIMEOUT_DURATION_RATE;</span>
+
+    /**
+     * ratelimiter limitRefreshPeriod.
+     */
+<span class="nc" id="L37">    private int limitRefreshPeriod = Constants.LIMIT_REFRESH_PERIOD;</span>
+
+    /**
+     * ratelimiter limitForPeriod.
+     */
+<span class="nc" id="L42">    private int limitForPeriod = Constants.LIMIT_FOR_PERIOD;</span>
+
+    /**
+     * circuitBreaker circuitEnable.
+     */
+<span class="nc" id="L47">    private int circuitEnable = Constants.CIRCUIT_ENABLE;</span>
+
+    /**
+     * circuitBreaker timeoutDuration.
+     */
+<span class="nc" id="L52">    private long timeoutDuration = Constants.TIMEOUT_DURATION;</span>
+
+    /**
+     * circuitBreaker timeoutDuration.
+     */
+    private String fallbackUri;
+
+    /**
+     * circuitBreaker slidingWindowSize.
+     */
+<span class="nc" id="L62">    private int slidingWindowSize = Constants.SLIDING_WINDOW_SIZE;</span>
+
+    /**
+     * circuitBreaker slidingWindowType.
+     */
+<span class="nc" id="L67">    private int slidingWindowType = Constants.SLIDING_WINDOW_TYPE;</span>
+
+    /**
+     * circuitBreaker minimumNumberOfCalls.
+     */
+<span class="nc" id="L72">    private int minimumNumberOfCalls = Constants.MINIMUM_NUMBER_OF_CALLS;</span>
+
+    /**
+     * circuitBreaker waitIntervalFunctionInOpenState.
+     */
+<span class="nc" id="L77">    private int waitIntervalFunctionInOpenState = Constants.WAIT_INTERVAL_FUNCTION_IN_OPEN_STATE;</span>
+
+    /**
+     * circuitBreaker waitIntervalFunctionInOpenState.
+     */
+<span class="nc" id="L82">    private int permittedNumberOfCallsInHalfOpenState = Constants.PERMITTED_NUMBER_OF_CALLS_IN_HALF_OPEN_STATE;</span>
+
+    /**
+     * circuitBreaker failureRateThreshold.
+     */
+<span class="nc" id="L87">    private float failureRateThreshold = Constants.FAILURE_RATE_THRESHOLD;</span>
+
+    /**
+     * circuitBreaker automaticTransitionFromOpenToHalfOpenEnabled.
+     */
+<span class="nc" id="L92">    private Boolean automaticTransitionFromOpenToHalfOpenEnabled = Constants.AUTOMATIC_TRANSITION_FROM_OPEN_TO_HALF_OPEN_ENABLED;</span>
+
+    /**
+     * get timeoutDurationRate.
+     *
+     * @return timeoutDurationRate
+     */
+    public int getTimeoutDurationRate() {
+<span class="nc" id="L100">        return timeoutDurationRate;</span>
+    }
+
+    /**
+     * set timeoutDurationRate.
+     *
+     * @param timeoutDurationRate timeoutDurationRate
+     */
+    public void setTimeoutDurationRate(final int timeoutDurationRate) {
+<span class="nc" id="L109">        this.timeoutDurationRate = timeoutDurationRate;</span>
+<span class="nc" id="L110">    }</span>
+
+    /**
+     * get limitRefreshPeriod.
+     *
+     * @return limitRefreshPeriod
+     */
+    public int getLimitRefreshPeriod() {
+<span class="nc" id="L118">        return limitRefreshPeriod;</span>
+    }
+
+    /**
+     * set limitRefreshPeriod.
+     *
+     * @param limitRefreshPeriod limitRefreshPeriod
+     */
+    public void setLimitRefreshPeriod(final int limitRefreshPeriod) {
+<span class="nc" id="L127">        this.limitRefreshPeriod = limitRefreshPeriod;</span>
+<span class="nc" id="L128">    }</span>
+
+    /**
+     * get limitForPeriod.
+     *
+     * @return limitForPeriod
+     */
+    public int getLimitForPeriod() {
+<span class="nc" id="L136">        return limitForPeriod;</span>
+    }
+
+    /**
+     * set limitForPeriod.
+     *
+     * @param limitForPeriod limitForPeriod
+     */
+    public void setLimitForPeriod(final int limitForPeriod) {
+<span class="nc" id="L145">        this.limitForPeriod = limitForPeriod;</span>
+<span class="nc" id="L146">    }</span>
+
+    /**
+     * get circuitEnable.
+     *
+     * @return circuitEnable
+     */
+    public int getCircuitEnable() {
+<span class="nc" id="L154">        return circuitEnable;</span>
+    }
+
+    /**
+     * set circuitEnable.
+     *
+     * @param circuitEnable circuitEnable
+     */
+    public void setCircuitEnable(final int circuitEnable) {
+<span class="nc" id="L163">        this.circuitEnable = circuitEnable;</span>
+<span class="nc" id="L164">    }</span>
+
+    /**
+     * get timeoutDuration.
+     *
+     * @return timeoutDuration
+     */
+    public long getTimeoutDuration() {
+<span class="nc" id="L172">        return timeoutDuration;</span>
+    }
+
+    /**
+     * set timeoutDuration.
+     *
+     * @param timeoutDuration timeoutDuration
+     */
+    public void setTimeoutDuration(final long timeoutDuration) {
+<span class="nc" id="L181">        this.timeoutDuration = timeoutDuration;</span>
+<span class="nc" id="L182">    }</span>
+
+    /**
+     * get fallbackUri.
+     *
+     * @return fallbackUri
+     */
+    public String getFallbackUri() {
+<span class="nc" id="L190">        return fallbackUri;</span>
+    }
+
+    /**
+     * set fallbackUri.
+     *
+     * @param fallbackUri fallbackUri
+     */
+    public void setFallbackUri(final String fallbackUri) {
+<span class="nc" id="L199">        this.fallbackUri = fallbackUri;</span>
+<span class="nc" id="L200">    }</span>
+
+    /**
+     * get slidingWindowSize.
+     *
+     * @return slidingWindowSize
+     */
+    public int getSlidingWindowSize() {
+<span class="nc" id="L208">        return slidingWindowSize;</span>
+    }
+
+    /**
+     * set slidingWindowSize.
+     *
+     * @param slidingWindowSize slidingWindowSize
+     */
+    public void setSlidingWindowSize(final int slidingWindowSize) {
+<span class="nc" id="L217">        this.slidingWindowSize = slidingWindowSize;</span>
+<span class="nc" id="L218">    }</span>
+
+    /**
+     * get slidingWindowType.
+     *
+     * @return slidingWindowType
+     */
+    public int getSlidingWindowType() {
+<span class="nc" id="L226">        return slidingWindowType;</span>
+    }
+
+    /**
+     * set slidingWindowType.
+     *
+     * @param slidingWindowType slidingWindowType
+     */
+    public void setSlidingWindowType(final int slidingWindowType) {
+<span class="nc" id="L235">        this.slidingWindowType = slidingWindowType;</span>
+<span class="nc" id="L236">    }</span>
+
+    /**
+     * get minimumNumberOfCalls.
+     *
+     * @return minimumNumberOfCalls
+     */
+    public int getMinimumNumberOfCalls() {
+<span class="nc" id="L244">        return minimumNumberOfCalls;</span>
+    }
+
+    /**
+     * set minimumNumberOfCalls.
+     *
+     * @param minimumNumberOfCalls minimumNumberOfCalls
+     */
+    public void setMinimumNumberOfCalls(final int minimumNumberOfCalls) {
+<span class="nc" id="L253">        this.minimumNumberOfCalls = minimumNumberOfCalls;</span>
+<span class="nc" id="L254">    }</span>
+
+    /**
+     * get waitIntervalFunctionInOpenState.
+     *
+     * @return waitIntervalFunctionInOpenState
+     */
+    public int getWaitIntervalFunctionInOpenState() {
+<span class="nc" id="L262">        return waitIntervalFunctionInOpenState;</span>
+    }
+
+    /**
+     * set waitIntervalFunctionInOpenState.
+     *
+     * @param waitIntervalFunctionInOpenState waitIntervalFunctionInOpenState
+     */
+    public void setWaitIntervalFunctionInOpenState(final int waitIntervalFunctionInOpenState) {
+<span class="nc" id="L271">        this.waitIntervalFunctionInOpenState = waitIntervalFunctionInOpenState;</span>
+<span class="nc" id="L272">    }</span>
+
+    /**
+     * get permittedNumberOfCallsInHalfOpenState.
+     *
+     * @return permittedNumberOfCallsInHalfOpenState
+     */
+    public int getPermittedNumberOfCallsInHalfOpenState() {
+<span class="nc" id="L280">        return permittedNumberOfCallsInHalfOpenState;</span>
+    }
+
+    /**
+     * set permittedNumberOfCallsInHalfOpenState.
+     *
+     * @param permittedNumberOfCallsInHalfOpenState permittedNumberOfCallsInHalfOpenState
+     */
+    public void setPermittedNumberOfCallsInHalfOpenState(final int permittedNumberOfCallsInHalfOpenState) {
+<span class="nc" id="L289">        this.permittedNumberOfCallsInHalfOpenState = permittedNumberOfCallsInHalfOpenState;</span>
+<span class="nc" id="L290">    }</span>
+
+    /**
+     * get failureRateThreshold.
+     *
+     * @return failureRateThreshold
+     */
+    public float getFailureRateThreshold() {
+<span class="nc" id="L298">        return failureRateThreshold;</span>
+    }
+
+    /**
+     * set failureRateThreshold.
+     *
+     * @param failureRateThreshold failureRateThreshold
+     */
+    public void setFailureRateThreshold(final float failureRateThreshold) {
+<span class="nc" id="L307">        this.failureRateThreshold = failureRateThreshold;</span>
+<span class="nc" id="L308">    }</span>
+
+    /**
+     * get automaticTransitionFromOpenToHalfOpenEnabled.
+     *
+     * @return automaticTransitionFromOpenToHalfOpenEnabled
+     */
+    public Boolean getAutomaticTransitionFromOpenToHalfOpenEnabled() {
+<span class="nc" id="L316">        return automaticTransitionFromOpenToHalfOpenEnabled;</span>
+    }
+
+    /**
+     * set automaticTransitionFromOpenToHalfOpenEnabled.
+     *
+     * @param automaticTransitionFromOpenToHalfOpenEnabled automaticTransitionFromOpenToHalfOpenEnabled
+     */
+    public void setAutomaticTransitionFromOpenToHalfOpenEnabled(final Boolean automaticTransitionFromOpenToHalfOpenEnabled) {
+<span class="nc" id="L325">        this.automaticTransitionFromOpenToHalfOpenEnabled = automaticTransitionFromOpenToHalfOpenEnabled;</span>
+<span class="nc" id="L326">    }</span>
+
+    @Override
+    public boolean equals(final Object o) {
+<span class="nc bnc" id="L330" title="All 2 branches missed.">        if (this == o) {</span>
+<span class="nc" id="L331">            return true;</span>
+        }
+<span class="nc bnc" id="L333" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L334">            return false;</span>
+        }
+<span class="nc" id="L336">        Resilience4JHandle that = (Resilience4JHandle) o;</span>
+<span class="nc bnc" id="L337" title="All 20 branches missed.">        return timeoutDurationRate == that.timeoutDurationRate &amp;&amp; limitRefreshPeriod == that.limitRefreshPeriod &amp;&amp; limitForPeriod == that.limitForPeriod</span>
+                &amp;&amp; circuitEnable == that.circuitEnable &amp;&amp; timeoutDuration == that.timeoutDuration &amp;&amp; slidingWindowSize == that.slidingWindowSize
+                &amp;&amp; slidingWindowType == that.slidingWindowType &amp;&amp; minimumNumberOfCalls == that.minimumNumberOfCalls
+                &amp;&amp; waitIntervalFunctionInOpenState == that.waitIntervalFunctionInOpenState &amp;&amp; permittedNumberOfCallsInHalfOpenState == that.permittedNumberOfCallsInHalfOpenState
+<span class="nc bnc" id="L341" title="All 4 branches missed.">                &amp;&amp; Float.compare(that.failureRateThreshold, failureRateThreshold) == 0 &amp;&amp; Objects.equals(fallbackUri, that.fallbackUri)</span>
+<span class="nc bnc" id="L342" title="All 2 branches missed.">                &amp;&amp; Objects.equals(automaticTransitionFromOpenToHalfOpenEnabled, that.automaticTransitionFromOpenToHalfOpenEnabled);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L347">        return Objects.hash(timeoutDurationRate, limitRefreshPeriod, limitForPeriod, circuitEnable, timeoutDuration, fallbackUri,</span>
+<span class="nc" id="L348">                slidingWindowSize, slidingWindowType, minimumNumberOfCalls, waitIntervalFunctionInOpenState,</span>
+<span class="nc" id="L349">                permittedNumberOfCallsInHalfOpenState, failureRateThreshold, automaticTransitionFromOpenToHalfOpenEnabled);</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L354">        return &quot;Resilience4JHandle{&quot;</span>
+                + &quot;timeoutDurationRate=&quot;
+                + timeoutDurationRate
+                + &quot;, limitRefreshPeriod=&quot;
+                + limitRefreshPeriod
+                + &quot;, limitForPeriod=&quot;
+                + limitForPeriod
+                + &quot;, circuitEnable=&quot;
+                + circuitEnable
+                + &quot;, timeoutDuration=&quot;
+                + timeoutDuration
+                + &quot;, fallbackUri='&quot;
+                + fallbackUri
+                + '\''
+                + &quot;, slidingWindowSize=&quot;
+                + slidingWindowSize
+                + &quot;, slidingWindowType=&quot;
+                + slidingWindowType
+                + &quot;, minimumNumberOfCalls=&quot;
+                + minimumNumberOfCalls
+                + &quot;, waitIntervalFunctionInOpenState=&quot;
+                + waitIntervalFunctionInOpenState
+                + &quot;, permittedNumberOfCallsInHalfOpenState=&quot;
+                + permittedNumberOfCallsInHalfOpenState
+                + &quot;, failureRateThreshold=&quot;
+                + failureRateThreshold
+                + &quot;, automaticTransitionFromOpenToHalfOpenEnabled=&quot;
+                + automaticTransitionFromOpenToHalfOpenEnabled
+                + '}';
+    }
+
+    /**
+     * check filed default value.
+     *
+     * @param resilience4JHandle {@linkplain Resilience4JHandle}
+     */
+    public void checkData(final Resilience4JHandle resilience4JHandle) {
+<span class="nc" id="L391">        resilience4JHandle.setTimeoutDurationRate(Math.max(resilience4JHandle.getTimeoutDurationRate(), Constants.TIMEOUT_DURATION_RATE));</span>
+<span class="nc" id="L392">        resilience4JHandle.setLimitRefreshPeriod(Math.max(resilience4JHandle.getLimitRefreshPeriod(), Constants.LIMIT_REFRESH_PERIOD));</span>
+<span class="nc" id="L393">        resilience4JHandle.setLimitForPeriod(Math.max(resilience4JHandle.getLimitForPeriod(), Constants.LIMIT_FOR_PERIOD));</span>
+<span class="nc" id="L394">        resilience4JHandle.setCircuitEnable(Math.max(resilience4JHandle.getCircuitEnable(), Constants.CIRCUIT_ENABLE));</span>
+<span class="nc" id="L395">        resilience4JHandle.setTimeoutDuration(Math.max(resilience4JHandle.getTimeoutDuration(), Constants.TIMEOUT_DURATION));</span>
+<span class="nc bnc" id="L396" title="All 2 branches missed.">        resilience4JHandle.setFallbackUri(!&quot;0&quot;.equals(resilience4JHandle.getFallbackUri()) ? resilience4JHandle.getFallbackUri() : &quot;&quot;);</span>
+<span class="nc" id="L397">        resilience4JHandle.setSlidingWindowSize(Math.max(resilience4JHandle.getSlidingWindowSize(), Constants.SLIDING_WINDOW_SIZE));</span>
+<span class="nc" id="L398">        resilience4JHandle.setSlidingWindowType(Math.max(resilience4JHandle.getSlidingWindowType(), Constants.SLIDING_WINDOW_TYPE));</span>
+<span class="nc" id="L399">        resilience4JHandle.setMinimumNumberOfCalls(Math.max(resilience4JHandle.getMinimumNumberOfCalls(), Constants.MINIMUM_NUMBER_OF_CALLS));</span>
+<span class="nc" id="L400">        resilience4JHandle.setWaitIntervalFunctionInOpenState(Math.max(resilience4JHandle.getWaitIntervalFunctionInOpenState(), Constants.WAIT_INTERVAL_FUNCTION_IN_OPEN_STATE));</span>
+<span class="nc" id="L401">        resilience4JHandle.setPermittedNumberOfCallsInHalfOpenState(Math.max(resilience4JHandle.getPermittedNumberOfCallsInHalfOpenState(), Constants.PERMITTED_NUMBER_OF_CALLS_IN_HALF_OPEN_STATE));</span>
+<span class="nc" id="L402">        resilience4JHandle.setFailureRateThreshold(Math.max(resilience4JHandle.getFailureRateThreshold(), Constants.FAILURE_RATE_THRESHOLD));</span>
+<span class="nc" id="L403">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

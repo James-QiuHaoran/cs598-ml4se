@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HystrixHandle.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.dto.convert.rule</a> &gt; <span class="el_source">HystrixHandle.java</span></div><h1>HystrixHandle.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.dto.convert.rule;
+
+import org.apache.shenyu.common.constant.Constants;
+import org.apache.shenyu.common.enums.HystrixIsolationModeEnum;
+
+import java.util.Objects;
+
+/**
+ * this is hystrix handle.
+ */
+<span class="nc" id="L28">public class HystrixHandle {</span>
+
+    /**
+     * hystrix group key is required.
+     */
+    private String groupKey;
+
+    /**
+     * hystrix command key is required.
+     */
+    private String commandKey;
+
+    /**
+     * hystrix withExecutionIsolationSemaphoreMaxConcurrentRequests.
+     */
+<span class="nc" id="L43">    private int maxConcurrentRequests = Constants.MAX_CONCURRENT_REQUESTS;</span>
+
+    /**
+     * hystrix withCircuitBreakerErrorThresholdPercentage.
+     */
+<span class="nc" id="L48">    private int errorThresholdPercentage = Constants.ERROR_THRESHOLD_PERCENTAGE;</span>
+
+    /**
+     * hystrix withCircuitBreakerRequestVolumeThreshold.
+     */
+<span class="nc" id="L53">    private int requestVolumeThreshold = Constants.REQUEST_VOLUME_THRESHOLD;</span>
+
+    /**
+     * hystrix withCircuitBreakerSleepWindowInMilliseconds.
+     */
+<span class="nc" id="L58">    private int sleepWindowInMilliseconds = Constants.SLEEP_WINDOW_INMILLISECONDS;</span>
+
+    /**
+     * timeout is required.
+     */
+<span class="nc" id="L63">    private long timeout = Constants.TIME_OUT;</span>
+
+    /**
+     * call back uri.
+     * when some error occurs in hystrix invoke it will forward to this
+     */
+    private String callBackUri;
+
+    /**
+     * Isolation strategy to use when executing a hystrix command.
+     */
+<span class="nc" id="L74">    private int executionIsolationStrategy = HystrixIsolationModeEnum.SEMAPHORE.getCode();</span>
+
+    /**
+     * hystrix thread pool config.
+     */
+    private HystrixThreadPoolConfig hystrixThreadPoolConfig;
+
+    /**
+     * get groupKey.
+     *
+     * @return groupKey
+     */
+    public String getGroupKey() {
+<span class="nc" id="L87">        return groupKey;</span>
+    }
+
+    /**
+     * set groupKey.
+     *
+     * @param groupKey groupKey
+     */
+    public void setGroupKey(final String groupKey) {
+<span class="nc" id="L96">        this.groupKey = groupKey;</span>
+<span class="nc" id="L97">    }</span>
+
+    /**
+     * get commandKey.
+     *
+     * @return commandKey
+     */
+    public String getCommandKey() {
+<span class="nc" id="L105">        return commandKey;</span>
+    }
+
+    /**
+     * set commandKey.
+     *
+     * @param commandKey commandKey
+     */
+    public void setCommandKey(final String commandKey) {
+<span class="nc" id="L114">        this.commandKey = commandKey;</span>
+<span class="nc" id="L115">    }</span>
+
+    /**
+     * get maxConcurrentRequests.
+     *
+     * @return maxConcurrentRequests
+     */
+    public int getMaxConcurrentRequests() {
+<span class="nc" id="L123">        return maxConcurrentRequests;</span>
+    }
+
+    /**
+     * set maxConcurrentRequests.
+     *
+     * @param maxConcurrentRequests maxConcurrentRequests
+     */
+    public void setMaxConcurrentRequests(final int maxConcurrentRequests) {
+<span class="nc" id="L132">        this.maxConcurrentRequests = maxConcurrentRequests;</span>
+<span class="nc" id="L133">    }</span>
+
+    /**
+     * get errorThresholdPercentage.
+     *
+     * @return errorThresholdPercentage
+     */
+    public int getErrorThresholdPercentage() {
+<span class="nc" id="L141">        return errorThresholdPercentage;</span>
+    }
+
+    /**
+     * set errorThresholdPercentage.
+     *
+     * @param errorThresholdPercentage errorThresholdPercentage
+     */
+    public void setErrorThresholdPercentage(final int errorThresholdPercentage) {
+<span class="nc" id="L150">        this.errorThresholdPercentage = errorThresholdPercentage;</span>
+<span class="nc" id="L151">    }</span>
+
+    /**
+     * get requestVolumeThreshold.
+     *
+     * @return requestVolumeThreshold
+     */
+    public int getRequestVolumeThreshold() {
+<span class="nc" id="L159">        return requestVolumeThreshold;</span>
+    }
+
+    /**
+     * set requestVolumeThreshold.
+     *
+     * @param requestVolumeThreshold requestVolumeThreshold
+     */
+    public void setRequestVolumeThreshold(final int requestVolumeThreshold) {
+<span class="nc" id="L168">        this.requestVolumeThreshold = requestVolumeThreshold;</span>
+<span class="nc" id="L169">    }</span>
+
+    /**
+     * get sleepWindowInMilliseconds.
+     *
+     * @return sleepWindowInMilliseconds
+     */
+    public int getSleepWindowInMilliseconds() {
+<span class="nc" id="L177">        return sleepWindowInMilliseconds;</span>
+    }
+
+    /**
+     * set sleepWindowInMilliseconds.
+     *
+     * @param sleepWindowInMilliseconds sleepWindowInMilliseconds
+     */
+    public void setSleepWindowInMilliseconds(final int sleepWindowInMilliseconds) {
+<span class="nc" id="L186">        this.sleepWindowInMilliseconds = sleepWindowInMilliseconds;</span>
+<span class="nc" id="L187">    }</span>
+
+    /**
+     * get timeout.
+     *
+     * @return timeout
+     */
+    public long getTimeout() {
+<span class="nc" id="L195">        return timeout;</span>
+    }
+
+    /**
+     * set timeout.
+     *
+     * @param timeout timeout
+     */
+    public void setTimeout(final long timeout) {
+<span class="nc" id="L204">        this.timeout = timeout;</span>
+<span class="nc" id="L205">    }</span>
+
+    /**
+     * get callBackUri.
+     *
+     * @return callBackUri
+     */
+    public String getCallBackUri() {
+<span class="nc" id="L213">        return callBackUri;</span>
+    }
+
+    /**
+     * set callBackUri.
+     *
+     * @param callBackUri callBackUri
+     */
+    public void setCallBackUri(final String callBackUri) {
+<span class="nc" id="L222">        this.callBackUri = callBackUri;</span>
+<span class="nc" id="L223">    }</span>
+
+    /**
+     * get executionIsolationStrategy.
+     *
+     * @return executionIsolationStrategy
+     */
+    public int getExecutionIsolationStrategy() {
+<span class="nc" id="L231">        return executionIsolationStrategy;</span>
+    }
+
+    /**
+     * set executionIsolationStrategy.
+     *
+     * @param executionIsolationStrategy executionIsolationStrategy
+     */
+    public void setExecutionIsolationStrategy(final int executionIsolationStrategy) {
+<span class="nc" id="L240">        this.executionIsolationStrategy = executionIsolationStrategy;</span>
+<span class="nc" id="L241">    }</span>
+
+    /**
+     * get hystrixThreadPoolConfig.
+     *
+     * @return hystrixThreadPoolConfig
+     */
+    public HystrixThreadPoolConfig getHystrixThreadPoolConfig() {
+<span class="nc" id="L249">        return hystrixThreadPoolConfig;</span>
+    }
+
+    /**
+     * set hystrixThreadPoolConfig.
+     *
+     * @param hystrixThreadPoolConfig hystrixThreadPoolConfig
+     */
+    public void setHystrixThreadPoolConfig(final HystrixThreadPoolConfig hystrixThreadPoolConfig) {
+<span class="nc" id="L258">        this.hystrixThreadPoolConfig = hystrixThreadPoolConfig;</span>
+<span class="nc" id="L259">    }</span>
+
+    @Override
+    public boolean equals(final Object o) {
+<span class="nc bnc" id="L263" title="All 2 branches missed.">        if (this == o) {</span>
+<span class="nc" id="L264">            return true;</span>
+        }
+<span class="nc bnc" id="L266" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L267">            return false;</span>
+        }
+<span class="nc" id="L269">        HystrixHandle that = (HystrixHandle) o;</span>
+<span class="nc bnc" id="L270" title="All 12 branches missed.">        return maxConcurrentRequests == that.maxConcurrentRequests &amp;&amp; errorThresholdPercentage == that.errorThresholdPercentage</span>
+                &amp;&amp; requestVolumeThreshold == that.requestVolumeThreshold &amp;&amp; sleepWindowInMilliseconds == that.sleepWindowInMilliseconds
+<span class="nc bnc" id="L272" title="All 2 branches missed.">                &amp;&amp; timeout == that.timeout &amp;&amp; executionIsolationStrategy == that.executionIsolationStrategy &amp;&amp; Objects.equals(groupKey, that.groupKey)</span>
+<span class="nc bnc" id="L273" title="All 4 branches missed.">                &amp;&amp; Objects.equals(commandKey, that.commandKey) &amp;&amp; Objects.equals(callBackUri, that.callBackUri)</span>
+<span class="nc bnc" id="L274" title="All 2 branches missed.">                &amp;&amp; Objects.equals(hystrixThreadPoolConfig, that.hystrixThreadPoolConfig);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L279">        return Objects.hash(groupKey, commandKey, maxConcurrentRequests, errorThresholdPercentage, requestVolumeThreshold,</span>
+<span class="nc" id="L280">                sleepWindowInMilliseconds, timeout, callBackUri, executionIsolationStrategy, hystrixThreadPoolConfig);</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L285">        return &quot;HystrixHandle{&quot;</span>
+                + &quot;groupKey='&quot;
+                + groupKey
+                + '\''
+                + &quot;, commandKey='&quot;
+                + commandKey
+                + '\''
+                + &quot;, maxConcurrentRequests=&quot;
+                + maxConcurrentRequests
+                + &quot;, errorThresholdPercentage=&quot;
+                + errorThresholdPercentage
+                + &quot;, requestVolumeThreshold=&quot;
+                + requestVolumeThreshold
+                + &quot;, sleepWindowInMilliseconds=&quot;
+                + sleepWindowInMilliseconds
+                + &quot;, timeout=&quot;
+                + timeout
+                + &quot;, callBackUri='&quot;
+                + callBackUri
+                + '\''
+                + &quot;, executionIsolationStrategy=&quot;
+                + executionIsolationStrategy
+                + &quot;, hystrixThreadPoolConfig=&quot;
+                + hystrixThreadPoolConfig
+                + '}';
+    }
+    
+    /**
+     * hystrix thread pool config.
+     */
+<span class="nc" id="L315">    public static class HystrixThreadPoolConfig {</span>
+    
+<span class="nc" id="L317">        private int coreSize = Constants.HYSTRIX_THREAD_POOL_CORE_SIZE;</span>
+    
+<span class="nc" id="L319">        private int maximumSize = Constants.HYSTRIX_THREAD_POOL_MAX_SIZE;</span>
+    
+<span class="nc" id="L321">        private int keepAliveTimeMinutes = Constants.HYSTRIX_THREAD_KEEP_ALIVE_TIME_MINUTE;</span>
+    
+<span class="nc" id="L323">        private int maxQueueSize = Constants.HYSTRIX_THREAD_POOL_QUEUE_SIZE;</span>
+    
+        /**
+         * get coreSize.
+         *
+         * @return coreSize
+         */
+        public int getCoreSize() {
+<span class="nc" id="L331">            return coreSize;</span>
+        }
+    
+        /**
+         * set coreSize.
+         *
+         * @param coreSize coreSize
+         */
+        public void setCoreSize(final int coreSize) {
+<span class="nc" id="L340">            this.coreSize = coreSize;</span>
+<span class="nc" id="L341">        }</span>
+    
+        /**
+         * get maximumSize.
+         *
+         * @return maximumSize
+         */
+        public int getMaximumSize() {
+<span class="nc" id="L349">            return maximumSize;</span>
+        }
+    
+        /**
+         * set maximumSize.
+         *
+         * @param maximumSize maximumSize
+         */
+        public void setMaximumSize(final int maximumSize) {
+<span class="nc" id="L358">            this.maximumSize = maximumSize;</span>
+<span class="nc" id="L359">        }</span>
+    
+        /**
+         * get keepAliveTimeMinutes.
+         *
+         * @return keepAliveTimeMinutes
+         */
+        public int getKeepAliveTimeMinutes() {
+<span class="nc" id="L367">            return keepAliveTimeMinutes;</span>
+        }
+    
+        /**
+         * set keepAliveTimeMinutes.
+         *
+         * @param keepAliveTimeMinutes keepAliveTimeMinutes
+         */
+        public void setKeepAliveTimeMinutes(final int keepAliveTimeMinutes) {
+<span class="nc" id="L376">            this.keepAliveTimeMinutes = keepAliveTimeMinutes;</span>
+<span class="nc" id="L377">        }</span>
+    
+        /**
+         * get maxQueueSize.
+         *
+         * @return maxQueueSize
+         */
+        public int getMaxQueueSize() {
+<span class="nc" id="L385">            return maxQueueSize;</span>
+        }
+    
+        /**
+         * set maxQueueSize.
+         *
+         * @param maxQueueSize maxQueueSize
+         */
+        public void setMaxQueueSize(final int maxQueueSize) {
+<span class="nc" id="L394">            this.maxQueueSize = maxQueueSize;</span>
+<span class="nc" id="L395">        }</span>
+    
+        @Override
+        public boolean equals(final Object o) {
+<span class="nc bnc" id="L399" title="All 2 branches missed.">            if (this == o) {</span>
+<span class="nc" id="L400">                return true;</span>
+            }
+<span class="nc bnc" id="L402" title="All 4 branches missed.">            if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L403">                return false;</span>
+            }
+<span class="nc" id="L405">            HystrixThreadPoolConfig that = (HystrixThreadPoolConfig) o;</span>
+<span class="nc bnc" id="L406" title="All 8 branches missed.">            return coreSize == that.coreSize &amp;&amp; maximumSize == that.maximumSize &amp;&amp; keepAliveTimeMinutes == that.keepAliveTimeMinutes &amp;&amp; maxQueueSize == that.maxQueueSize;</span>
+        }
+    
+        @Override
+        public int hashCode() {
+<span class="nc" id="L411">            return Objects.hash(coreSize, maximumSize, keepAliveTimeMinutes, maxQueueSize);</span>
+        }
+    
+        @Override
+        public String toString() {
+<span class="nc" id="L416">            return &quot;HystrixThreadPoolConfig{&quot; + &quot;coreSize=&quot; + coreSize + &quot;, maximumSize=&quot; + maximumSize + &quot;, keepAliveTimeMinutes=&quot; + keepAliveTimeMinutes + &quot;, maxQueueSize=&quot; + maxQueueSize + '}';</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

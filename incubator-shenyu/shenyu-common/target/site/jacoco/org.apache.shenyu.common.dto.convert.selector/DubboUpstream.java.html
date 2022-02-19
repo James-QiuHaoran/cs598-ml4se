@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DubboUpstream.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.dto.convert.selector</a> &gt; <span class="el_source">DubboUpstream.java</span></div><h1>DubboUpstream.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.dto.convert.selector;
+
+import java.util.Objects;
+
+/**
+ * The type Dubbo selector upstream.
+ */
+public final class DubboUpstream extends CommonUpstream {
+
+    /**
+     * zookeeper url is required.
+     */
+    private String registry;
+
+    /**
+     * dubbo application name is required.
+     */
+    private String appName;
+    
+    /**
+     * port.
+     */
+    private int port;
+
+    /**
+     * gray status.
+     */
+    private Boolean gray;
+
+    /**
+     * group.
+     */
+    private String group;
+
+    /**
+     * version.
+     */
+    private String version;
+
+    /**
+     * weight.
+     */
+    private int weight;
+
+    /**
+     * warmup.
+     */
+    private int warmup;
+    
+    /**
+     * builder constructor.
+     *
+     * @param builder builder
+     */
+<span class="nc" id="L72">    private DubboUpstream(final Builder builder) {</span>
+<span class="nc" id="L73">        boolean statusValue = builder.statusValue;</span>
+<span class="nc bnc" id="L74" title="All 2 branches missed.">        if (!builder.statusSet) {</span>
+<span class="nc" id="L75">            statusValue = defaultStatus();</span>
+        }
+<span class="nc" id="L77">        setUpstreamHost(builder.upstreamHost);</span>
+<span class="nc" id="L78">        setProtocol(builder.protocol);</span>
+<span class="nc" id="L79">        setUpstreamUrl(builder.upstreamUrl);</span>
+<span class="nc" id="L80">        this.weight = builder.weight;</span>
+<span class="nc" id="L81">        setStatus(statusValue);</span>
+<span class="nc" id="L82">        setTimestamp(builder.timestamp);</span>
+<span class="nc" id="L83">        this.warmup = builder.warmup;</span>
+<span class="nc" id="L84">    }</span>
+    
+    /**
+     * class builder.
+     *
+     * @return Builder
+     */
+    public static Builder builder() {
+<span class="nc" id="L92">        return new Builder();</span>
+    }
+
+    /**
+     * get registry.
+     *
+     * @return registry
+     */
+    public String getRegistry() {
+<span class="nc" id="L101">        return registry;</span>
+    }
+
+    /**
+     * set registry.
+     *
+     * @param registry registry
+     */
+    public void setRegistry(final String registry) {
+<span class="nc" id="L110">        this.registry = registry;</span>
+<span class="nc" id="L111">    }</span>
+
+    /**
+     * get appName.
+     *
+     * @return appName
+     */
+    public String getAppName() {
+<span class="nc" id="L119">        return appName;</span>
+    }
+
+    /**
+     * set appName.
+     *
+     * @param appName appName
+     */
+    public void setAppName(final String appName) {
+<span class="nc" id="L128">        this.appName = appName;</span>
+<span class="nc" id="L129">    }</span>
+
+    /**
+     * get port.
+     *
+     * @return port
+     */
+    public int getPort() {
+<span class="nc" id="L137">        return port;</span>
+    }
+
+    /**
+     * set port.
+     *
+     * @param port port
+     */
+    public void setPort(final int port) {
+<span class="nc" id="L146">        this.port = port;</span>
+<span class="nc" id="L147">    }</span>
+
+    /**
+     * Gets the value of gray.
+     *
+     * @return the value of gray
+     */
+    public Boolean isGray() {
+<span class="nc" id="L155">        return gray;</span>
+    }
+
+    /**
+     * Sets the gray.
+     *
+     * @param gray gray
+     */
+    public void setGray(final Boolean gray) {
+<span class="nc" id="L164">        this.gray = gray;</span>
+<span class="nc" id="L165">    }</span>
+
+    /**
+     * Gets the value of weight.
+     *
+     * @return the value of weight
+     */
+    public int getWeight() {
+<span class="nc" id="L173">        return weight;</span>
+    }
+
+    /**
+     * Sets the weight.
+     *
+     * @param weight weight
+     */
+    public void setWeight(final int weight) {
+<span class="nc" id="L182">        this.weight = weight;</span>
+<span class="nc" id="L183">    }</span>
+
+    /**
+     * Gets the value of warmup.
+     *
+     * @return the value of warmup
+     */
+    public int getWarmup() {
+<span class="nc" id="L191">        return warmup;</span>
+    }
+
+    /**
+     * Sets the warmup.
+     *
+     * @param warmup warmup
+     */
+    public void setWarmup(final int warmup) {
+<span class="nc" id="L200">        this.warmup = warmup;</span>
+<span class="nc" id="L201">    }</span>
+
+    /**
+     * Gets the value of group.
+     *
+     * @return the value of group
+     */
+    public String getGroup() {
+<span class="nc" id="L209">        return group;</span>
+    }
+
+    /**
+     * Sets the group.
+     *
+     * @param group group
+     */
+    public void setGroup(final String group) {
+<span class="nc" id="L218">        this.group = group;</span>
+<span class="nc" id="L219">    }</span>
+
+    /**
+     * Gets the value of version.
+     *
+     * @return the value of version
+     */
+    public String getVersion() {
+<span class="nc" id="L227">        return version;</span>
+    }
+
+    /**
+     * Sets the version.
+     *
+     * @param version version
+     */
+    public void setVersion(final String version) {
+<span class="nc" id="L236">        this.version = version;</span>
+<span class="nc" id="L237">    }</span>
+
+    @Override
+    public boolean equals(final Object o) {
+<span class="nc bnc" id="L241" title="All 2 branches missed.">        if (this == o) {</span>
+<span class="nc" id="L242">            return true;</span>
+        }
+<span class="nc bnc" id="L244" title="All 2 branches missed.">        if (!(o instanceof DubboUpstream)) {</span>
+<span class="nc" id="L245">            return false;</span>
+        }
+<span class="nc" id="L247">        DubboUpstream that = (DubboUpstream) o;</span>
+<span class="nc bnc" id="L248" title="All 6 branches missed.">        return port == that.port</span>
+                &amp;&amp; weight == that.weight
+                &amp;&amp; warmup == that.warmup
+<span class="nc bnc" id="L251" title="All 2 branches missed.">                &amp;&amp; Objects.equals(registry, that.registry)</span>
+<span class="nc bnc" id="L252" title="All 2 branches missed.">                &amp;&amp; Objects.equals(appName, that.appName)</span>
+<span class="nc bnc" id="L253" title="All 2 branches missed.">                &amp;&amp; Objects.equals(this.getProtocol(), that.getProtocol())</span>
+<span class="nc bnc" id="L254" title="All 2 branches missed.">                &amp;&amp; Objects.equals(this.getUpstreamUrl(), that.getUpstreamUrl())</span>
+<span class="nc bnc" id="L255" title="All 2 branches missed.">                &amp;&amp; Objects.equals(gray, that.gray)</span>
+<span class="nc bnc" id="L256" title="All 2 branches missed.">                &amp;&amp; Objects.equals(group, that.group)</span>
+<span class="nc bnc" id="L257" title="All 2 branches missed.">                &amp;&amp; Objects.equals(version, that.version);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L262">        return Objects.hash(registry, appName, port, gray, weight, warmup, group, version);</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L267">        return &quot;DubboUpstream{&quot;</span>
+                + &quot;registry='&quot; + registry
+                + &quot;, appName='&quot; + appName
+<span class="nc" id="L270">                + &quot;, protocol='&quot; + this.getProtocol()</span>
+                + &quot;, port=&quot; + port
+<span class="nc" id="L272">                + &quot;, upstreamUrl='&quot; + this.getUpstreamUrl()</span>
+                + &quot;, gray=&quot; + gray
+                + &quot;, weight=&quot; + weight
+                + &quot;, warmup=&quot; + warmup
+                + &quot;, group='&quot; + group
+                + &quot;, version='&quot; + version
+                + '}';
+    }
+    
+    /**
+     * class builder.
+     */
+    public static final class Builder {
+        
+        /**
+         * upstreamHost.
+         */
+        private String upstreamHost;
+        
+        /**
+         * protocol.
+         */
+        private String protocol;
+        
+        /**
+         * upstreamUrl.
+         */
+        private String upstreamUrl;
+        
+        /**
+         * weight.
+         */
+        private int weight;
+        
+        /**
+         * status.
+         */
+        private boolean statusSet;
+        
+        /**
+         * status.
+         */
+        private boolean statusValue;
+        
+        /**
+         * timestamp.
+         */
+        private long timestamp;
+        
+        /**
+         * warmup.
+         */
+        private int warmup;
+        
+        /**
+         * no args constructor.
+         */
+        private Builder() {
+        }
+        
+        /**
+         * build new Object.
+         *
+         * @return DivideUpstream
+         */
+        public DubboUpstream build() {
+<span class="nc" id="L338">            return new DubboUpstream(this);</span>
+        }
+        
+        /**
+         * build upstreamHost.
+         *
+         * @param upstreamHost upstreamHost
+         * @return this
+         */
+        public DubboUpstream.Builder upstreamHost(final String upstreamHost) {
+<span class="nc" id="L348">            this.upstreamHost = upstreamHost;</span>
+<span class="nc" id="L349">            return this;</span>
+        }
+        
+        /**
+         * build protocol.
+         *
+         * @param protocol protocol
+         * @return this
+         */
+        public DubboUpstream.Builder protocol(final String protocol) {
+<span class="nc" id="L359">            this.protocol = protocol;</span>
+<span class="nc" id="L360">            return this;</span>
+        }
+        
+        /**
+         * build upstreamUrl.
+         *
+         * @param upstreamUrl upstreamUrl
+         * @return this
+         */
+        public DubboUpstream.Builder upstreamUrl(final String upstreamUrl) {
+<span class="nc" id="L370">            this.upstreamUrl = upstreamUrl;</span>
+<span class="nc" id="L371">            return this;</span>
+        }
+        
+        /**
+         * build weight.
+         *
+         * @param weight weight
+         * @return this
+         */
+        public DubboUpstream.Builder weight(final int weight) {
+<span class="nc" id="L381">            this.weight = weight;</span>
+<span class="nc" id="L382">            return this;</span>
+        }
+        
+        /**
+         * build status.
+         *
+         * @param status status
+         * @return this
+         */
+        public DubboUpstream.Builder status(final boolean status) {
+<span class="nc" id="L392">            this.statusValue = status;</span>
+<span class="nc" id="L393">            this.statusSet = true;</span>
+<span class="nc" id="L394">            return this;</span>
+        }
+        
+        /**
+         * build timestamp.
+         *
+         * @param timestamp timestamp
+         * @return this
+         */
+        public DubboUpstream.Builder timestamp(final long timestamp) {
+<span class="nc" id="L404">            this.timestamp = timestamp;</span>
+<span class="nc" id="L405">            return this;</span>
+        }
+        
+        /**
+         * build warmup.
+         *
+         * @param warmup warmup
+         * @return this
+         */
+        public DubboUpstream.Builder warmup(final int warmup) {
+<span class="nc" id="L415">            this.warmup = warmup;</span>
+<span class="nc" id="L416">            return this;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

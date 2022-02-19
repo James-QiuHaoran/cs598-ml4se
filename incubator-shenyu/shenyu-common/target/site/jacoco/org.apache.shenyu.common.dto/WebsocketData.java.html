@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>WebsocketData.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.dto</a> &gt; <span class="el_source">WebsocketData.java</span></div><h1>WebsocketData.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.dto;
+
+import org.apache.shenyu.common.enums.ConfigGroupEnum;
+import org.apache.shenyu.common.enums.DataEventTypeEnum;
+
+import java.util.List;
+import java.util.Objects;
+
+/**
+ * Data set, including {@link AppAuthData}、{@link ConditionData}、{@link PluginData}、{@link RuleData}、{@link SelectorData}.
+ *
+ * @param &lt;T&gt; the type parameter
+ * @since 2.0.0
+ */
+public class WebsocketData&lt;T&gt; {
+
+    /**
+     * group type.
+     * {@linkplain ConfigGroupEnum}
+     */
+    private String groupType;
+
+    /**
+     * event type.
+     * {@linkplain DataEventTypeEnum}
+     */
+    private String eventType;
+
+    /**
+     * data list.
+     * {@link AppAuthData}、{@link ConditionData}、{@link PluginData}、{@link RuleData}、{@link SelectorData}.
+     */
+    private List&lt;T&gt; data;
+
+    /**
+     * no args constructor.
+     */
+<span class="nc" id="L55">    public WebsocketData() {</span>
+<span class="nc" id="L56">    }</span>
+
+    /**
+     * all args constructor.
+     *
+     * @param groupType groupType
+     * @param eventType eventType
+     * @param data      data
+     */
+<span class="nc" id="L65">    public WebsocketData(final String groupType, final String eventType, final List&lt;T&gt; data) {</span>
+<span class="nc" id="L66">        this.groupType = groupType;</span>
+<span class="nc" id="L67">        this.eventType = eventType;</span>
+<span class="nc" id="L68">        this.data = data;</span>
+<span class="nc" id="L69">    }</span>
+
+    /**
+     * get groupType.
+     *
+     * @return groupType
+     */
+    public String getGroupType() {
+<span class="nc" id="L77">        return groupType;</span>
+    }
+
+    /**
+     * set groupType.
+     *
+     * @param groupType groupType
+     * @return this
+     */
+    public WebsocketData&lt;T&gt; setGroupType(final String groupType) {
+<span class="nc" id="L87">        this.groupType = groupType;</span>
+<span class="nc" id="L88">        return this;</span>
+    }
+
+    /**
+     * get eventType.
+     *
+     * @return eventType
+     */
+    public String getEventType() {
+<span class="nc" id="L97">        return eventType;</span>
+    }
+
+    /**
+     * set eventType.
+     *
+     * @param eventType eventType
+     * @return this
+     */
+    public WebsocketData&lt;T&gt; setEventType(final String eventType) {
+<span class="nc" id="L107">        this.eventType = eventType;</span>
+<span class="nc" id="L108">        return this;</span>
+    }
+
+    /**
+     * get data.
+     *
+     * @return data
+     */
+    public List&lt;T&gt; getData() {
+<span class="nc" id="L117">        return data;</span>
+    }
+
+    /**
+     * set data.
+     *
+     * @param data data
+     * @return this
+     */
+    public WebsocketData&lt;T&gt; setData(final List&lt;T&gt; data) {
+<span class="nc" id="L127">        this.data = data;</span>
+<span class="nc" id="L128">        return this;</span>
+    }
+
+    @Override
+    public boolean equals(final Object o) {
+<span class="nc bnc" id="L133" title="All 2 branches missed.">        if (this == o) {</span>
+<span class="nc" id="L134">            return true;</span>
+        }
+<span class="nc bnc" id="L136" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L137">            return false;</span>
+        }
+<span class="nc" id="L139">        WebsocketData&lt;?&gt; that = (WebsocketData&lt;?&gt;) o;</span>
+<span class="nc bnc" id="L140" title="All 6 branches missed.">        return Objects.equals(groupType, that.groupType) &amp;&amp; Objects.equals(eventType, that.eventType) &amp;&amp; Objects.equals(data, that.data);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L145">        return Objects.hash(groupType, eventType, data);</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L150">        return &quot;WebsocketData{&quot;</span>
+                + &quot;groupType='&quot;
+                + groupType
+                + '\''
+                + &quot;, eventType='&quot;
+                + eventType
+                + '\''
+                + &quot;, data=&quot;
+                + data
+                + '}';
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

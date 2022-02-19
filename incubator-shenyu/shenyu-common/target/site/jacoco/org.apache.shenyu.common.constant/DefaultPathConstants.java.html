@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DefaultPathConstants.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.constant</a> &gt; <span class="el_source">DefaultPathConstants.java</span></div><h1>DefaultPathConstants.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.constant;
+
+/**
+ * DefaultPathConstants.
+ */
+<span class="nc" id="L23">public final class DefaultPathConstants implements Constants {</span>
+
+    /**
+     * The constant SELECTOR_JOIN_RULE.
+     */
+    public static final String SELECTOR_JOIN_RULE = &quot;-&quot;;
+
+    private static final String PRE_FIX = &quot;/shenyu&quot;;
+
+    /**
+     * The constant PLUGIN_PARENT.
+     */
+    public static final String PLUGIN_PARENT = PRE_FIX + &quot;/plugin&quot;;
+
+    /**
+     * The constant SELECTOR_PARENT.
+     */
+    public static final String SELECTOR_PARENT = PRE_FIX + &quot;/selector&quot;;
+
+    public static final String RULE_PARENT = PRE_FIX + &quot;/rule&quot;;
+
+    /**
+     * The constant APP_AUTH_PARENT.
+     */
+    public static final String APP_AUTH_PARENT = PRE_FIX + &quot;/auth&quot;;
+
+    /**
+     * The constant META_DATA.
+     */
+    public static final String META_DATA = PRE_FIX + &quot;/metaData&quot;;
+
+
+    /**
+     * acquire app_auth_path.
+     *
+     * @param appKey appKey
+     * @return app_auth_path string
+     */
+    public static String buildAppAuthPath(final String appKey) {
+<span class="fc" id="L62">        return String.join(PATH_SEPARATOR, APP_AUTH_PARENT, appKey);</span>
+    }
+
+    /**
+     * Build meta data path string.
+     *
+     * @param path the path
+     * @return the string
+     */
+    public static String buildMetaDataPath(final String path) {
+<span class="fc" id="L72">        return String.join(PATH_SEPARATOR, META_DATA, path);</span>
+    }
+
+    /**
+     * buildPluginParentPath.
+     *
+     * @return zk path for plugin
+     */
+    public static String buildPluginParentPath() {
+<span class="fc" id="L81">        return String.join(PATH_SEPARATOR, PLUGIN_PARENT);</span>
+    }
+
+    /**
+     * buildPluginRealPath.
+     *
+     * @param pluginName pluginName
+     * @return zk path for plugin
+     */
+    public static String buildPluginPath(final String pluginName) {
+<span class="fc" id="L91">        return String.join(PATH_SEPARATOR, PLUGIN_PARENT, pluginName);</span>
+    }
+
+    /**
+     * buildSelectorParentPath.
+     *
+     * @param pluginName pluginName
+     * @return zk path for selector
+     */
+    public static String buildSelectorParentPath(final String pluginName) {
+<span class="fc" id="L101">        return String.join(PATH_SEPARATOR, SELECTOR_PARENT, pluginName);</span>
+    }
+
+    /**
+     * buildSelectorRealPath.
+     *
+     * @param pluginName pluginName
+     * @param selectorId selectorId
+     * @return zk full path for selector
+     */
+    public static String buildSelectorRealPath(final String pluginName, final String selectorId) {
+<span class="fc" id="L112">        return String.join(PATH_SEPARATOR, SELECTOR_PARENT, pluginName, selectorId);</span>
+    }
+
+    /**
+     * buildRuleParentPath.
+     *
+     * @param pluginName pluginName
+     * @return zk rule parent path.
+     */
+    public static String buildRuleParentPath(final String pluginName) {
+<span class="fc" id="L122">        return String.join(PATH_SEPARATOR, RULE_PARENT, pluginName);</span>
+    }
+
+    /**
+     * buildRulePath.
+     *
+     * @param pluginName pluginName
+     * @param selectorId selectorId
+     * @param ruleId     ruleId
+     * @return /shenyu/rule/pluginName/selectorId-ruleId
+     */
+    public static String buildRulePath(final String pluginName, final String selectorId, final String ruleId) {
+<span class="fc" id="L134">        return String.join(PATH_SEPARATOR, buildRuleParentPath(pluginName), String.join(SELECTOR_JOIN_RULE, selectorId, ruleId));</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

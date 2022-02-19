@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GeneralContextHandle.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shenyu-common</a> &gt; <a href="index.source.html" class="el_package">org.apache.shenyu.common.dto.convert.rule</a> &gt; <span class="el_source">GeneralContextHandle.java</span></div><h1>GeneralContextHandle.java</h1><pre class="source lang-java linenums">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the &quot;License&quot;); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.apache.shenyu.common.dto.convert.rule;
+
+import java.util.Objects;
+
+/**
+ * this is RequestHandle plugin handle.
+ */
+public class GeneralContextHandle {
+    /**
+     * general context type.
+     */
+    private String generalContextType;
+
+    /**
+     * generalContextKey.
+     * &lt;p&gt;
+     * need to be added new context value.
+     * key: new general context key, value: general context value.
+     * &lt;/p&gt;
+     */
+    private String generalContextKey;
+
+    /**
+     * generalContextValue.
+     * when generalContextType is addGeneralContext, the generalContextValue is the value of generalContextKey.
+     * when generalContextType is transmitHeaderToGeneralContext, the generalContextValue is the new key of generalContext.
+     * In this case, if generalContextValue is blank, default value is same as generalContextKey.
+     */
+    private String generalContextValue;
+
+    /**
+     * no args constructor.
+     */
+<span class="nc" id="L51">    public GeneralContextHandle() {</span>
+<span class="nc" id="L52">    }</span>
+
+    /**
+     * all args constructor.
+     *
+     * @param generalContextType  generalContextType
+     * @param generalContextKey   generalContextKey
+     * @param generalContextValue generalContextValue
+     */
+<span class="nc" id="L61">    public GeneralContextHandle(final String generalContextType, final String generalContextKey, final String generalContextValue) {</span>
+<span class="nc" id="L62">        this.generalContextType = generalContextType;</span>
+<span class="nc" id="L63">        this.generalContextKey = generalContextKey;</span>
+<span class="nc" id="L64">        this.generalContextValue = generalContextValue;</span>
+<span class="nc" id="L65">    }</span>
+
+    /**
+     * get generalContextType.
+     *
+     * @return generalContextType
+     */
+    public String getGeneralContextType() {
+<span class="nc" id="L73">        return generalContextType;</span>
+    }
+
+    /**
+     * set generalContextType.
+     *
+     * @param generalContextType generalContextType
+     */
+    public void setGeneralContextType(final String generalContextType) {
+<span class="nc" id="L82">        this.generalContextType = generalContextType;</span>
+<span class="nc" id="L83">    }</span>
+
+    /**
+     * get generalContextKey.
+     *
+     * @return generalContextKey
+     */
+    public String getGeneralContextKey() {
+<span class="nc" id="L91">        return generalContextKey;</span>
+    }
+
+    /**
+     * set generalContextKey.
+     *
+     * @param generalContextKey generalContextKey
+     */
+    public void setGeneralContextKey(final String generalContextKey) {
+<span class="nc" id="L100">        this.generalContextKey = generalContextKey;</span>
+<span class="nc" id="L101">    }</span>
+
+    /**
+     * get generalContextValue.
+     *
+     * @return generalContextValue
+     */
+    public String getGeneralContextValue() {
+<span class="nc" id="L109">        return generalContextValue;</span>
+    }
+
+    /**
+     * set generalContextValue.
+     *
+     * @param generalContextValue generalContextValue
+     */
+    public void setGeneralContextValue(final String generalContextValue) {
+<span class="nc" id="L118">        this.generalContextValue = generalContextValue;</span>
+<span class="nc" id="L119">    }</span>
+
+    @Override
+    public boolean equals(final Object o) {
+<span class="nc bnc" id="L123" title="All 2 branches missed.">        if (this == o) {</span>
+<span class="nc" id="L124">            return true;</span>
+        }
+<span class="nc bnc" id="L126" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L127">            return false;</span>
+        }
+<span class="nc" id="L129">        GeneralContextHandle that = (GeneralContextHandle) o;</span>
+<span class="nc bnc" id="L130" title="All 2 branches missed.">        return Objects.equals(generalContextType, that.generalContextType)</span>
+<span class="nc bnc" id="L131" title="All 2 branches missed.">                &amp;&amp; Objects.equals(generalContextKey, that.generalContextKey)</span>
+<span class="nc bnc" id="L132" title="All 2 branches missed.">                &amp;&amp; Objects.equals(generalContextValue, that.generalContextValue);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L137">        return Objects.hash(generalContextType, generalContextKey, generalContextValue);</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L142">        return &quot;GeneralContextHandleContent{&quot;</span>
+                + &quot;generalContextType='&quot; + generalContextType + '\''
+                + &quot;, generalContextKey='&quot; + generalContextKey + '\''
+                + &quot;, generalContextValue='&quot; + generalContextValue + '\''
+                + '}';
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
