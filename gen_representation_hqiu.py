@@ -1,6 +1,7 @@
 import argparse
 import os
 import subprocess
+import time
 import pydot
 
 PATH_ANALYZER = 'analyzer-hqiu/out/artifacts/PropertyGraph_jar/'
@@ -27,6 +28,9 @@ def get_ast(path, visualization=False):
     cwd = os.getcwd()
     # print('Current working directory:', cwd)
 
+    # return true only when full path is given
+    # print('DEBUG:', os.path.isfile(path), os.path.isdir(path), path)
+
     if os.path.isfile(path) or os.path.isdir(path):
         # extract the AST representation of the code in the file or all files of the directory
         print('Target path:', path)
@@ -35,6 +39,35 @@ def get_ast(path, visualization=False):
             print(result.stdout.decode('utf-8'))
         if result.stderr:
             print(result.stderr.decode('utf-8'))
+
+        if path[-1] == '/':
+            path = path[:-1]
+        dir_path = None
+        if '.' in path:
+            path = path[0:path.rindex('/')]
+            print('AST representation files are stored to:', path + '/AST')
+            dir_path = path + '/AST'
+        else:
+            print('AST representation files are stored to:', path + '/../AST')
+            dir_path = path + '/../AST'
+
+        # visualization
+        if visualization:
+            print('Transforming .dot files to .png files...')
+            # dir_path = path + '/../AST'
+            for file_name in os.listdir(dir_path):
+                if file_name in ast_files or 'Test' in file_name:
+            	    continue
+                file_path = os.path.join(dir_path, file_name)
+                if os.path.getsize(file_path) < 100:
+                    # skip files less than 100 bytes (basically no meaningful representation extracted)
+                    continue
+                print(file_path)
+                try:
+                    graphs = pydot.graph_from_dot_file(file_path)
+                    graphs[0].write_png(dir_path + '/' + file_name[:-3] + 'png')
+                except:
+                    continue
     elif os.path.isfile(original_cwd + '/' + path) or os.path.isdir(original_cwd + '/' + path):
         # extract the AST representation of the code in the file or all files of the directory
         print('Target path:', original_cwd + '/' + path)
@@ -46,12 +79,19 @@ def get_ast(path, visualization=False):
 
         if path[-1] == '/':
             path = path[:-1]
-        print('AST representation files are stored to:', original_cwd + '/' + path + '/../AST')
+        dir_path = None
+        if '.' in path:
+            path = path[0:path.rindex('/')]
+            print('AST representation files are stored to:', path + '/AST')
+            dir_path = original_cwd + '/' + path + '/AST'
+        else:
+            print('AST representation files are stored to:', path + '/../AST')
+            dir_path = oringla_cwd + '/' + path + '/../AST'
 
         # visualization
         if visualization:
             print('Transforming .dot files to .png files...')
-            dir_path = original_cwd + '/' + path + '/../AST'
+            # dir_path = original_cwd + '/' + path + '/../AST'
             for file_name in os.listdir(dir_path):
                 if file_name in ast_files or 'Test' in file_name:
             	    continue
@@ -95,6 +135,20 @@ def get_cg(path, visualization=False):
             print(result.stdout.decode('utf-8'))
         if result.stderr:
             print(result.stderr.decode('utf-8'))
+
+        # visualization
+        if visualization:
+            print('Transforming .dot files to .png files...')
+            time.sleep(2)
+            dir_path = path[0:path.rindex('/')] + '/CG'
+            for file_name in os.listdir(dir_path):
+                file_path = os.path.join(dir_path, file_name)
+                print(file_path)
+                try:
+                    graphs = pydot.graph_from_dot_file(file_path)
+                    graphs[0].write_png(dir_path + '/' + file_name[:-3] + 'png')
+                except:
+                    continue
     else:
         print('Input file/directory not found:', path)
 
@@ -115,6 +169,35 @@ def get_cfg(path, visualization=False):
             print(result.stdout.decode('utf-8'))
         if result.stderr:
             print(result.stderr.decode('utf-8'))
+
+        if path[-1] == '/':
+            path = path[:-1]
+        dir_path = None
+        if '.' in path:
+            path = path[0:path.rindex('/')]
+            print('CFG representation files are stored to:', path + '/CFG')
+            dir_path = path + '/CFG'
+        else:
+            print('CFG representation files are stored to:', path + '/../CFG')
+            dir_path = path + '/../CFG'
+
+        # visualization
+        if visualization:
+            print('Transforming .dot files to .png files...')
+            # dir_path = original_cwd + '/' + path + '/../CFG'
+            for file_name in os.listdir(dir_path):
+                if file_name in cfg_files:
+                    continue
+                file_path = os.path.join(dir_path, file_name)
+                if os.path.getsize(file_path) < 100:
+                    # skip files less than 100 bytes (basically no meaningful representation extracted)
+                    continue
+                print(file_path)
+                try:
+                    graphs = pydot.graph_from_dot_file(file_path)
+                    graphs[0].write_png(dir_path + '/' + file_name[:-3] + 'png')
+                except:
+                    continue
     elif os.path.isfile(original_cwd + '/' + path) or os.path.isdir(original_cwd + '/' + path):
         # extract the CFG representation of the code in the file or all files of the directory
         print('Target path:', original_cwd + '/' + path)
@@ -126,12 +209,19 @@ def get_cfg(path, visualization=False):
     
         if path[-1] == '/':
             path = path[:-1]
-        print('CFG representation files are stored to:', original_cwd + '/' + path + '/../CFG')
+        dir_path = None
+        if '.' in path:
+            path = path[0:path.rindex('/')]
+            print('CFG representation files are stored to:', path + '/CFG')
+            dir_path = original_cwd + '/' + path + '/CFG'
+        else:
+            print('CFG representation files are stored to:', path + '/../CFG')
+            dir_path = original_cwd + '/' + path + '/../CFG'
 
         # visualization
         if visualization:
             print('Transforming .dot files to .png files...')
-            dir_path = original_cwd + '/' + path + '/../CFG'
+            # dir_path = original_cwd + '/' + path + '/../CFG'
             for file_name in os.listdir(dir_path):
                 if file_name in cfg_files:
                     continue
