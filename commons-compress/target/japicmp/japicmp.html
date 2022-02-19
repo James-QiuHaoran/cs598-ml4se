@@ -1,0 +1,2893 @@
+<html>
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Comparing source compatibility of commons-compress-1.22-SNAPSHOT.jar against commons-compress-1.21.jar</title>
+        <style type="text/css">
+body {
+    font-family: Verdana;
+}
+.title {
+    font-weight: bold;
+}
+.new {
+    color: green;
+}
+.removed {
+    color: red;
+}
+.modified {
+    color: orange;
+}
+.unchanged {
+    color: black;
+}
+thead tr td {
+    font-weight: bold;
+}
+.toc {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border: 1px solid #dcdcdc;
+    padding: 5px;
+    background: #ededed;
+    display: inline-block;
+}
+table {
+    border-collapse: collapse;
+}
+table tr td {
+    border: 1px solid black;
+    padding: 5px;
+}
+table thead {
+    background-color: #dee3e9;
+}
+table tbody tr td.matrix_layout {
+    background-color: #dee3e9;
+    font-weight: bold;
+}
+.class {
+    margin-bottom: 2em;
+    border: 1px solid #dcdcdc;
+    padding: 5px;
+    background: #ededed;
+    display: inline-block;
+}
+.class_compatibilityChanges {
+	margin-top: 1em;
+}
+
+.class_fileFormatVersion {
+	margin-top: 1em;
+}
+.class_superclass {
+    margin-top: 1em;
+}
+.class_interfaces {
+    margin-top: 1em;
+}
+.class_fields {
+    margin-top: 1em;
+}
+.class_serialVersionUid {
+    margin-top: 1em;
+}
+.class_constructors {
+    margin-top: 1em;
+}
+.class_methods {
+    margin-top: 1em;
+}
+.class_annotations {
+    margin-top: 1em;
+}
+.label {
+    font-weight: bold;
+}
+.label_class_member {
+    background-color: #4d7a97;
+    display: inline-block;
+    padding: 5px;
+}
+.toc_link {
+    margin-left: 10px;
+    font-size: 0.5em;
+}
+.modifier {
+    font-style: italic;
+}
+.method_return_type {
+
+}
+ul {
+    list-style-type: none;
+    padding: 0px 0px;
+}
+.meta-information {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background: #ededed;
+    display: inline-block;
+}
+.warnings {
+    margin-top: 1em;
+    font-size: 0.75em;
+}
+.explanations {
+	margin-bottom: 2em;
+}
+
+</style>
+    </head>
+    <body>
+        <span class="title">Comparing source compatibility of commons-compress-1.22-SNAPSHOT.jar against commons-compress-1.21.jar</span>
+        <br>
+        <div class="meta-information">
+            <table>
+                <tr>
+                    <td>Old:</td><td>commons-compress-1.21.jar</td>
+                </tr>
+                <tr>
+                    <td>New:</td><td>commons-compress-1.22-SNAPSHOT.jar</td>
+                </tr>
+                <tr>
+                    <td>Created:</td><td>2022-02-10T14:49:07.749-0600</td>
+                </tr>
+                <tr>
+                    <td>Access modifier filter:</td><td>PROTECTED</td>
+                </tr>
+                <tr>
+                    <td>Only modifications:</td><td>true</td>
+                </tr>
+                <tr>
+                    <td>Only binary incompatible modifications:</td><td>false</td>
+                </tr>
+                <tr>
+                    <td>Ignore missing classes:</td><td>false</td>
+                </tr>
+                <tr>
+                    <td>Includes:</td><td>all</td>
+                </tr>
+                <tr>
+                    <td>Excludes:</td><td>org.apache.commons.compress.harmony.pack200.Segment;org.apache.commons.compress.harmony.pack200.Segment;org.apache.commons.compress.harmony.pack200.SegmentMethodVisitor;org.apache.commons.compress.harmony.pack200.SegmentMethodVisitor;org.apache.commons.compress.harmony.pack200.SegmentAnnotationVisitor;org.apache.commons.compress.harmony.pack200.SegmentAnnotationVisitor;org.apache.commons.compress.harmony.pack200.SegmentFieldVisitor;org.apache.commons.compress.harmony.pack200.SegmentFieldVisitor</td>
+                </tr>
+                <tr>
+                    <td id="semver-label">Semantic Versioning:</td><td id="semver-version">0.1.0</td>
+                </tr>
+            </table>
+        </div>
+        <ul>
+            <li>
+                <a href="#toc">Classes</a>
+            </li>
+        </ul>
+            
+        <div class="toc" id="toc">
+            <span class="label">Classes:</span>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Status</td><td>Fully Qualified Name</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="modified">MODIFIED&nbsp;(*)</span></td><td><a href="#org.apache.commons.compress.archivers.examples.Archiver">org.apache.commons.compress.archivers.examples.Archiver</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="modified">MODIFIED&nbsp;(*)</span></td><td><a href="#org.apache.commons.compress.archivers.examples.Expander">org.apache.commons.compress.archivers.examples.Expander</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="modified">MODIFIED&nbsp;(*)</span></td><td><a href="#org.apache.commons.compress.archivers.sevenz.SevenZOutputFile">org.apache.commons.compress.archivers.sevenz.SevenZOutputFile</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="unchanged">UNCHANGED</span></td><td><a href="#org.apache.commons.compress.archivers.tar.TarUtils">org.apache.commons.compress.archivers.tar.TarUtils</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="modified">MODIFIED</span></td><td><a href="#org.apache.commons.compress.archivers.zip.ScatterZipOutputStream">org.apache.commons.compress.archivers.zip.ScatterZipOutputStream</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="modified">MODIFIED</span></td><td><a href="#org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream">org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="modified">MODIFIED</span></td><td><a href="#org.apache.commons.compress.archivers.zip.ZipFile">org.apache.commons.compress.archivers.zip.ZipFile</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="modified">MODIFIED</span></td><td><a href="#org.apache.commons.compress.archivers.zip.ZipSplitReadOnlySeekableByteChannel">org.apache.commons.compress.archivers.zip.ZipSplitReadOnlySeekableByteChannel</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="modified">MODIFIED</span></td><td><a href="#org.apache.commons.compress.compressors.deflate.DeflateCompressorOutputStream">org.apache.commons.compress.compressors.deflate.DeflateCompressorOutputStream</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="modified">MODIFIED</span></td><td><a href="#org.apache.commons.compress.compressors.lz4.BlockLZ4CompressorInputStream">org.apache.commons.compress.compressors.lz4.BlockLZ4CompressorInputStream</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="modified">MODIFIED</span></td><td><a href="#org.apache.commons.compress.compressors.lz4.BlockLZ4CompressorOutputStream">org.apache.commons.compress.compressors.lz4.BlockLZ4CompressorOutputStream</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="modified">MODIFIED</span></td><td><a href="#org.apache.commons.compress.compressors.lz77support.AbstractLZ77CompressorInputStream">org.apache.commons.compress.compressors.lz77support.AbstractLZ77CompressorInputStream</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="modified">MODIFIED</span></td><td><a href="#org.apache.commons.compress.harmony.pack200.NewAttributeBands$Callable">org.apache.commons.compress.harmony.pack200.NewAttributeBands$Callable</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="modified">MODIFIED</span></td><td><a href="#org.apache.commons.compress.harmony.pack200.NewAttributeBands$UnionCase">org.apache.commons.compress.harmony.pack200.NewAttributeBands$UnionCase</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="modified">MODIFIED</span></td><td><a href="#org.apache.commons.compress.harmony.pack200.PackingOptions">org.apache.commons.compress.harmony.pack200.PackingOptions</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="modified">MODIFIED</span></td><td><a href="#org.apache.commons.compress.harmony.unpack200.Archive">org.apache.commons.compress.harmony.unpack200.Archive</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="modified">MODIFIED&nbsp;(*)</span></td><td><a href="#org.apache.commons.compress.harmony.unpack200.AttributeLayoutMap">org.apache.commons.compress.harmony.unpack200.AttributeLayoutMap</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="modified">MODIFIED&nbsp;(*)</span></td><td><a href="#org.apache.commons.compress.harmony.unpack200.ClassBands">org.apache.commons.compress.harmony.unpack200.ClassBands</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="modified">MODIFIED</span></td><td><a href="#org.apache.commons.compress.harmony.unpack200.NewAttributeBands$Callable">org.apache.commons.compress.harmony.unpack200.NewAttributeBands$Callable</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="modified">MODIFIED</span></td><td><a href="#org.apache.commons.compress.harmony.unpack200.NewAttributeBands$UnionCase">org.apache.commons.compress.harmony.unpack200.NewAttributeBands$UnionCase</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="modified">MODIFIED&nbsp;(*)</span></td><td><a href="#org.apache.commons.compress.harmony.unpack200.Segment">org.apache.commons.compress.harmony.unpack200.Segment</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="modified">MODIFIED&nbsp;(*)</span></td><td><a href="#org.apache.commons.compress.harmony.unpack200.SegmentHeader">org.apache.commons.compress.harmony.unpack200.SegmentHeader</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="modified">MODIFIED</span></td><td><a href="#org.apache.commons.compress.parallel.FileBasedScatterGatherBackingStore">org.apache.commons.compress.parallel.FileBasedScatterGatherBackingStore</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="new">NEW</span></td><td><a href="#org.apache.commons.compress.utils.ExactMath">org.apache.commons.compress.utils.ExactMath</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="modified">MODIFIED</span></td><td><a href="#org.apache.commons.compress.utils.FileNameUtils">org.apache.commons.compress.utils.FileNameUtils</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="modified">MODIFIED</span></td><td><a href="#org.apache.commons.compress.utils.MultiReadOnlySeekableByteChannel">org.apache.commons.compress.utils.MultiReadOnlySeekableByteChannel</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="explanations">
+            <span>Binary incompatible changes are marked with (!) while source incompatible changes are marked with (*).</span>
+        </div>
+        <div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.archivers.examples.Archiver">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.archivers.examples.Archiver"></a><span class="modified">MODIFIED&nbsp;(*)</span><span class="">&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged">class</span>&nbsp;org.apache.commons.compress.archivers.examples.Archiver</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_fileFormatVersion">
+                        <span class="label_class_member">class File Format Version:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Old Version</td><td>New Version</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td>52.0</td><td>53.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields"></div>
+                    <div class="class_constructors"></div>
+                    <div class="class_methods">
+                        <span class="label_class_member">Methods:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Type</td><td>Method</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED&nbsp;(*)</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td><span class="unchanged method_return_type">void</span></td><td>create(org.apache.commons.compress.archivers.ArchiveOutputStream,
+                                        <wbr></wbr>
+                                        java.io.File)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="unchanged">UNCHANGED</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>org.apache.commons.compress.archivers.ArchiveException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>METHOD_NO_LONGER_THROWS_CHECKED_EXCEPTION</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>110</td><td>109</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.archivers.examples.Expander">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.archivers.examples.Expander"></a><span class="modified">MODIFIED&nbsp;(*)</span><span class="">&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged">class</span>&nbsp;org.apache.commons.compress.archivers.examples.Expander</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_fileFormatVersion">
+                        <span class="label_class_member">class File Format Version:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Old Version</td><td>New Version</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td>52.0</td><td>53.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields"></div>
+                    <div class="class_constructors"></div>
+                    <div class="class_methods">
+                        <span class="label_class_member">Methods:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Type</td><td>Method</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED&nbsp;(*)</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td><span class="unchanged method_return_type">void</span></td><td>expand(org.apache.commons.compress.archivers.ArchiveInputStream,
+                                        <wbr></wbr>
+                                        java.io.File)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="unchanged">UNCHANGED</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>org.apache.commons.compress.archivers.ArchiveException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>METHOD_NO_LONGER_THROWS_CHECKED_EXCEPTION</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>266</td><td>265</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="modified">MODIFIED&nbsp;(*)</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td><span class="unchanged method_return_type">void</span></td><td>expand(org.apache.commons.compress.archivers.tar.TarFile,
+                                        <wbr></wbr>
+                                        java.io.File)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="unchanged">UNCHANGED</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>org.apache.commons.compress.archivers.ArchiveException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>METHOD_NO_LONGER_THROWS_CHECKED_EXCEPTION</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>286</td><td>284</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="modified">MODIFIED&nbsp;(*)</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td><span class="unchanged method_return_type">void</span></td><td>expand(org.apache.commons.compress.archivers.zip.ZipFile,
+                                        <wbr></wbr>
+                                        java.io.File)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="unchanged">UNCHANGED</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>org.apache.commons.compress.archivers.ArchiveException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>METHOD_NO_LONGER_THROWS_CHECKED_EXCEPTION</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>305</td><td>302</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="modified">MODIFIED&nbsp;(*)</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td><span class="unchanged method_return_type">void</span></td><td>expand(org.apache.commons.compress.archivers.sevenz.SevenZFile,
+                                        <wbr></wbr>
+                                        java.io.File)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="unchanged">UNCHANGED</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>org.apache.commons.compress.archivers.ArchiveException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>METHOD_NO_LONGER_THROWS_CHECKED_EXCEPTION</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>329</td><td>325</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.archivers.sevenz.SevenZOutputFile">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.archivers.sevenz.SevenZOutputFile"></a><span class="modified">MODIFIED&nbsp;(*)</span><span class="">&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged">class</span>&nbsp;org.apache.commons.compress.archivers.sevenz.SevenZOutputFile</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_fileFormatVersion">
+                        <span class="label_class_member">class File Format Version:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Old Version</td><td>New Version</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td>52.0</td><td>53.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields"></div>
+                    <div class="class_constructors"></div>
+                    <div class="class_methods">
+                        <span class="label_class_member">Methods:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Type</td><td>Method</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED&nbsp;(*)</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td><span class="unchanged method_return_type">org.apache.commons.compress.archivers.sevenz.SevenZArchiveEntry</span></td><td>createArchiveEntry(java.io.File,
+                                        <wbr></wbr>
+                                        java.lang.String)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>METHOD_NO_LONGER_THROWS_CHECKED_EXCEPTION</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>159</td><td>158</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="modified">MODIFIED&nbsp;(*)</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td><span class="unchanged method_return_type">void</span></td><td>putArchiveEntry(org.apache.commons.compress.archivers.ArchiveEntry)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>METHOD_NO_LONGER_THROWS_CHECKED_EXCEPTION</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>196</td><td>194</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.archivers.tar.TarUtils">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.archivers.tar.TarUtils"></a><span class="unchanged">UNCHANGED</span><span class="">&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged">class</span>&nbsp;org.apache.commons.compress.archivers.tar.TarUtils</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_fileFormatVersion">
+                        <span class="label_class_member">class File Format Version:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Old Version</td><td>New Version</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td>52.0</td><td>53.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields"></div>
+                    <div class="class_constructors"></div>
+                    <div class="class_methods">
+                        <span class="label_class_member">Methods:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Type</td><td>Method</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="unchanged">UNCHANGED</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier">static&nbsp;</span><span class="unchanged modifier">protected&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td><span class="unchanged method_return_type">java.util.List</span></td><td>parsePAX01SparseHeaders(java.lang.String)
+                                        <div class="class_annotations">
+                                            <span class="label_class_member">Annotations:</span>
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <td>Status:</td><td>Fully Qualified Name:</td><td>Elements:</td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><span class="new">NEW</span></td><td>java.lang.Deprecated</td><td>n.a.</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </td><td>n.a.</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>ANNOTATION_DEPRECATED_ADDED</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>855</td><td>855</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.archivers.zip.ScatterZipOutputStream">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.archivers.zip.ScatterZipOutputStream"></a><span class="modified">MODIFIED</span><span class="">&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged">class</span>&nbsp;org.apache.commons.compress.archivers.zip.ScatterZipOutputStream</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_fileFormatVersion">
+                        <span class="label_class_member">class File Format Version:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Old Version</td><td>New Version</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td>52.0</td><td>53.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields"></div>
+                    <div class="class_constructors"></div>
+                    <div class="class_methods">
+                        <span class="label_class_member">Methods:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Type</td><td>Method</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="new">NEW</span></td><td><span class="new modifier"></span><span class="new modifier">static&nbsp;</span><span class="new modifier">public&nbsp;</span><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier"></span></td><td><span class="new method_return_type">org.apache.commons.compress.archivers.zip.ScatterZipOutputStream</span></td><td>pathBased(java.nio.file.Path)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="new">NEW</span></td><td>java.io.FileNotFoundException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>METHOD_ADDED_TO_PUBLIC_CLASS</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>n.a.</td><td>201</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="new">NEW</span></td><td><span class="new modifier"></span><span class="new modifier">static&nbsp;</span><span class="new modifier">public&nbsp;</span><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier"></span></td><td><span class="new method_return_type">org.apache.commons.compress.archivers.zip.ScatterZipOutputStream</span></td><td>pathBased(java.nio.file.Path,
+                                        <wbr></wbr>
+                                        int)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="new">NEW</span></td><td>java.io.FileNotFoundException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>METHOD_ADDED_TO_PUBLIC_CLASS</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>n.a.</td><td>225</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream"></a><span class="modified">MODIFIED</span><span class="">&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged">class</span>&nbsp;org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_fileFormatVersion">
+                        <span class="label_class_member">class File Format Version:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Old Version</td><td>New Version</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td>52.0</td><td>53.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields"></div>
+                    <div class="class_constructors">
+                        <span class="label_class_member">Constructors:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Constructor</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td>ZipArchiveOutputStream(java.nio.channels.SeekableByteChannel)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>n.a.</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>387</td><td>406</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="new">NEW</span></td><td><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier">public&nbsp;</span><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier"></span></td><td>ZipArchiveOutputStream(java.nio.file.Path,
+                                        <wbr></wbr>
+                                        long)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="new">NEW</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>n.a.</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>n.a.</td><td>387</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_methods">
+                        <span class="label_class_member">Methods:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Type</td><td>Method</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="new">NEW</span></td><td><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier">public&nbsp;</span><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier"></span></td><td><span class="new method_return_type">long</span></td><td>getBytesWritten()</td><td>n.a.</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>METHOD_ADDED_TO_PUBLIC_CLASS</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>n.a.</td><td>547</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.archivers.zip.ZipFile">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.archivers.zip.ZipFile"></a><span class="modified">MODIFIED</span><span class="">&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged">class</span>&nbsp;org.apache.commons.compress.archivers.zip.ZipFile</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_fileFormatVersion">
+                        <span class="label_class_member">class File Format Version:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Old Version</td><td>New Version</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td>52.0</td><td>53.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields"></div>
+                    <div class="class_constructors">
+                        <span class="label_class_member">Constructors:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Constructor</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="new">NEW</span></td><td><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier">public&nbsp;</span><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier"></span></td><td>ZipFile(java.nio.file.Path,
+                                        <wbr></wbr>
+                                        java.lang.String,
+                                        <wbr></wbr>
+                                        boolean)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="new">NEW</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>n.a.</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>n.a.</td><td>270</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="new">NEW</span></td><td><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier">public&nbsp;</span><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier"></span></td><td>ZipFile(java.nio.file.Path,
+                                        <wbr></wbr>
+                                        java.lang.String)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="new">NEW</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>n.a.</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>n.a.</td><td>237</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="new">NEW</span></td><td><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier">public&nbsp;</span><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier"></span></td><td>ZipFile(java.nio.file.Path,
+                                        <wbr></wbr>
+                                        java.lang.String,
+                                        <wbr></wbr>
+                                        boolean,
+                                        <wbr></wbr>
+                                        boolean)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="new">NEW</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>n.a.</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>n.a.</td><td>329</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="new">NEW</span></td><td><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier">public&nbsp;</span><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier"></span></td><td>ZipFile(java.nio.file.Path)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="new">NEW</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>n.a.</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>n.a.</td><td>185</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_methods"></div>
+                </div>
+            </div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.archivers.zip.ZipSplitReadOnlySeekableByteChannel">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.archivers.zip.ZipSplitReadOnlySeekableByteChannel"></a><span class="modified">MODIFIED</span><span class="">&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged">class</span>&nbsp;org.apache.commons.compress.archivers.zip.ZipSplitReadOnlySeekableByteChannel</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_fileFormatVersion">
+                        <span class="label_class_member">class File Format Version:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Old Version</td><td>New Version</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td>52.0</td><td>53.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields"></div>
+                    <div class="class_constructors"></div>
+                    <div class="class_methods">
+                        <span class="label_class_member">Methods:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Type</td><td>Method</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="new">NEW</span></td><td><span class="new modifier"></span><span class="new modifier">static&nbsp;</span><span class="new modifier">public&nbsp;</span><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier"></span></td><td><span class="new method_return_type">java.nio.channels.SeekableByteChannel</span></td><td>buildFromLastSplitSegment(java.nio.file.Path)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="new">NEW</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>METHOD_ADDED_TO_PUBLIC_CLASS</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>n.a.</td><td>176</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="new">NEW</span></td><td><span class="new modifier"></span><span class="new modifier">static&nbsp;</span><span class="new modifier">public&nbsp;</span><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier"></span></td><td><span class="new method_return_type">java.nio.channels.SeekableByteChannel</span></td><td>forPaths(java.nio.file.Path[])</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="new">NEW</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>METHOD_ADDED_TO_PUBLIC_CLASS</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>n.a.</td><td>231</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="new">NEW</span></td><td><span class="new modifier"></span><span class="new modifier">static&nbsp;</span><span class="new modifier">public&nbsp;</span><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier"></span></td><td><span class="new method_return_type">java.nio.channels.SeekableByteChannel</span></td><td>forPaths(java.nio.file.Path,
+                                        <wbr></wbr>
+                                        java.lang.Iterable)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="new">NEW</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>METHOD_ADDED_TO_PUBLIC_CLASS</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>n.a.</td><td>276</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.compressors.deflate.DeflateCompressorOutputStream">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.compressors.deflate.DeflateCompressorOutputStream"></a><span class="modified">MODIFIED</span><span class="">&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged">class</span>&nbsp;org.apache.commons.compress.compressors.deflate.DeflateCompressorOutputStream</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_fileFormatVersion">
+                        <span class="label_class_member">class File Format Version:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Old Version</td><td>New Version</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td>52.0</td><td>53.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields"></div>
+                    <div class="class_constructors">
+                        <span class="label_class_member">Constructors:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Constructor</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td>DeflateCompressorOutputStream(java.io.OutputStream,
+                                        <wbr></wbr>
+                                        org.apache.commons.compress.compressors.deflate.DeflateParameters)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>n.a.</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>52</td><td>50</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td>DeflateCompressorOutputStream(java.io.OutputStream)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>n.a.</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>42</td><td>41</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_methods"></div>
+                </div>
+            </div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.compressors.lz4.BlockLZ4CompressorInputStream">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.compressors.lz4.BlockLZ4CompressorInputStream"></a><span class="modified">MODIFIED</span><span class="">&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged">class</span>&nbsp;org.apache.commons.compress.compressors.lz4.BlockLZ4CompressorInputStream</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_fileFormatVersion">
+                        <span class="label_class_member">class File Format Version:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Old Version</td><td>New Version</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td>52.0</td><td>53.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields"></div>
+                    <div class="class_constructors">
+                        <span class="label_class_member">Constructors:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Constructor</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td>BlockLZ4CompressorInputStream(java.io.InputStream)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>n.a.</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>56</td><td>54</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_methods"></div>
+                </div>
+            </div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.compressors.lz4.BlockLZ4CompressorOutputStream">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.compressors.lz4.BlockLZ4CompressorOutputStream"></a><span class="modified">MODIFIED</span><span class="">&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged">class</span>&nbsp;org.apache.commons.compress.compressors.lz4.BlockLZ4CompressorOutputStream</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_fileFormatVersion">
+                        <span class="label_class_member">class File Format Version:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Old Version</td><td>New Version</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td>52.0</td><td>53.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields"></div>
+                    <div class="class_constructors">
+                        <span class="label_class_member">Constructors:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Constructor</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td>BlockLZ4CompressorOutputStream(java.io.OutputStream)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>n.a.</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>100</td><td>98</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td>BlockLZ4CompressorOutputStream(java.io.OutputStream,
+                                        <wbr></wbr>
+                                        org.apache.commons.compress.compressors.lz77support.Parameters)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>n.a.</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>113</td><td>109</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_methods"></div>
+                </div>
+            </div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.compressors.lz77support.AbstractLZ77CompressorInputStream">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.compressors.lz77support.AbstractLZ77CompressorInputStream"></a><span class="modified">MODIFIED</span><span class="">&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier">abstract&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged">class</span>&nbsp;org.apache.commons.compress.compressors.lz77support.AbstractLZ77CompressorInputStream</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_fileFormatVersion">
+                        <span class="label_class_member">class File Format Version:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Old Version</td><td>New Version</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td>52.0</td><td>53.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields"></div>
+                    <div class="class_constructors">
+                        <span class="label_class_member">Constructors:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Constructor</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td>AbstractLZ77CompressorInputStream(java.io.InputStream,
+                                        <wbr></wbr>
+                                        int)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>n.a.</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>130</td><td>129</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_methods"></div>
+                </div>
+            </div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.harmony.pack200.NewAttributeBands$Callable">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.harmony.pack200.NewAttributeBands$Callable"></a><span class="modified">MODIFIED</span><span class="">&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged">class</span>&nbsp;org.apache.commons.compress.harmony.pack200.NewAttributeBands$Callable</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_fileFormatVersion">
+                        <span class="label_class_member">class File Format Version:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Old Version</td><td>New Version</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td>52.0</td><td>53.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields"></div>
+                    <div class="class_constructors">
+                        <span class="label_class_member">Constructors:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Constructor</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td>NewAttributeBands$Callable(org.apache.commons.compress.harmony.pack200.NewAttributeBands,
+                                        <wbr></wbr>
+                                        java.util.List)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>n.a.</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>698</td><td>695</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_methods"></div>
+                </div>
+            </div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.harmony.pack200.NewAttributeBands$UnionCase">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.harmony.pack200.NewAttributeBands$UnionCase"></a><span class="modified">MODIFIED</span><span class="">&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged">class</span>&nbsp;org.apache.commons.compress.harmony.pack200.NewAttributeBands$UnionCase</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_fileFormatVersion">
+                        <span class="label_class_member">class File Format Version:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Old Version</td><td>New Version</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td>52.0</td><td>53.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields"></div>
+                    <div class="class_constructors">
+                        <span class="label_class_member">Constructors:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Constructor</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td>NewAttributeBands$UnionCase(org.apache.commons.compress.harmony.pack200.NewAttributeBands,
+                                        <wbr></wbr>
+                                        java.util.List,
+                                        <wbr></wbr>
+                                        java.util.List)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>n.a.</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>768</td><td>765</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_methods"></div>
+                </div>
+            </div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.harmony.pack200.PackingOptions">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.harmony.pack200.PackingOptions"></a><span class="modified">MODIFIED</span><span class="">&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged">class</span>&nbsp;org.apache.commons.compress.harmony.pack200.PackingOptions</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_fileFormatVersion">
+                        <span class="label_class_member">class File Format Version:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Old Version</td><td>New Version</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td>52.0</td><td>53.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields">
+                        <span class="label_class_member">Fields:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Type</td><td>Field</td><td>Compatibility Changes:</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="new">NEW</span></td><td><span class="new modifier">public&nbsp;</span><span class="new modifier">static&nbsp;</span><span class="new modifier">final&nbsp;</span><span class="new modifier"></span></td><td><span class="new modifier">long</span></td><td>n.a.</td><td>SEGMENT_LIMIT</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_constructors"></div>
+                    <div class="class_methods"></div>
+                </div>
+            </div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.harmony.unpack200.Archive">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.harmony.unpack200.Archive"></a><span class="modified">MODIFIED</span><span class="">&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged">class</span>&nbsp;org.apache.commons.compress.harmony.unpack200.Archive</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_fileFormatVersion">
+                        <span class="label_class_member">class File Format Version:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Old Version</td><td>New Version</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td>52.0</td><td>53.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields"></div>
+                    <div class="class_constructors">
+                        <span class="label_class_member">Constructors:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Constructor</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td>Archive(java.io.InputStream,
+                                        <wbr></wbr>
+                                        java.util.jar.JarOutputStream)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>n.a.</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>84</td><td>83</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_methods"></div>
+                </div>
+            </div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.harmony.unpack200.AttributeLayoutMap">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.harmony.unpack200.AttributeLayoutMap"></a><span class="modified">MODIFIED&nbsp;(*)</span><span class="">&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged">class</span>&nbsp;org.apache.commons.compress.harmony.unpack200.AttributeLayoutMap</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_fileFormatVersion">
+                        <span class="label_class_member">class File Format Version:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Old Version</td><td>New Version</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td>52.0</td><td>53.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields"></div>
+                    <div class="class_constructors"></div>
+                    <div class="class_methods">
+                        <span class="label_class_member">Methods:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Type</td><td>Method</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED&nbsp;(*)</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td><span class="unchanged method_return_type">org.apache.commons.compress.harmony.unpack200.AttributeLayout</span></td><td>getAttributeLayout(java.lang.String,
+                                        <wbr></wbr>
+                                        int)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>org.apache.commons.compress.harmony.pack200.Pack200Exception</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>METHOD_NO_LONGER_THROWS_CHECKED_EXCEPTION</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>153</td><td>152</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="modified">MODIFIED&nbsp;(*)</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td><span class="unchanged method_return_type">org.apache.commons.compress.harmony.unpack200.AttributeLayout</span></td><td>getAttributeLayout(int,
+                                        <wbr></wbr>
+                                        int)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>org.apache.commons.compress.harmony.pack200.Pack200Exception</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>METHOD_NO_LONGER_THROWS_CHECKED_EXCEPTION</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>164</td><td>163</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.harmony.unpack200.ClassBands">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.harmony.unpack200.ClassBands"></a><span class="modified">MODIFIED&nbsp;(*)</span><span class="">&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged">class</span>&nbsp;org.apache.commons.compress.harmony.unpack200.ClassBands</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_fileFormatVersion">
+                        <span class="label_class_member">class File Format Version:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Old Version</td><td>New Version</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td>52.0</td><td>53.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields"></div>
+                    <div class="class_constructors"></div>
+                    <div class="class_methods">
+                        <span class="label_class_member">Methods:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Type</td><td>Method</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED&nbsp;(*)</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td><span class="unchanged method_return_type">long[]</span></td><td>getClassFlags()</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>org.apache.commons.compress.harmony.pack200.Pack200Exception</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>METHOD_NO_LONGER_THROWS_CHECKED_EXCEPTION</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1092</td><td>1091</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="modified">MODIFIED&nbsp;(*)</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td><span class="unchanged method_return_type">long[]</span></td><td>getFieldFlags()</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>org.apache.commons.compress.harmony.pack200.Pack200Exception</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>METHOD_NO_LONGER_THROWS_CHECKED_EXCEPTION</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1145</td><td>1144</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="modified">MODIFIED&nbsp;(*)</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td><span class="unchanged method_return_type">long[]</span></td><td>getMethodFlags()</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>org.apache.commons.compress.harmony.pack200.Pack200Exception</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>METHOD_NO_LONGER_THROWS_CHECKED_EXCEPTION</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1193</td><td>1192</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.harmony.unpack200.NewAttributeBands$Callable">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.harmony.unpack200.NewAttributeBands$Callable"></a><span class="modified">MODIFIED</span><span class="">&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier">static&nbsp;</span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged">class</span>&nbsp;org.apache.commons.compress.harmony.unpack200.NewAttributeBands$Callable</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_fileFormatVersion">
+                        <span class="label_class_member">class File Format Version:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Old Version</td><td>New Version</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td>52.0</td><td>53.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields"></div>
+                    <div class="class_constructors">
+                        <span class="label_class_member">Constructors:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Constructor</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td>NewAttributeBands$Callable(java.util.List)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>n.a.</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>741</td><td>738</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_methods"></div>
+                </div>
+            </div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.harmony.unpack200.NewAttributeBands$UnionCase">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.harmony.unpack200.NewAttributeBands$UnionCase"></a><span class="modified">MODIFIED</span><span class="">&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged">class</span>&nbsp;org.apache.commons.compress.harmony.unpack200.NewAttributeBands$UnionCase</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_fileFormatVersion">
+                        <span class="label_class_member">class File Format Version:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Old Version</td><td>New Version</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td>52.0</td><td>53.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields"></div>
+                    <div class="class_constructors">
+                        <span class="label_class_member">Constructors:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Constructor</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td>NewAttributeBands$UnionCase(org.apache.commons.compress.harmony.unpack200.NewAttributeBands,
+                                        <wbr></wbr>
+                                        java.util.List,
+                                        <wbr></wbr>
+                                        java.util.List)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>n.a.</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>833</td><td>834</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_methods">
+                        <span class="label_class_member">Methods:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Type</td><td>Method</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="new">NEW</span></td><td><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier">public&nbsp;</span><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier"></span></td><td><span class="new method_return_type">boolean</span></td><td>hasTag(int)</td><td>n.a.</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>METHOD_ADDED_TO_PUBLIC_CLASS</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>n.a.</td><td>827</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.harmony.unpack200.Segment">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.harmony.unpack200.Segment"></a><span class="modified">MODIFIED&nbsp;(*)</span><span class="">&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged">class</span>&nbsp;org.apache.commons.compress.harmony.unpack200.Segment</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_fileFormatVersion">
+                        <span class="label_class_member">class File Format Version:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Old Version</td><td>New Version</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td>52.0</td><td>53.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields"></div>
+                    <div class="class_constructors"></div>
+                    <div class="class_methods">
+                        <span class="label_class_member">Methods:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Type</td><td>Method</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED&nbsp;(*)</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td><span class="unchanged method_return_type">void</span></td><td>writeJar(java.util.jar.JarOutputStream)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="unchanged">UNCHANGED</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>org.apache.commons.compress.harmony.pack200.Pack200Exception</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>METHOD_NO_LONGER_THROWS_CHECKED_EXCEPTION</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>488</td><td>487</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.harmony.unpack200.SegmentHeader">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.harmony.unpack200.SegmentHeader"></a><span class="modified">MODIFIED&nbsp;(*)</span><span class="">&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged">class</span>&nbsp;org.apache.commons.compress.harmony.unpack200.SegmentHeader</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_fileFormatVersion">
+                        <span class="label_class_member">class File Format Version:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Old Version</td><td>New Version</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td>52.0</td><td>53.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields"></div>
+                    <div class="class_constructors"></div>
+                    <div class="class_methods">
+                        <span class="label_class_member">Methods:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Type</td><td>Method</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED&nbsp;(*)</span></td><td><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier"></span></td><td><span class="unchanged method_return_type">void</span></td><td>read(java.io.InputStream)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="unchanged">UNCHANGED</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="unchanged">UNCHANGED</span></td><td>org.apache.commons.compress.harmony.pack200.Pack200Exception</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="unchanged">UNCHANGED</span></td><td>java.lang.Error</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="removed">REMOVED</span></td><td>org.apache.commons.compress.harmony.pack200.Pack200Exception</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>METHOD_NO_LONGER_THROWS_CHECKED_EXCEPTION</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>104</td><td>104</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.parallel.FileBasedScatterGatherBackingStore">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.parallel.FileBasedScatterGatherBackingStore"></a><span class="modified">MODIFIED</span><span class="">&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged">class</span>&nbsp;org.apache.commons.compress.parallel.FileBasedScatterGatherBackingStore</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_fileFormatVersion">
+                        <span class="label_class_member">class File Format Version:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Old Version</td><td>New Version</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td>52.0</td><td>53.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields"></div>
+                    <div class="class_constructors">
+                        <span class="label_class_member">Constructors:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Constructor</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="new">NEW</span></td><td><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier">public&nbsp;</span><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier"></span></td><td>FileBasedScatterGatherBackingStore(java.nio.file.Path)</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="new">NEW</span></td><td>java.io.FileNotFoundException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>n.a.</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>n.a.</td><td>49</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_methods"></div>
+                </div>
+            </div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.utils.ExactMath">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.utils.ExactMath"></a><span class="new">NEW</span><span class="">&nbsp;</span><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier">public&nbsp;</span><span class="new modifier"></span><span class="new modifier"></span><span class="new">class</span>&nbsp;org.apache.commons.compress.utils.ExactMath</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields"></div>
+                    <div class="class_constructors"></div>
+                    <div class="class_methods">
+                        <span class="label_class_member">Methods:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Type</td><td>Method</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="new">NEW</span></td><td><span class="new modifier"></span><span class="new modifier">static&nbsp;</span><span class="new modifier">public&nbsp;</span><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier"></span></td><td><span class="new method_return_type">int</span></td><td>add(int,
+                                        <wbr></wbr>
+                                        long)</td><td>n.a.</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>METHOD_ADDED_TO_PUBLIC_CLASS</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>n.a.</td><td>43</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.utils.FileNameUtils">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.utils.FileNameUtils"></a><span class="modified">MODIFIED</span><span class="">&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged">class</span>&nbsp;org.apache.commons.compress.utils.FileNameUtils</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_fileFormatVersion">
+                        <span class="label_class_member">class File Format Version:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Old Version</td><td>New Version</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td>52.0</td><td>53.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields"></div>
+                    <div class="class_constructors"></div>
+                    <div class="class_methods">
+                        <span class="label_class_member">Methods:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Type</td><td>Method</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="new">NEW</span></td><td><span class="new modifier"></span><span class="new modifier">static&nbsp;</span><span class="new modifier">public&nbsp;</span><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier"></span></td><td><span class="new method_return_type">java.lang.String</span></td><td>getBaseName(java.nio.file.Path)</td><td>n.a.</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>METHOD_ADDED_TO_PUBLIC_CLASS</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>n.a.</td><td>51</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="new">NEW</span></td><td><span class="new modifier"></span><span class="new modifier">static&nbsp;</span><span class="new modifier">public&nbsp;</span><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier"></span></td><td><span class="new method_return_type">java.lang.String</span></td><td>getExtension(java.nio.file.Path)</td><td>n.a.</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>METHOD_ADDED_TO_PUBLIC_CLASS</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>n.a.</td><td>86</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="class" id="org.apache.commons.compress.utils.MultiReadOnlySeekableByteChannel">
+                    <div class="class_header">
+                        <span class="label"><a name="org.apache.commons.compress.utils.MultiReadOnlySeekableByteChannel"></a><span class="modified">MODIFIED</span><span class="">&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged modifier">public&nbsp;</span><span class="unchanged modifier"></span><span class="unchanged modifier"></span><span class="unchanged">class</span>&nbsp;org.apache.commons.compress.utils.MultiReadOnlySeekableByteChannel</span><a href="#toc" class="toc_link">top</a>
+                    </div>
+                    <div class="class_fileFormatVersion">
+                        <span class="label_class_member">class File Format Version:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Old Version</td><td>New Version</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="modified">MODIFIED</span></td><td>52.0</td><td>53.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="class_superclass"></div>
+                    <div class="class_interfaces"></div>
+                    <div class="class_fields"></div>
+                    <div class="class_constructors"></div>
+                    <div class="class_methods">
+                        <span class="label_class_member">Methods:</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Status</td><td>Modifier</td><td>Type</td><td>Method</td><td>Exceptions</td><td>Compatibility Changes:</td><td>Line Number</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="new">NEW</span></td><td><span class="new modifier"></span><span class="new modifier">static&nbsp;</span><span class="new modifier">public&nbsp;</span><span class="new modifier"></span><span class="new modifier"></span><span class="new modifier"></span></td><td><span class="new method_return_type">java.nio.channels.SeekableByteChannel</span></td><td>forPaths(java.nio.file.Path[])</td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Status:</td><td>Name:</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="new">NEW</span></td><td>java.io.IOException</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Change</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>METHOD_ADDED_TO_PUBLIC_CLASS</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td><td>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>Old file</td><td>New file</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>n.a.</td><td>266</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>

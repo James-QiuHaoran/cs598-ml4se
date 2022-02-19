@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.commons.compress.harmony.pack200.tests.PackingOptionsTest
+-------------------------------------------------------------------------------
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.934 s - in org.apache.commons.compress.harmony.pack200.tests.PackingOptionsTest

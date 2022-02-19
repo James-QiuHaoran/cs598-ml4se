@@ -1,0 +1,147 @@
+Comparing source compatibility of commons-compress-1.22-SNAPSHOT.jar against commons-compress-1.21.jar
+**** MODIFIED CLASS: PUBLIC org.apache.commons.compress.archivers.examples.Archiver  (not serializable)
+	***! CLASS FILE FORMAT VERSION: 53.0 <- 52.0
+	**** MODIFIED METHOD: PUBLIC void create(org.apache.commons.compress.archivers.ArchiveOutputStream, java.io.File)
+		===  UNCHANGED EXCEPTION: java.io.IOException
+		---  REMOVED EXCEPTION: org.apache.commons.compress.archivers.ArchiveException
+**** MODIFIED CLASS: PUBLIC org.apache.commons.compress.archivers.examples.Expander  (not serializable)
+	***! CLASS FILE FORMAT VERSION: 53.0 <- 52.0
+	**** MODIFIED METHOD: PUBLIC void expand(org.apache.commons.compress.archivers.ArchiveInputStream, java.io.File)
+		===  UNCHANGED EXCEPTION: java.io.IOException
+		---  REMOVED EXCEPTION: org.apache.commons.compress.archivers.ArchiveException
+	**** MODIFIED METHOD: PUBLIC void expand(org.apache.commons.compress.archivers.tar.TarFile, java.io.File)
+		===  UNCHANGED EXCEPTION: java.io.IOException
+		---  REMOVED EXCEPTION: org.apache.commons.compress.archivers.ArchiveException
+	**** MODIFIED METHOD: PUBLIC void expand(org.apache.commons.compress.archivers.zip.ZipFile, java.io.File)
+		===  UNCHANGED EXCEPTION: java.io.IOException
+		---  REMOVED EXCEPTION: org.apache.commons.compress.archivers.ArchiveException
+	**** MODIFIED METHOD: PUBLIC void expand(org.apache.commons.compress.archivers.sevenz.SevenZFile, java.io.File)
+		===  UNCHANGED EXCEPTION: java.io.IOException
+		---  REMOVED EXCEPTION: org.apache.commons.compress.archivers.ArchiveException
+**** MODIFIED CLASS: PUBLIC org.apache.commons.compress.archivers.sevenz.SevenZOutputFile  (not serializable)
+	***! CLASS FILE FORMAT VERSION: 53.0 <- 52.0
+	**** MODIFIED METHOD: PUBLIC org.apache.commons.compress.archivers.sevenz.SevenZArchiveEntry createArchiveEntry(java.io.File, java.lang.String)
+		---  REMOVED EXCEPTION: java.io.IOException
+	**** MODIFIED METHOD: PUBLIC void putArchiveEntry(org.apache.commons.compress.archivers.ArchiveEntry)
+		---  REMOVED EXCEPTION: java.io.IOException
+===  UNCHANGED CLASS: PUBLIC org.apache.commons.compress.archivers.tar.TarUtils  (not serializable)
+	***! CLASS FILE FORMAT VERSION: 53.0 <- 52.0
+	===  UNCHANGED METHOD: PROTECTED STATIC java.util.List parsePAX01SparseHeaders(java.lang.String)
+		+++  NEW ANNOTATION: java.lang.Deprecated
+***  MODIFIED CLASS: PUBLIC org.apache.commons.compress.archivers.zip.ScatterZipOutputStream  (not serializable)
+	***! CLASS FILE FORMAT VERSION: 53.0 <- 52.0
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.commons.compress.archivers.zip.ScatterZipOutputStream pathBased(java.nio.file.Path)
+		+++  NEW EXCEPTION: java.io.FileNotFoundException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.commons.compress.archivers.zip.ScatterZipOutputStream pathBased(java.nio.file.Path, int)
+		+++  NEW EXCEPTION: java.io.FileNotFoundException
+***  MODIFIED CLASS: PUBLIC org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream  (not serializable)
+	***! CLASS FILE FORMAT VERSION: 53.0 <- 52.0
+	***  MODIFIED CONSTRUCTOR: PUBLIC ZipArchiveOutputStream(java.nio.channels.SeekableByteChannel)
+		---  REMOVED EXCEPTION: java.io.IOException
+	+++  NEW CONSTRUCTOR: PUBLIC(+) ZipArchiveOutputStream(java.nio.file.Path, long)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW METHOD: PUBLIC(+) long getBytesWritten()
+***  MODIFIED CLASS: PUBLIC org.apache.commons.compress.archivers.zip.ZipFile  (not serializable)
+	***! CLASS FILE FORMAT VERSION: 53.0 <- 52.0
+	+++  NEW CONSTRUCTOR: PUBLIC(+) ZipFile(java.nio.file.Path, java.lang.String, boolean)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW CONSTRUCTOR: PUBLIC(+) ZipFile(java.nio.file.Path, java.lang.String)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW CONSTRUCTOR: PUBLIC(+) ZipFile(java.nio.file.Path, java.lang.String, boolean, boolean)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW CONSTRUCTOR: PUBLIC(+) ZipFile(java.nio.file.Path)
+		+++  NEW EXCEPTION: java.io.IOException
+***  MODIFIED CLASS: PUBLIC org.apache.commons.compress.archivers.zip.ZipSplitReadOnlySeekableByteChannel  (not serializable)
+	***! CLASS FILE FORMAT VERSION: 53.0 <- 52.0
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.nio.channels.SeekableByteChannel buildFromLastSplitSegment(java.nio.file.Path)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.nio.channels.SeekableByteChannel forPaths(java.nio.file.Path[])
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.nio.channels.SeekableByteChannel forPaths(java.nio.file.Path, java.lang.Iterable)
+		+++  NEW EXCEPTION: java.io.IOException
+***  MODIFIED CLASS: PUBLIC org.apache.commons.compress.compressors.deflate.DeflateCompressorOutputStream  (not serializable)
+	***! CLASS FILE FORMAT VERSION: 53.0 <- 52.0
+	***  MODIFIED CONSTRUCTOR: PUBLIC DeflateCompressorOutputStream(java.io.OutputStream, org.apache.commons.compress.compressors.deflate.DeflateParameters)
+		---  REMOVED EXCEPTION: java.io.IOException
+	***  MODIFIED CONSTRUCTOR: PUBLIC DeflateCompressorOutputStream(java.io.OutputStream)
+		---  REMOVED EXCEPTION: java.io.IOException
+***  MODIFIED CLASS: PUBLIC org.apache.commons.compress.compressors.lz4.BlockLZ4CompressorInputStream  (not serializable)
+	***! CLASS FILE FORMAT VERSION: 53.0 <- 52.0
+	***  MODIFIED CONSTRUCTOR: PUBLIC BlockLZ4CompressorInputStream(java.io.InputStream)
+		---  REMOVED EXCEPTION: java.io.IOException
+***  MODIFIED CLASS: PUBLIC org.apache.commons.compress.compressors.lz4.BlockLZ4CompressorOutputStream  (not serializable)
+	***! CLASS FILE FORMAT VERSION: 53.0 <- 52.0
+	***  MODIFIED CONSTRUCTOR: PUBLIC BlockLZ4CompressorOutputStream(java.io.OutputStream)
+		---  REMOVED EXCEPTION: java.io.IOException
+	***  MODIFIED CONSTRUCTOR: PUBLIC BlockLZ4CompressorOutputStream(java.io.OutputStream, org.apache.commons.compress.compressors.lz77support.Parameters)
+		---  REMOVED EXCEPTION: java.io.IOException
+***  MODIFIED CLASS: PUBLIC ABSTRACT org.apache.commons.compress.compressors.lz77support.AbstractLZ77CompressorInputStream  (not serializable)
+	***! CLASS FILE FORMAT VERSION: 53.0 <- 52.0
+	***  MODIFIED CONSTRUCTOR: PUBLIC AbstractLZ77CompressorInputStream(java.io.InputStream, int)
+		---  REMOVED EXCEPTION: java.io.IOException
+***  MODIFIED CLASS: PUBLIC org.apache.commons.compress.harmony.pack200.NewAttributeBands$Callable  (not serializable)
+	***! CLASS FILE FORMAT VERSION: 53.0 <- 52.0
+	***  MODIFIED CONSTRUCTOR: PUBLIC NewAttributeBands$Callable(org.apache.commons.compress.harmony.pack200.NewAttributeBands, java.util.List)
+		---  REMOVED EXCEPTION: java.io.IOException
+***  MODIFIED CLASS: PUBLIC org.apache.commons.compress.harmony.pack200.NewAttributeBands$UnionCase  (not serializable)
+	***! CLASS FILE FORMAT VERSION: 53.0 <- 52.0
+	***  MODIFIED CONSTRUCTOR: PUBLIC NewAttributeBands$UnionCase(org.apache.commons.compress.harmony.pack200.NewAttributeBands, java.util.List, java.util.List)
+		---  REMOVED EXCEPTION: java.io.IOException
+***  MODIFIED CLASS: PUBLIC org.apache.commons.compress.harmony.pack200.PackingOptions  (not serializable)
+	***! CLASS FILE FORMAT VERSION: 53.0 <- 52.0
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) long SEGMENT_LIMIT
+***  MODIFIED CLASS: PUBLIC org.apache.commons.compress.harmony.unpack200.Archive  (not serializable)
+	***! CLASS FILE FORMAT VERSION: 53.0 <- 52.0
+	***  MODIFIED CONSTRUCTOR: PUBLIC Archive(java.io.InputStream, java.util.jar.JarOutputStream)
+		---  REMOVED EXCEPTION: java.io.IOException
+**** MODIFIED CLASS: PUBLIC org.apache.commons.compress.harmony.unpack200.AttributeLayoutMap  (not serializable)
+	***! CLASS FILE FORMAT VERSION: 53.0 <- 52.0
+	**** MODIFIED METHOD: PUBLIC org.apache.commons.compress.harmony.unpack200.AttributeLayout getAttributeLayout(java.lang.String, int)
+		---  REMOVED EXCEPTION: org.apache.commons.compress.harmony.pack200.Pack200Exception
+	**** MODIFIED METHOD: PUBLIC org.apache.commons.compress.harmony.unpack200.AttributeLayout getAttributeLayout(int, int)
+		---  REMOVED EXCEPTION: org.apache.commons.compress.harmony.pack200.Pack200Exception
+**** MODIFIED CLASS: PUBLIC org.apache.commons.compress.harmony.unpack200.ClassBands  (not serializable)
+	***! CLASS FILE FORMAT VERSION: 53.0 <- 52.0
+	**** MODIFIED METHOD: PUBLIC long[] getClassFlags()
+		---  REMOVED EXCEPTION: org.apache.commons.compress.harmony.pack200.Pack200Exception
+	**** MODIFIED METHOD: PUBLIC long[] getFieldFlags()
+		---  REMOVED EXCEPTION: org.apache.commons.compress.harmony.pack200.Pack200Exception
+	**** MODIFIED METHOD: PUBLIC long[] getMethodFlags()
+		---  REMOVED EXCEPTION: org.apache.commons.compress.harmony.pack200.Pack200Exception
+***  MODIFIED CLASS: PUBLIC STATIC org.apache.commons.compress.harmony.unpack200.NewAttributeBands$Callable  (not serializable)
+	***! CLASS FILE FORMAT VERSION: 53.0 <- 52.0
+	***  MODIFIED CONSTRUCTOR: PUBLIC NewAttributeBands$Callable(java.util.List)
+		---  REMOVED EXCEPTION: java.io.IOException
+***  MODIFIED CLASS: PUBLIC org.apache.commons.compress.harmony.unpack200.NewAttributeBands$UnionCase  (not serializable)
+	***! CLASS FILE FORMAT VERSION: 53.0 <- 52.0
+	***  MODIFIED CONSTRUCTOR: PUBLIC NewAttributeBands$UnionCase(org.apache.commons.compress.harmony.unpack200.NewAttributeBands, java.util.List, java.util.List)
+		---  REMOVED EXCEPTION: java.io.IOException
+	+++  NEW METHOD: PUBLIC(+) boolean hasTag(int)
+**** MODIFIED CLASS: PUBLIC org.apache.commons.compress.harmony.unpack200.Segment  (not serializable)
+	***! CLASS FILE FORMAT VERSION: 53.0 <- 52.0
+	**** MODIFIED METHOD: PUBLIC void writeJar(java.util.jar.JarOutputStream)
+		===  UNCHANGED EXCEPTION: java.io.IOException
+		---  REMOVED EXCEPTION: org.apache.commons.compress.harmony.pack200.Pack200Exception
+**** MODIFIED CLASS: PUBLIC org.apache.commons.compress.harmony.unpack200.SegmentHeader  (not serializable)
+	***! CLASS FILE FORMAT VERSION: 53.0 <- 52.0
+	**** MODIFIED METHOD: PUBLIC void read(java.io.InputStream)
+		===  UNCHANGED EXCEPTION: java.io.IOException
+		===  UNCHANGED EXCEPTION: org.apache.commons.compress.harmony.pack200.Pack200Exception
+		===  UNCHANGED EXCEPTION: java.lang.Error
+		---  REMOVED EXCEPTION: org.apache.commons.compress.harmony.pack200.Pack200Exception
+***  MODIFIED CLASS: PUBLIC org.apache.commons.compress.parallel.FileBasedScatterGatherBackingStore  (not serializable)
+	***! CLASS FILE FORMAT VERSION: 53.0 <- 52.0
+	+++  NEW CONSTRUCTOR: PUBLIC(+) FileBasedScatterGatherBackingStore(java.nio.file.Path)
+		+++  NEW EXCEPTION: java.io.FileNotFoundException
++++  NEW CLASS: PUBLIC(+) org.apache.commons.compress.utils.ExactMath  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 53.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) int add(int, long)
+***  MODIFIED CLASS: PUBLIC org.apache.commons.compress.utils.FileNameUtils  (not serializable)
+	***! CLASS FILE FORMAT VERSION: 53.0 <- 52.0
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.lang.String getBaseName(java.nio.file.Path)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.lang.String getExtension(java.nio.file.Path)
+***  MODIFIED CLASS: PUBLIC org.apache.commons.compress.utils.MultiReadOnlySeekableByteChannel  (not serializable)
+	***! CLASS FILE FORMAT VERSION: 53.0 <- 52.0
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.nio.channels.SeekableByteChannel forPaths(java.nio.file.Path[])
+		+++  NEW EXCEPTION: java.io.IOException
