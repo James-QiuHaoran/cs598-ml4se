@@ -86,7 +86,7 @@ def get_ast(path, visualization=False):
             dir_path = original_cwd + '/' + path + '/AST'
         else:
             print('AST representation files are stored to:', path + '/../AST')
-            dir_path = oringla_cwd + '/' + path + '/../AST'
+            dir_path = original_cwd + '/' + path + '/../AST'
 
         # visualization
         if visualization:
@@ -143,6 +143,9 @@ def get_cg(path, visualization=False):
             dir_path = path[0:path.rindex('/')] + '/CG'
             for file_name in os.listdir(dir_path):
                 file_path = os.path.join(dir_path, file_name)
+                if os.path.getsize(file_path) < 100:
+                    # skip files less than 100 bytes (basically no meaningful representation extracted)
+                    continue
                 print(file_path)
                 try:
                     graphs = pydot.graph_from_dot_file(file_path)
