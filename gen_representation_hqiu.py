@@ -10,7 +10,8 @@ NAME_CG_ANALYZER = 'javacg-static.jar'
 app_paths = {
     "owner": "owner/out/artifacts/owner_jar/owner.jar",
     "hutool": "hutool/target/hutool-json-5.7.21.jar",
-    "cfg4j": "cfg4j/out/artifacts/git-bind-1.0.0-SNAPSHOT.jar"
+    "cfg4j": "cfg4j/out/artifacts/git-bind-1.0.0-SNAPSHOT.jar",
+    "commons-compress": "commons-compress/target/commons-compress-1.22-SNAPSHOT-sources.jar"# commons-compress-1.22-SNAPSHOT.jar"
 }
 
 ast_files = ['JSONXMLSerializer_ast.dot', 'JSONObject_ast.dot', 'JSONUtil_ast.dot', 'JSONTokener_ast.dot', 'IssueI1F8M2_ast.dot']
@@ -83,6 +84,8 @@ def get_cg(path, visualization=False):
             path = original_cwd + '/' + app_paths['hutool']
         elif 'cfg4j' in path:
             path = original_cwd + '/' + app_paths['cfg4j']
+        elif 'commons-compress' in path:
+            path = original_cwd + '/' + app_paths['commons-compress']
         print('Target path:', path)
         result = subprocess.run(['java', '-jar', NAME_CG_ANALYZER, path], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         if result.stdout:

@@ -39,4 +39,9 @@ python gen_representation_hqiu.py -r CFG -i hutool/hutool-json/src -v
 python gen_representation_hqiu.py -r AST -i cfg4j/cfg4j-git/src -v
 python gen_representation_hqiu.py -r CG -i cfg4j/cfg4j-git/src -v
 python gen_representation_hqiu.py -r CFG -i cfg4j/cfg4j-git/src -v
+
+# commons-compress
+python gen_representation_hqiu.py -r CFG -i commons-compress/src/ -v
+python gen_representation_hqiu.py -r AST -i commons-compress/src/ -v
+python gen_representation_hqiu.py -r CG -i commons-compress/src/ -v
 ```
