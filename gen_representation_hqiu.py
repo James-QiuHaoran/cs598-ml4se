@@ -132,6 +132,13 @@ def get_cg(path, visualization=False):
             path = original_cwd + '/' + app_paths['commons-compress']
         elif 'incubator-shenyu' in path:
             path = original_cwd + '/' + app_paths['incubator-shenyu']
+        elif 'commons-io' in path:
+            path = original_cwd + '/' + app_paths['commons-io']
+        elif 'commons-cli' in path:
+            path = original_cwd + '/' + app_paths['commons-cli']
+        elif 'fastjson' in path:
+            path = original_cwd + '/' + app_paths['fastjson']
+
         print('Target path:', path)
         result = subprocess.run(['java', '-jar', NAME_CG_ANALYZER, path], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         if result.stdout:
