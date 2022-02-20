@@ -1,0 +1,43 @@
+
+*****************************************************
+Summary
+-------
+Generated at: 2022-02-20T11:14:36-06:00
+
+Notes: 0
+Binaries: 0
+Archives: 0
+Standards: 17
+
+Apache Licensed: 17
+Generated Documents: 0
+
+JavaDocs are generated, thus a license header is optional.
+Generated files do not require license headers.
+
+0 Unknown Licenses
+
+*****************************************************
+  Files with Apache License headers will be marked AL
+  Binary files (which do not require any license headers) will be marked B
+  Compressed archives will be marked A
+  Notices, licenses etc. will be marked N
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-api/pom.xml
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-api/src/main/java/org/apache/shenyu/plugin/api/result/ShenyuResult.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-api/src/main/java/org/apache/shenyu/plugin/api/result/ShenyuResultWrap.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-api/src/main/java/org/apache/shenyu/plugin/api/result/ShenyuResultEnum.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-api/src/main/java/org/apache/shenyu/plugin/api/result/DefaultShenyuEntity.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-api/src/main/java/org/apache/shenyu/plugin/api/result/DefaultShenyuResult.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-api/src/main/java/org/apache/shenyu/plugin/api/context/ShenyuContext.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-api/src/main/java/org/apache/shenyu/plugin/api/context/ShenyuContextDecorator.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-api/src/main/java/org/apache/shenyu/plugin/api/context/ShenyuContextBuilder.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-api/src/main/java/org/apache/shenyu/plugin/api/RemoteAddressResolver.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-api/src/main/java/org/apache/shenyu/plugin/api/ShenyuPlugin.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-api/src/main/java/org/apache/shenyu/plugin/api/HandleCache.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-api/src/main/java/org/apache/shenyu/plugin/api/utils/BodyParamUtils.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-api/src/main/java/org/apache/shenyu/plugin/api/utils/WebFluxResultUtils.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-api/src/main/java/org/apache/shenyu/plugin/api/utils/RequestQueryCodecUtil.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-api/src/main/java/org/apache/shenyu/plugin/api/utils/SpringBeanUtils.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-api/src/main/java/org/apache/shenyu/plugin/api/ShenyuPluginChain.java
+ 
+*****************************************************

@@ -1,0 +1,36 @@
+
+*****************************************************
+Summary
+-------
+Generated at: 2022-02-20T11:14:25-06:00
+
+Notes: 0
+Binaries: 0
+Archives: 0
+Standards: 10
+
+Apache Licensed: 10
+Generated Documents: 0
+
+JavaDocs are generated, thus a license header is optional.
+Generated files do not require license headers.
+
+0 Unknown Licenses
+
+*****************************************************
+  Files with Apache License headers will be marked AL
+  Binary files (which do not require any license headers) will be marked B
+  Compressed archives will be marked A
+  Notices, licenses etc. will be marked N
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-client/shenyu-client-grpc/pom.xml
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-client/shenyu-client-grpc/src/main/java/org/apache/shenyu/client/grpc/server/GrpcServerBuilder.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-client/shenyu-client-grpc/src/main/java/org/apache/shenyu/client/grpc/server/GrpcServerRunner.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-client/shenyu-client-grpc/src/main/java/org/apache/shenyu/client/grpc/GrpcClientBeanPostProcessor.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-client/shenyu-client-grpc/src/main/java/org/apache/shenyu/client/grpc/common/dto/GrpcExt.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-client/shenyu-client-grpc/src/main/java/org/apache/shenyu/client/grpc/common/annotation/ShenyuGrpcClient.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-client/shenyu-client-grpc/src/main/java/org/apache/shenyu/client/grpc/json/JsonServerCallListener.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-client/shenyu-client-grpc/src/main/java/org/apache/shenyu/client/grpc/json/JsonServerServiceInterceptor.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-client/shenyu-client-grpc/src/main/java/org/apache/shenyu/client/grpc/json/JsonForwardingServerCall.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-client/shenyu-client-grpc/src/main/java/org/apache/shenyu/client/grpc/GrpcContextRefreshedEventListener.java
+ 
+*****************************************************

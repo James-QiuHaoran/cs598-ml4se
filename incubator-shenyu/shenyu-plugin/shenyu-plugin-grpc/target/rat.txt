@@ -1,0 +1,83 @@
+
+*****************************************************
+Summary
+-------
+Generated at: 2022-02-20T11:14:52-06:00
+
+Notes: 0
+Binaries: 0
+Archives: 0
+Standards: 57
+
+Apache Licensed: 57
+Generated Documents: 0
+
+JavaDocs are generated, thus a license header is optional.
+Generated files do not require license headers.
+
+0 Unknown Licenses
+
+*****************************************************
+  Files with Apache License headers will be marked AL
+  Binary files (which do not require any license headers) will be marked B
+  Compressed archives will be marked A
+  Notices, licenses etc. will be marked N
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/pom.xml
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/test/java/org/apache/shenyu/plugin/grpc/handler/GrpcPluginDataHandlerTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/test/java/org/apache/shenyu/plugin/grpc/loadbalance/RandomLoadBalancerProviderTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/test/java/org/apache/shenyu/plugin/grpc/loadbalance/picker/EmptyPickerTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/test/java/org/apache/shenyu/plugin/grpc/loadbalance/picker/UnitTestIdleHelper.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/test/java/org/apache/shenyu/plugin/grpc/loadbalance/picker/RoundRobinPickerTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/test/java/org/apache/shenyu/plugin/grpc/loadbalance/picker/UnitTestReadHelper.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/test/java/org/apache/shenyu/plugin/grpc/loadbalance/picker/RandomPickerTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/test/java/org/apache/shenyu/plugin/grpc/loadbalance/RoundRobinLoadBalancerProviderTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/test/java/org/apache/shenyu/plugin/grpc/loadbalance/SubChannelsTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/test/java/org/apache/shenyu/plugin/grpc/loadbalance/AbstractLoadBalancerTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/test/java/org/apache/shenyu/plugin/grpc/context/GrpcShenyuContextDecoratorTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/test/java/org/apache/shenyu/plugin/grpc/cache/ApplicationConfigCacheTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/test/java/org/apache/shenyu/plugin/grpc/proto/MessageWriterTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/test/java/org/apache/shenyu/plugin/grpc/proto/MyStreamObserver.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/test/java/org/apache/shenyu/plugin/grpc/proto/DynamicMessageMarshallerTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/test/java/org/apache/shenyu/plugin/grpc/proto/CompositeStreamObserverTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/test/java/org/apache/shenyu/plugin/grpc/proto/CompleteObserverTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/test/java/org/apache/shenyu/plugin/grpc/GrpcPluginTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/test/java/org/apache/shenyu/plugin/grpc/resolver/ShenyuResolverHelperTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/test/java/org/apache/shenyu/plugin/grpc/resolver/ShenyuNameResolverProviderTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/test/java/org/apache/shenyu/plugin/grpc/resolver/ShenyuServiceInstanceListsTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/test/java/org/apache/shenyu/plugin/grpc/resolver/ShenyuServiceInstanceTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/GrpcPlugin.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/handler/GrpcPluginDataHandler.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/loadbalance/AbstractLoadBalancer.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/loadbalance/picker/AbstractReadyPicker.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/loadbalance/picker/AbstractPicker.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/loadbalance/picker/Picker.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/loadbalance/picker/EmptyPicker.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/loadbalance/picker/RoundRobinPicker.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/loadbalance/picker/RandomPicker.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/loadbalance/GrpcAttributeUtils.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/loadbalance/LoadBalancerStrategy.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/loadbalance/SubChannelCopy.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/loadbalance/RoundRobinLoadBalancerProvider.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/loadbalance/SubChannels.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/loadbalance/RandomLoadBalancerProvider.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/context/GrpcShenyuContextDecorator.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/cache/GrpcClientCache.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/cache/ApplicationConfigCache.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/proto/CompleteObserver.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/proto/MessageWriter.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/proto/ShenyuGrpcResponse.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/proto/ShenyuGrpcCallRequest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/proto/CompositeStreamObserver.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/proto/DynamicMessageMarshaller.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/transfer/ShenyuServiceTransfer.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/intercept/ContextClientInterceptor.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/exception/ShenyuGrpcException.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/client/GrpcClientBuilder.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/client/ShenyuGrpcClient.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/resolver/ShenyuServiceInstance.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/resolver/ShenyuNameResolverProvider.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/resolver/ShenyuServiceInstanceLists.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/resolver/ShenyuNameResolver.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-grpc/src/main/java/org/apache/shenyu/plugin/grpc/resolver/ShenyuResolverHelper.java
+ 
+*****************************************************

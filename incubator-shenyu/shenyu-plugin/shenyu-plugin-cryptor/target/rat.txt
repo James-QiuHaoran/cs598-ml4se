@@ -1,0 +1,42 @@
+
+*****************************************************
+Summary
+-------
+Generated at: 2022-02-20T11:14:41-06:00
+
+Notes: 0
+Binaries: 0
+Archives: 0
+Standards: 16
+
+Apache Licensed: 16
+Generated Documents: 0
+
+JavaDocs are generated, thus a license header is optional.
+Generated files do not require license headers.
+
+0 Unknown Licenses
+
+*****************************************************
+  Files with Apache License headers will be marked AL
+  Binary files (which do not require any license headers) will be marked B
+  Compressed archives will be marked A
+  Notices, licenses etc. will be marked N
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-cryptor/pom.xml
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-cryptor/src/test/java/org/apache/shenyu/plugin/cryptor/response/CryptorResponsePluginTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-cryptor/src/test/java/org/apache/shenyu/plugin/cryptor/request/CryptorRequestPluginTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-cryptor/src/main/resources/META-INF/shenyu/org.apache.shenyu.plugin.cryptor.strategy.CryptorStrategy
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-cryptor/src/main/java/org/apache/shenyu/plugin/cryptor/handler/CryptorResponsePluginDataHandler.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-cryptor/src/main/java/org/apache/shenyu/plugin/cryptor/handler/CryptorRuleHandler.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-cryptor/src/main/java/org/apache/shenyu/plugin/cryptor/handler/CryptorRequestPluginDataHandler.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-cryptor/src/main/java/org/apache/shenyu/plugin/cryptor/response/CryptorResponsePlugin.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-cryptor/src/main/java/org/apache/shenyu/plugin/cryptor/decorator/CryptorResponseDecorator.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-cryptor/src/main/java/org/apache/shenyu/plugin/cryptor/decorator/CryptorRequestDecorator.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-cryptor/src/main/java/org/apache/shenyu/plugin/cryptor/utils/JsonUtil.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-cryptor/src/main/java/org/apache/shenyu/plugin/cryptor/utils/CryptorUtil.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-cryptor/src/main/java/org/apache/shenyu/plugin/cryptor/request/CryptorRequestPlugin.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-cryptor/src/main/java/org/apache/shenyu/plugin/cryptor/strategy/CryptorStrategyFactory.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-cryptor/src/main/java/org/apache/shenyu/plugin/cryptor/strategy/RsaStrategy.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-cryptor/src/main/java/org/apache/shenyu/plugin/cryptor/strategy/CryptorStrategy.java
+ 
+*****************************************************

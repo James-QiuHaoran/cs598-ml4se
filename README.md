@@ -33,7 +33,7 @@ python gen_representation_hqiu.py -r CFG -i owner/owner/src -v
 # hutool
 python gen_representation_hqiu.py -r AST -i hutool/hutool-json/src -v
 python gen_representation_hqiu.py -r CG -i hutool/hutool-json/src -v
-python gen_representation_hqiu.py -r CFG -i hutool/hutool-json/src -v
+python3 gen_representation_hqiu.py -r CFG -i hutool/hutool-json/src -v
 
 # cfg4j
 python gen_representation_hqiu.py -r AST -i cfg4j/cfg4j-git/src -v
@@ -49,4 +49,19 @@ python gen_representation_hqiu.py -r CFG -i commons-compress/src/ -v
 python gen_representation_hqiu.py -r AST -i incubator-shenyu/shenyu-common -v
 python gen_representation_hqiu.py -r CG -i incubator-shenyu/shenyu-common -v
 python gen_representation_hqiu.py -r CFG -i incubator-shenyu/shenyu-common -v
+
+#commons-cli
+python gen_representation_hqiu.py -r AST -i commons-cli/src/ -v
+python gen_representation_hqiu.py -r CG -i commons-cli/src/ -v
+python gen_representation_hqiu.py -r CFG -i commons-cli/src/ -v
+
+#commons-io
+python gen_representation_hqiu.py -r AST -i commons-io/src/ -v
+python gen_representation_hqiu.py -r CG -i commons-io/src/ -v
+python gen_representation_hqiu.py -r CFG -i commons-io/src/ -v
+
+#fastjson
+python gen_representation_hqiu.py -r AST -i fastjson/src/ -v
+python gen_representation_hqiu.py -r CG -i fastjson/src/ -v
+python gen_representation_hqiu.py -r CFG -i fastjson/src/ -v
 ```

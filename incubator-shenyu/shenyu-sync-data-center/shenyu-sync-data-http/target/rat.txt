@@ -1,0 +1,45 @@
+
+*****************************************************
+Summary
+-------
+Generated at: 2022-02-20T11:15:50-06:00
+
+Notes: 0
+Binaries: 0
+Archives: 0
+Standards: 19
+
+Apache Licensed: 19
+Generated Documents: 0
+
+JavaDocs are generated, thus a license header is optional.
+Generated files do not require license headers.
+
+0 Unknown Licenses
+
+*****************************************************
+  Files with Apache License headers will be marked AL
+  Binary files (which do not require any license headers) will be marked B
+  Compressed archives will be marked A
+  Notices, licenses etc. will be marked N
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-sync-data-center/shenyu-sync-data-http/pom.xml
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-sync-data-center/shenyu-sync-data-http/src/test/resources/logback.xml
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-sync-data-center/shenyu-sync-data-http/src/test/java/org/apache/shenyu/sync/data/http/config/HttpConfigTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-sync-data-center/shenyu-sync-data-http/src/test/java/org/apache/shenyu/sync/data/http/refresh/PluginDataRefreshTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-sync-data-center/shenyu-sync-data-http/src/test/java/org/apache/shenyu/sync/data/http/refresh/AppAuthDataRefreshTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-sync-data-center/shenyu-sync-data-http/src/test/java/org/apache/shenyu/sync/data/http/refresh/MetaDataRefreshTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-sync-data-center/shenyu-sync-data-http/src/test/java/org/apache/shenyu/sync/data/http/refresh/SelectorDataRefreshTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-sync-data-center/shenyu-sync-data-http/src/test/java/org/apache/shenyu/sync/data/http/refresh/RuleDataRefreshTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-sync-data-center/shenyu-sync-data-http/src/test/java/org/apache/shenyu/sync/data/http/HttpSyncDataServiceTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-sync-data-center/shenyu-sync-data-http/src/main/java/org/apache/shenyu/sync/data/http/HttpSyncDataService.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-sync-data-center/shenyu-sync-data-http/src/main/java/org/apache/shenyu/sync/data/http/config/HttpConfig.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-sync-data-center/shenyu-sync-data-http/src/main/java/org/apache/shenyu/sync/data/http/refresh/MetaDataRefresh.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-sync-data-center/shenyu-sync-data-http/src/main/java/org/apache/shenyu/sync/data/http/refresh/AbstractDataRefresh.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-sync-data-center/shenyu-sync-data-http/src/main/java/org/apache/shenyu/sync/data/http/refresh/DataRefreshFactory.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-sync-data-center/shenyu-sync-data-http/src/main/java/org/apache/shenyu/sync/data/http/refresh/AppAuthDataRefresh.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-sync-data-center/shenyu-sync-data-http/src/main/java/org/apache/shenyu/sync/data/http/refresh/SelectorDataRefresh.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-sync-data-center/shenyu-sync-data-http/src/main/java/org/apache/shenyu/sync/data/http/refresh/RuleDataRefresh.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-sync-data-center/shenyu-sync-data-http/src/main/java/org/apache/shenyu/sync/data/http/refresh/PluginDataRefresh.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-sync-data-center/shenyu-sync-data-http/src/main/java/org/apache/shenyu/sync/data/http/refresh/DataRefresh.java
+ 
+*****************************************************

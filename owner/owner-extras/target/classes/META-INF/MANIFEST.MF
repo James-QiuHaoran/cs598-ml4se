@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1645377260799
+Build-Jdk: 17.0.1
+Built-By: jiananhou
+Bundle-Description: Extras for OWNER library
+Bundle-DocURL: https://www.aeonbits.org/
+Bundle-License: https://raw.github.com/lviggiano/owner/master/LICENSE
+Bundle-ManifestVersion: 2
+Bundle-Name: OWNER :: Extras
+Bundle-SymbolicName: org.aeonbits.owner.extras
+Bundle-Vendor: Luigi R. Viggiano
+Bundle-Version: 1.0.13.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: org.aeonbits.owner.loaders;version="1.0.13"
+Import-Package: org.apache.curator;version="[2.12,3)";resolution:=option
+ al,org.apache.curator.framework;version="[2.12,3)";resolution:=optional
+ ,org.apache.curator.framework.api;version="[2.12,3)";resolution:=option
+ al,org.apache.curator.utils;version="[2.12,3)";resolution:=optional
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.6))"
+Tool: Bnd-3.5.0.201709291849

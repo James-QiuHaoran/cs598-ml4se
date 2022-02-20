@@ -1,0 +1,38 @@
+
+*****************************************************
+Summary
+-------
+Generated at: 2022-02-20T11:15:16-06:00
+
+Notes: 0
+Binaries: 0
+Archives: 0
+Standards: 12
+
+Apache Licensed: 12
+Generated Documents: 0
+
+JavaDocs are generated, thus a license header is optional.
+Generated files do not require license headers.
+
+0 Unknown Licenses
+
+*****************************************************
+  Files with Apache License headers will be marked AL
+  Binary files (which do not require any license headers) will be marked B
+  Compressed archives will be marked A
+  Notices, licenses etc. will be marked N
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-sign/pom.xml
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-sign/src/test/java/org/apache/shenyu/plugin/sign/SignPluginTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-sign/src/test/java/org/apache/shenyu/plugin/sign/service/DefaultSignServiceTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-sign/src/test/java/org/apache/shenyu/plugin/sign/sign/DefaultSignProviderTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-sign/src/main/java/org/apache/shenyu/plugin/sign/cache/SignAuthDataCache.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-sign/src/main/java/org/apache/shenyu/plugin/sign/SignPlugin.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-sign/src/main/java/org/apache/shenyu/plugin/sign/api/SignService.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-sign/src/main/java/org/apache/shenyu/plugin/sign/api/DefaultSignProvider.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-sign/src/main/java/org/apache/shenyu/plugin/sign/api/ShenyuSignProviderWrap.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-sign/src/main/java/org/apache/shenyu/plugin/sign/api/SignProvider.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-sign/src/main/java/org/apache/shenyu/plugin/sign/subscriber/SignAuthDataSubscriber.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-sign/src/main/java/org/apache/shenyu/plugin/sign/service/DefaultSignService.java
+ 
+*****************************************************

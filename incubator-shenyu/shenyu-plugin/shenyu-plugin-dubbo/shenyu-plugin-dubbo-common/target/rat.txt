@@ -1,0 +1,36 @@
+
+*****************************************************
+Summary
+-------
+Generated at: 2022-02-20T11:14:47-06:00
+
+Notes: 0
+Binaries: 0
+Archives: 0
+Standards: 10
+
+Apache Licensed: 10
+Generated Documents: 0
+
+JavaDocs are generated, thus a license header is optional.
+Generated files do not require license headers.
+
+0 Unknown Licenses
+
+*****************************************************
+  Files with Apache License headers will be marked AL
+  Binary files (which do not require any license headers) will be marked B
+  Compressed archives will be marked A
+  Notices, licenses etc. will be marked N
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-dubbo/shenyu-plugin-dubbo-common/pom.xml
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-dubbo/shenyu-plugin-dubbo-common/src/test/java/org/apache/shenyu/plugin/dubbo/common/context/DubboShenyuContextDecoratorTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-dubbo/shenyu-plugin-dubbo-common/src/test/java/org/apache/shenyu/plugin/dubbo/common/param/DubboParamResolveServiceTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-dubbo/shenyu-plugin-dubbo-common/src/main/java/org/apache/shenyu/plugin/dubbo/common/handler/AbstractDubboPluginDataHandler.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-dubbo/shenyu-plugin-dubbo-common/src/main/java/org/apache/shenyu/plugin/dubbo/common/context/DubboShenyuContextDecorator.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-dubbo/shenyu-plugin-dubbo-common/src/main/java/org/apache/shenyu/plugin/dubbo/common/cache/DubboConfigCache.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-dubbo/shenyu-plugin-dubbo-common/src/main/java/org/apache/shenyu/plugin/dubbo/common/cache/DubboParam.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-dubbo/shenyu-plugin-dubbo-common/src/main/java/org/apache/shenyu/plugin/dubbo/common/AbstractDubboPlugin.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-dubbo/shenyu-plugin-dubbo-common/src/main/java/org/apache/shenyu/plugin/dubbo/common/param/DubboParamResolveService.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-dubbo/shenyu-plugin-dubbo-common/src/main/java/org/apache/shenyu/plugin/dubbo/common/param/DubboParamResolveServiceImpl.java
+ 
+*****************************************************

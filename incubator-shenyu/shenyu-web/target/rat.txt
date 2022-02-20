@@ -1,0 +1,61 @@
+
+*****************************************************
+Summary
+-------
+Generated at: 2022-02-20T11:15:52-06:00
+
+Notes: 0
+Binaries: 0
+Archives: 0
+Standards: 35
+
+Apache Licensed: 35
+Generated Documents: 0
+
+JavaDocs are generated, thus a license header is optional.
+Generated files do not require license headers.
+
+0 Unknown Licenses
+
+*****************************************************
+  Files with Apache License headers will be marked AL
+  Binary files (which do not require any license headers) will be marked B
+  Compressed archives will be marked A
+  Notices, licenses etc. will be marked N
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/pom.xml
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/test/java/org/apache/shenyu/web/handler/GlobalErrorHandlerTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/test/java/org/apache/shenyu/web/handler/ShenyuWebHandlerTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/test/java/org/apache/shenyu/web/controller/TestObjectProvider.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/test/java/org/apache/shenyu/web/controller/LocalMetadataControllerTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/test/java/org/apache/shenyu/web/controller/LocalAppAuthControllerTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/test/java/org/apache/shenyu/web/controller/LocalPluginControllerTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/test/java/org/apache/shenyu/web/logo/ShenyuLogoTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/test/java/org/apache/shenyu/web/loader/ShenyuPluginPathBuilderTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/test/java/org/apache/shenyu/web/loader/ShenyuPluginLoaderTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/test/java/org/apache/shenyu/web/filter/FallbackFilterTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/test/java/org/apache/shenyu/web/filter/ExcludeFilterTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/test/java/org/apache/shenyu/web/filter/FileSizeFilterTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/test/java/org/apache/shenyu/web/filter/CrossFilterTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/test/java/org/apache/shenyu/web/forward/ForwardedRemoteAddressResolverTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/main/java/org/apache/shenyu/web/handler/ShenyuWebHandler.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/main/java/org/apache/shenyu/web/handler/GlobalErrorHandler.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/main/java/org/apache/shenyu/web/configuration/ShenyuExtConfiguration.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/main/java/org/apache/shenyu/web/configuration/SpringExtConfiguration.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/main/java/org/apache/shenyu/web/configuration/ErrorHandlerConfiguration.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/main/java/org/apache/shenyu/web/controller/LocalAppAuthController.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/main/java/org/apache/shenyu/web/controller/LocalMetadataController.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/main/java/org/apache/shenyu/web/controller/LocalPluginController.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/main/java/org/apache/shenyu/web/logo/ShenyuLogo.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/main/java/org/apache/shenyu/web/loader/ShenyuLoaderService.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/main/java/org/apache/shenyu/web/loader/ShenyuPluginPathBuilder.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/main/java/org/apache/shenyu/web/loader/ShenyuLoaderResult.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/main/java/org/apache/shenyu/web/loader/ShenyuPluginLoader.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/main/java/org/apache/shenyu/web/filter/CrossFilter.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/main/java/org/apache/shenyu/web/filter/FallbackFilter.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/main/java/org/apache/shenyu/web/filter/AbstractWebFilter.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/main/java/org/apache/shenyu/web/filter/ExcludeFilter.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/main/java/org/apache/shenyu/web/filter/FileSizeFilter.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/main/java/org/apache/shenyu/web/filter/LocalDispatcherFilter.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-web/src/main/java/org/apache/shenyu/web/forward/ForwardedRemoteAddressResolver.java
+ 
+*****************************************************

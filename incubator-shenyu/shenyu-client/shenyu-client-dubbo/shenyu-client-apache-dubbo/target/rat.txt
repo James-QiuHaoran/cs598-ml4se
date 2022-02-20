@@ -1,0 +1,39 @@
+
+*****************************************************
+Summary
+-------
+Generated at: 2022-02-20T11:14:23-06:00
+
+Notes: 0
+Binaries: 0
+Archives: 0
+Standards: 13
+
+Apache Licensed: 13
+Generated Documents: 0
+
+JavaDocs are generated, thus a license header is optional.
+Generated files do not require license headers.
+
+0 Unknown Licenses
+
+*****************************************************
+  Files with Apache License headers will be marked AL
+  Binary files (which do not require any license headers) will be marked B
+  Compressed archives will be marked A
+  Notices, licenses etc. will be marked N
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-client/shenyu-client-dubbo/shenyu-client-apache-dubbo/pom.xml
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-client/shenyu-client-dubbo/shenyu-client-apache-dubbo/src/test/java/org/apache/shenyu/client/apache/dubbo/validation/ApacheDubboClientValidationTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-client/shenyu-client-dubbo/shenyu-client-apache-dubbo/src/test/java/org/apache/shenyu/client/apache/dubbo/validation/mock/MockValidatorTarget.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-client/shenyu-client-dubbo/shenyu-client-apache-dubbo/src/test/java/org/apache/shenyu/client/apache/dubbo/validation/mock/MockEnumType.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-client/shenyu-client-dubbo/shenyu-client-apache-dubbo/src/test/java/org/apache/shenyu/client/apache/dubbo/validation/mock/MockConstraintValidator.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-client/shenyu-client-dubbo/shenyu-client-apache-dubbo/src/test/java/org/apache/shenyu/client/apache/dubbo/validation/mock/MockConstraint.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-client/shenyu-client-dubbo/shenyu-client-apache-dubbo/src/test/java/org/apache/shenyu/client/apache/dubbo/validation/mock/MockValidationParameter.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-client/shenyu-client-dubbo/shenyu-client-apache-dubbo/src/test/java/org/apache/shenyu/client/apache/dubbo/validation/ApacheDubboClientValidatorTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-client/shenyu-client-dubbo/shenyu-client-apache-dubbo/src/test/java/org/apache/shenyu/client/apache/dubbo/validation/service/TestService.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-client/shenyu-client-dubbo/shenyu-client-apache-dubbo/src/main/resources/META-INF/dubbo/org.apache.dubbo.validation.Validation
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-client/shenyu-client-dubbo/shenyu-client-apache-dubbo/src/main/java/org/apache/shenyu/client/apache/dubbo/ApacheDubboServiceBeanListener.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-client/shenyu-client-dubbo/shenyu-client-apache-dubbo/src/main/java/org/apache/shenyu/client/apache/dubbo/validation/ApacheDubboClientValidation.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-client/shenyu-client-dubbo/shenyu-client-apache-dubbo/src/main/java/org/apache/shenyu/client/apache/dubbo/validation/ApacheDubboClientValidator.java
+ 
+*****************************************************

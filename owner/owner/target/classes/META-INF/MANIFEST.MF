@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1645377260510
+Build-Jdk: 17.0.1
+Built-By: jiananhou
+Bundle-Description: Get rid of the boilerplate code in Java properties b
+ ased configuration.
+Bundle-DocURL: https://www.aeonbits.org/
+Bundle-License: https://raw.github.com/lviggiano/owner/master/LICENSE
+Bundle-ManifestVersion: 2
+Bundle-Name: OWNER :: Core
+Bundle-SymbolicName: org.aeonbits.owner
+Bundle-Vendor: Luigi R. Viggiano
+Bundle-Version: 1.0.13.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: org.aeonbits.owner;uses:="org.aeonbits.owner.crypto,org.
+ aeonbits.owner.event,org.aeonbits.owner.loaders";version="1.0.13",org.a
+ eonbits.owner.crypto;version="1.0.13",org.aeonbits.owner.util;uses:="or
+ g.aeonbits.owner";version="1.0.13",org.aeonbits.owner.loaders;version="
+ 1.0.13",org.aeonbits.owner.event;version="1.0.13"
+Import-Package: javax.management,javax.xml.parsers,org.aeonbits.owner,or
+ g.aeonbits.owner.crypto,org.aeonbits.owner.event,org.aeonbits.owner.loa
+ ders,org.aeonbits.owner.util,org.xml.sax,org.xml.sax.ext,org.xml.sax.he
+ lpers
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.6))"
+Tool: Bnd-3.5.0.201709291849

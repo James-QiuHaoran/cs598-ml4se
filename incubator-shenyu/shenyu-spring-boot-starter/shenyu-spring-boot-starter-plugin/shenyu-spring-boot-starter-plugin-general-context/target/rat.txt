@@ -1,0 +1,29 @@
+
+*****************************************************
+Summary
+-------
+Generated at: 2022-02-20T11:15:29-06:00
+
+Notes: 0
+Binaries: 0
+Archives: 0
+Standards: 3
+
+Apache Licensed: 3
+Generated Documents: 0
+
+JavaDocs are generated, thus a license header is optional.
+Generated files do not require license headers.
+
+0 Unknown Licenses
+
+*****************************************************
+  Files with Apache License headers will be marked AL
+  Binary files (which do not require any license headers) will be marked B
+  Compressed archives will be marked A
+  Notices, licenses etc. will be marked N
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-spring-boot-starter/shenyu-spring-boot-starter-plugin/shenyu-spring-boot-starter-plugin-general-context/pom.xml
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-spring-boot-starter/shenyu-spring-boot-starter-plugin/shenyu-spring-boot-starter-plugin-general-context/src/test/java/org/apache/shenyu/springboot/starter/plugin/general/context/GeneralContextPluginConfigurationTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-spring-boot-starter/shenyu-spring-boot-starter-plugin/shenyu-spring-boot-starter-plugin-general-context/src/main/java/org/apache/shenyu/springboot/starter/plugin/general/context/GeneralContextPluginConfiguration.java
+ 
+*****************************************************

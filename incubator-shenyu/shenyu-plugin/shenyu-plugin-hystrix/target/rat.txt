@@ -1,0 +1,38 @@
+
+*****************************************************
+Summary
+-------
+Generated at: 2022-02-20T11:14:55-06:00
+
+Notes: 0
+Binaries: 0
+Archives: 0
+Standards: 12
+
+Apache Licensed: 12
+Generated Documents: 0
+
+JavaDocs are generated, thus a license header is optional.
+Generated files do not require license headers.
+
+0 Unknown Licenses
+
+*****************************************************
+  Files with Apache License headers will be marked AL
+  Binary files (which do not require any license headers) will be marked B
+  Compressed archives will be marked A
+  Notices, licenses etc. will be marked N
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-hystrix/pom.xml
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-hystrix/src/test/java/org/apache/shenyu/plugin/hystrix/handler/HystrixPluginDataHandlerTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-hystrix/src/test/java/org/apache/shenyu/plugin/hystrix/HystrixPluginTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-hystrix/src/test/java/org/apache/shenyu/plugin/hystrix/command/HystrixCommandTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-hystrix/src/test/java/org/apache/shenyu/plugin/hystrix/command/HystrixCommandOnThreadTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-hystrix/src/test/java/org/apache/shenyu/plugin/hystrix/builder/HystrixBuilderTest.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-hystrix/src/main/java/org/apache/shenyu/plugin/hystrix/handler/HystrixPluginDataHandler.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-hystrix/src/main/java/org/apache/shenyu/plugin/hystrix/command/HystrixCommandOnThread.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-hystrix/src/main/java/org/apache/shenyu/plugin/hystrix/command/Command.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-hystrix/src/main/java/org/apache/shenyu/plugin/hystrix/command/HystrixCommand.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-hystrix/src/main/java/org/apache/shenyu/plugin/hystrix/builder/HystrixBuilder.java
+  AL    /Users/jiananhou/Desktop/cs598/cs598-ml4se/incubator-shenyu/shenyu-plugin/shenyu-plugin-hystrix/src/main/java/org/apache/shenyu/plugin/hystrix/HystrixPlugin.java
+ 
+*****************************************************

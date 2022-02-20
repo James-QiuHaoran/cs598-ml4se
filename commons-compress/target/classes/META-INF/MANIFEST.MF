@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Build-Jdk-Spec: 11
+Build-Jdk-Spec: 17
 Bundle-Description: Apache Commons Compress software defines an API for 
  working withcompression and archive formats.  These include: bzip2, gzi
  p, pack200,lzma, xz, Snappy, traditional Unix Compress, DEFLATE, DEFLAT
@@ -53,6 +53,5 @@ Import-Package: org.tukaani.xz;resolution:=optional,org.brotli.dec;resol
  to.spec;resolution:=optional
 Include-Resource: META-INF/NOTICE.txt=NOTICE.txt,META-INF/LICENSE.txt=LI
  CENSE.txt
-Originally-Created-By: Apache Maven Bundle Plugin 5.1.4
 Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=9))"
 Tool: Bnd-5.1.2.202007211702

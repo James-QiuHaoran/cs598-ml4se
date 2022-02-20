@@ -13,7 +13,10 @@ app_paths = {
     "hutool": "hutool/target/hutool-json-5.7.21.jar",
     "cfg4j": "cfg4j/out/artifacts/git-bind-1.0.0-SNAPSHOT.jar",
     "commons-compress":"commons-compress/target/commons-compress-1.22-SNAPSHOT-sources.jar",
-    "incubator-shenyu": "incubator-shenyu/shenyu-common/target/shenyu-common-2.4.3-SNAPSHOT-sources.jar"
+    "incubator-shenyu": "incubator-shenyu/shenyu-common/target/shenyu-common-2.4.3-SNAPSHOT-sources.jar",
+    "commons-cli": "commons-cli/out/commons-cli-1.2.jar",
+    "commons-io": "commons-io/out/commons-io-2.4.jar",
+    "fastjosn": "fastjson/out/fastjson-1.2.72.jar"
 }
 
 ast_files = ['JSONXMLSerializer_ast.dot', 'JSONObject_ast.dot', 'JSONUtil_ast.dot', 'JSONTokener_ast.dot', 'IssueI1F8M2_ast.dot']

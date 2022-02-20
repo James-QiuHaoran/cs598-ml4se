@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1645377261024
+Build-Jdk: 17.0.1
+Built-By: jiananhou
+Bundle-Description: OWNER Parent Project
+Bundle-DocURL: https://www.aeonbits.org/
+Bundle-License: https://raw.github.com/lviggiano/owner/master/LICENSE
+Bundle-ManifestVersion: 2
+Bundle-Name: OWNER :: Java 8 Extras
+Bundle-SymbolicName: org.aeonbits.owner.java8-extras
+Bundle-Vendor: Luigi R. Viggiano
+Bundle-Version: 1.0.13.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: org.aeonbits.owner.util.bytesize;version="1.0.13",org.ae
+ onbits.owner.converters;uses:="org.aeonbits.owner,org.aeonbits.owner.ut
+ il.bytesize";version="1.0.13"
+Import-Package: org.aeonbits.owner;version="[1.0,2)",org.aeonbits.owner.
+ util.bytesize
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-3.5.0.201709291849
