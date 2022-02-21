@@ -64,6 +64,16 @@ python gen_representation_hqiu.py -r CFG -i commons-io/src/ -v
 python gen_representation_hqiu.py -r AST -i fastjson/src/ -v
 python gen_representation_hqiu.py -r CG -i fastjson/src/ -v
 python gen_representation_hqiu.py -r CFG -i fastjson/src/ -v
+
+# json-java
+python gen_representation_hqiu.py -r AST -i json-java/src/ -v
+python gen_representation_hqiu.py -r CG -i json-java/src/ -v
+python gen_representation_hqiu.py -r CFG -i json-java/src/ -v
+
+# vectorz
+python gen_representation_hqiu.py -r AST -i vectorz/src/ -v
+python gen_representation_hqiu.py -r CG -i vectorz/src/ -v
+python gen_representation_hqiu.py -r CFG -i vectorz/src/ -v
 ```
 
 The location of generated code representations (in the format of `.dot` files) and their graphical visualizations (in the format of `.png` files) will be shown at the end.
