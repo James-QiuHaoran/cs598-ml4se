@@ -16,7 +16,9 @@ app_paths = {
     "incubator-shenyu": "incubator-shenyu/shenyu-common/target/shenyu-common-2.4.3-SNAPSHOT-sources.jar",
     "commons-cli": "commons-cli/out/commons-cli-1.2.jar",
     "commons-io": "commons-io/out/commons-io-2.4.jar",
-    "fastjosn": "fastjson/out/fastjson-1.2.72.jar"
+    "fastjson": "fastjson/out/fastjson-1.2.72.jar",
+    "json-java": "json-java/out/json-20211205.jar",
+    "vectorz": "vectorz/out/vectorz.jar"
 }
 
 ast_files = ['JSONXMLSerializer_ast.dot', 'JSONObject_ast.dot', 'JSONUtil_ast.dot', 'JSONTokener_ast.dot', 'IssueI1F8M2_ast.dot']
@@ -122,22 +124,10 @@ def get_cg(path, visualization=False):
 
     if os.path.isfile(path) or os.path.isdir(path) or os.path.isfile(original_cwd + '/' + path) or os.path.isdir(original_cwd + '/' + path):
         # extract the CG representation from the jar generated in the project
-        if 'owner' in path:
-            path = original_cwd + '/' + app_paths['owner']
-        elif 'hutool' in path:
-            path = original_cwd + '/' + app_paths['hutool']
-        elif 'cfg4j' in path:
-            path = original_cwd + '/' + app_paths['cfg4j']
-        elif 'commons-compress' in path:
-            path = original_cwd + '/' + app_paths['commons-compress']
-        elif 'incubator-shenyu' in path:
-            path = original_cwd + '/' + app_paths['incubator-shenyu']
-        elif 'commons-io' in path:
-            path = original_cwd + '/' + app_paths['commons-io']
-        elif 'commons-cli' in path:
-            path = original_cwd + '/' + app_paths['commons-cli']
-        elif 'fastjson' in path:
-            path = original_cwd + '/' + app_paths['fastjson']
+        for proj_name, path in app_paths.items():
+            if proj_name in path:
+                path = original_cwd + '/' + path
+                break
 
         print('Target path:', path)
         result = subprocess.run(['java', '-jar', NAME_CG_ANALYZER, path], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
